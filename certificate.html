@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate Services | A1 Computer Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+header{
+    background:#0b1f3a;
+    color:white;
+}
+
+.topbar{
+    background:#07162b;
+    padding:8px 5%;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    font-size:14px;
+}
+
+.navbar{
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    color:#ffd54a;
+    font-size:25px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:9px 12px;
+    border-radius:5px;
+}
+
+nav a:hover{
+    background:#0759a5;
+}
+
+.hero{
+    background:linear-gradient(135deg,#12345b,#0759a5);
+    color:white;
+    padding:50px 5%;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    max-width:800px;
+    margin:auto;
+    font-size:17px;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:30px auto;
+}
+
+.breadcrumb{
+    background:white;
+    padding:14px 18px;
+    border-radius:8px;
+    margin-bottom:25px;
+    box-shadow:0 2px 8px #00000012;
+}
+
+.breadcrumb a{
+    color:#0759a5;
+    text-decoration:none;
+}
+
+.notice{
+    background:#fff3cd;
+    border-left:5px solid #ffc107;
+    padding:16px;
+    border-radius:6px;
+    margin-bottom:25px;
+}
+
+.section-title{
+    text-align:center;
+    margin:35px 0 20px;
+    color:#0b1f3a;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:10px;
+    box-shadow:0 3px 12px #00000012;
+    transition:.2s;
+    border-top:4px solid #0759a5;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.card h3{
+    color:#0b1f3a;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#555;
+    font-size:14px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:12px;
+    padding:10px 15px;
+    background:#0759a5;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.btn:hover{
+    background:#043f76;
+}
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:18px;
+}
+
+.step{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px #00000012;
+    text-align:center;
+}
+
+.step span{
+    display:block;
+    width:45px;
+    height:45px;
+    line-height:45px;
+    margin:0 auto 10px;
+    background:#0759a5;
+    color:white;
+    border-radius:50%;
+    font-weight:bold;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    margin-top:15px;
+    box-shadow:0 2px 10px #00000010;
+}
+
+th,td{
+    padding:13px;
+    border:1px solid #ddd;
+    text-align:left;
+}
+
+th{
+    background:#0b1f3a;
+    color:white;
+}
+
+tr:nth-child(even){
+    background:#f7f9fc;
+}
+
+.info-box{
+    background:white;
+    padding:22px;
+    border-radius:10px;
+    margin-top:20px;
+    box-shadow:0 2px 10px #00000012;
+}
+
+.info-box h3{
+    color:#0759a5;
+    margin-bottom:10px;
+}
+
+ul{
+    padding-left:22px;
+}
+
+li{
+    margin:7px 0;
+}
+
+.faq{
+    background:white;
+    padding:18px;
+    margin-bottom:12px;
+    border-radius:8px;
+    box-shadow:0 2px 8px #00000010;
+}
+
+.faq h3{
+    color:#0b1f3a;
+    margin-bottom:7px;
+}
+
+.contact-box{
+    background:#0b1f3a;
+    color:white;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    margin-top:35px;
+}
+
+.contact-box h2{
+    color:#ffd54a;
+    margin-bottom:10px;
+}
+
+.whatsapp{
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    padding:12px 20px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+footer{
+    background:#07162b;
+    color:#ddd;
+    text-align:center;
+    padding:25px 5%;
+    margin-top:40px;
+    font-size:14px;
+}
+
+.float-wa{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    background:#25D366;
+    color:white;
+    width:58px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    text-decoration:none;
+    font-size:27px;
+    box-shadow:0 4px 15px #00000040;
+    z-index:999;
+}
+
+@media(max-width:600px){
+    .hero h1{
+        font-size:29px;
+    }
+
+    .topbar{
+        justify-content:center;
+        gap:5px;
+    }
+
+    .navbar{
+        justify-content:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    nav a{
+        font-size:13px;
+        padding:7px 9px;
+    }
+
+    table{
+        font-size:13px;
+    }
+
+    th,td{
+        padding:9px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="topbar">
+    <div>📍 New Bus Stand, Ajaigarh, Madhya Pradesh</div>
+    <div>📞 9993831755</div>
+</div>
+
+<div class="navbar">
+
+    <div class="logo">A1 COMPUTER SHOP</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="government-jobs.html">Jobs</a>
+        <a href="scholarship.html">Scholarship</a>
+        <a href="college.html">College</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>Certificate Services</h1>
+
+    <p>
+        विभिन्न प्रमाण पत्रों से संबंधित ऑनलाइन आवेदन,
+        दस्तावेज़ सहायता, फॉर्म भरने और प्रिंट की सुविधा
+        A1 Computer Shop पर उपलब्ध है।
+    </p>
+
+</section>
+
+
+<div class="container">
+
+<div class="breadcrumb">
+    <a href="index.html">Home</a> /
+    <a href="services.html">Services</a> /
+    Certificate Services
+</div>
+
+
+<div class="notice">
+
+<strong>⚠️ महत्वपूर्ण सूचना:</strong>
+A1 Computer Shop एक निजी ऑनलाइन सेवा केंद्र है।
+यह किसी सरकारी विभाग या पोर्टल का आधिकारिक कार्यालय नहीं है।
+सरकारी प्रमाण पत्र की स्वीकृति संबंधित सरकारी विभाग द्वारा की जाती है।
+
+</div>
+
+
+<h2 class="section-title">📄 Certificate की प्रमुख सेवाएँ</h2>
+
+
+<div class="cards">
+
+<div class="card">
+    <h3>जाति प्रमाण पत्र</h3>
+    <p>जाति प्रमाण पत्र के ऑनलाइन आवेदन और दस्तावेज़ सहायता।</p>
+    <a href="#process" class="btn">जानकारी देखें</a>
+</div>
+
+<div class="card">
+    <h3>आय प्रमाण पत्र</h3>
+    <p>Income Certificate के आवेदन और प्रिंट संबंधी सहायता।</p>
+    <a href="#process" class="btn">जानकारी देखें</a>
+</div>
+
+<div class="card">
+    <h3>निवास प्रमाण पत्र</h3>
+    <p>Residence/Domicile Certificate के आवेदन में सहायता।</p>
+    <a href="#process" class="btn">जानकारी देखें</a>
+</div>
+
+<div class="card">
+    <h3>जन्म प्रमाण पत्र</h3>
+    <p>Birth Certificate से संबंधित ऑनलाइन प्रक्रिया की जानकारी।</p>
+    <a href="#process" class="btn">जानकारी देखें</a>
+</div>
+
+<div class="card">
+    <h3>मृत्यु प्रमाण पत्र</h3>
+    <p>Death Certificate संबंधी आवेदन एवं दस्तावेज़ सहायता।</p>
+    <a href="#process" class="btn">जानकारी देखें</a>
+</div>
+
+<div class="card">
+    <h3>EWS प्रमाण पत्र</h3>
+    <p>EWS Certificate आवेदन के लिए सामान्य दस्तावेज़ सहायता।</p>
+    <a href="#process" class="btn">जानकारी देखें</a>
+</div>
+
+<div class="card">
+    <h3>विकलांगता प्रमाण पत्र</h3>
+    <p>Disability Certificate से संबंधित ऑनलाइन जानकारी और सहायता।</p>
+    <a href="#process" class="btn">जानकारी देखें</a>
+</div>
+
+<div class="card">
+    <h3>अन्य प्रमाण पत्र</h3>
+    <p>अन्य उपलब्ध प्रमाण पत्र सेवाओं के लिए संपर्क करें।</p>
+    <a href="contact.html" class="btn">संपर्क करें</a>
+</div>
+
+</div>
+
+
+<h2 class="section-title">📋 सामान्य Certificate Services</h2>
+
+<table>
+
+<tr>
+    <th>प्रमाण पत्र</th>
+    <th>सामान्य उपयोग</th>
+    <th>आवश्यकता</th>
+</tr>
+
+<tr>
+    <td>जाति प्रमाण पत्र</td>
+    <td>आरक्षण, छात्रवृत्ति, सरकारी योजनाएँ</td>
+    <td>पहचान एवं संबंधित प्रमाण</td>
+</tr>
+
+<tr>
+    <td>आय प्रमाण पत्र</td>
+    <td>Scholarship, योजनाएँ, फीस आदि</td>
+    <td>आय से संबंधित जानकारी</td>
+</tr>
+
+<tr>
+    <td>निवास प्रमाण पत्र</td>
+    <td>स्थायी निवास से संबंधित कार्य</td>
+    <td>पता/निवास प्रमाण</td>
+</tr>
+
+<tr>
+    <td>जन्म प्रमाण पत्र</td>
+    <td>आयु एवं जन्म संबंधी प्रमाण</td>
+    <td>जन्म संबंधी रिकॉर्ड</td>
+</tr>
+
+<tr>
+    <td>मृत्यु प्रमाण पत्र</td>
+    <td>मृत्यु संबंधी कानूनी/प्रशासनिक कार्य</td>
+    <td>मृत्यु संबंधी रिकॉर्ड</td>
+</tr>
+
+<tr>
+    <td>EWS Certificate</td>
+    <td>शिक्षा एवं सरकारी भर्ती में उपयोग</td>
+    <td>आय एवं संपत्ति संबंधी दस्तावेज़</td>
+</tr>
+
+</table>
+
+
+<h2 class="section-title">📑 सामान्य Documents</h2>
+
+<div class="info-box">
+
+<h3>आवेदन के समय सामान्यतः उपयोग होने वाले दस्तावेज़</h3>
+
+<ul>
+    <li>आधार कार्ड</li>
+    <li>मोबाइल नंबर</li>
+    <li>पासपोर्ट साइज फोटो</li>
+    <li>पता प्रमाण</li>
+    <li>परिवार/समग्र संबंधी जानकारी, जहाँ लागू हो</li>
+    <li>आय से संबंधित दस्तावेज़, जहाँ आवश्यक हो</li>
+    <li>जाति संबंधी दस्तावेज़, जहाँ आवश्यक हो</li>
+    <li>अन्य संबंधित प्रमाण/रिकॉर्ड</li>
+</ul>
+
+<p>
+<strong>नोट:</strong>
+हर प्रमाण पत्र के लिए दस्तावेज़ अलग हो सकते हैं।
+अंतिम आवश्यकता संबंधित विभाग के नियमों के अनुसार होती है।
+</p>
+
+</div>
+
+
+<h2 class="section-title" id="process">📝 Certificate आवेदन प्रक्रिया</h2>
+
+
+<div class="process">
+
+<div class="step">
+    <span>1</span>
+    <h3>Documents</h3>
+    <p>आवश्यक दस्तावेज़ साथ लेकर आएँ।</p>
+</div>
+
+<div class="step">
+    <span>2</span>
+    <h3>Details</h3>
+    <p>आवेदन के लिए आवश्यक जानकारी उपलब्ध कराएँ।</p>
+</div>
+
+<div class="step">
+    <span>3</span>
+    <h3>Online Form</h3>
+    <p>उपलब्ध ऑनलाइन प्रक्रिया के अनुसार फॉर्म भरा जाएगा।</p>
+</div>
+
+<div class="step">
+    <span>4</span>
+    <h3>Verification</h3>
+    <p>जहाँ लागू हो, संबंधित विभाग द्वारा सत्यापन किया जाता है।</p>
+</div>
+
+<div class="step">
+    <span>5</span>
+    <h3>Status</h3>
+    <p>आवेदन की स्थिति उपलब्ध होने पर जाँची जा सकती है।</p>
+</div>
+
+<div class="step">
+    <span>6</span>
+    <h3>Print</h3>
+    <p>स्वीकृति के बाद उपलब्ध प्रमाण पत्र का प्रिंट लिया जा सकता है।</p>
+</div>
+
+</div>
+
+
+<h2 class="section-title">🔍 Certificate बनवाते समय ध्यान रखें</h2>
+
+<div class="info-box">
+
+<ul>
+    <li>सभी दस्तावेज़ों में नाम की spelling सही रखें।</li>
+    <li>जन्मतिथि और पता सही दर्ज करवाएँ।</li>
+    <li>मोबाइल नंबर सही दें क्योंकि OTP की आवश्यकता हो सकती है।</li>
+    <li>आवेदन जमा करने से पहले सभी जानकारी जाँचें।</li>
+    <li>Application Number/Receipt सुरक्षित रखें।</li>
+    <li>किसी अनजान व्यक्ति को OTP न बताएं।</li>
+    <li>गलत दस्तावेज़ या गलत जानकारी देने से आवेदन प्रभावित हो सकता है।</li>
+</ul>
+
+</div>
+
+
+<h2 class="section-title">❓ Frequently Asked Questions</h2>
+
+
+<div class="faq">
+
+<h3>1. Certificate बनने में कितना समय लगता है?</h3>
+
+<p>
+समय प्रमाण पत्र के प्रकार, आवेदन और संबंधित विभाग की प्रक्रिया पर निर्भर करता है।
+A1 Computer Shop आवेदन प्रक्रिया में सहायता कर सकता है, लेकिन सरकारी approval का समय हमारे नियंत्रण में नहीं है।
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<h3>2. क्या केवल Aadhaar Card से सभी Certificate बन सकते हैं?</h3>
+
+<p>
+नहीं। अलग-अलग प्रमाण पत्र के लिए अलग-अलग दस्तावेज़ आवश्यक हो सकते हैं।
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<h3>3. Certificate का Status कैसे देखें?</h3>
+
+<p>
+यदि संबंधित सेवा में online status सुविधा उपलब्ध है, तो application/reference number के माध्यम से स्थिति जाँची जा सकती है।
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<h3>4. Certificate में गलती हो जाए तो क्या करें?</h3>
+
+<p>
+Correction की प्रक्रिया संबंधित विभाग के नियमों के अनुसार होती है। आवश्यक होने पर A1 Computer Shop में प्रक्रिया संबंधी सहायता ली जा सकती है।
+</p>
+
+</div>
+
+
+<div class="faq">
+
+<h3>5. क्या A1 Computer Shop सरकारी कार्यालय है?</h3>
+
+<p>
+नहीं। A1 Computer Shop एक निजी online service center है जो digital form filling, document assistance और print जैसी सेवाओं में सहायता प्रदान करता है।
+</p>
+
+</div>
+
+
+<h2 class="section-title">🔐 Privacy & Security</h2>
+
+<div class="info-box">
+
+<p>
+Certificate आवेदन के दौरान व्यक्तिगत जानकारी और दस्तावेज़ों का उपयोग केवल संबंधित सेवा की आवश्यकता के अनुसार किया जाना चाहिए।
+</p>
+
+<ul>
+    <li>OTP किसी के साथ share न करें।</li>
+    <li>ATM PIN या UPI PIN कभी न दें।</li>
+    <li>बैंक पासवर्ड साझा न करें।</li>
+    <li>Application receipt अपने पास रखें।</li>
+    <li>Original documents अनावश्यक रूप से किसी के पास न छोड़ें।</li>
+</ul>
+
+</div>
+
+
+<h2 class="section-title">🔗 Related Services</h2>
+
+<div class="cards">
+
+<div class="card">
+    <h3>Ayushman Card</h3>
+    <p>Ayushman संबंधी online सहायता।</p>
+    <a href="ayushman.html" class="btn">Open</a>
+</div>
+
+<div class="card">
+    <h3>Samagra</h3>
+    <p>Samagra ID एवं संबंधित सेवाएँ।</p>
+    <a href="samagra.html" class="btn">Open</a>
+</div>
+
+<div class="card">
+    <h3>Aadhaar</h3>
+    <p>Aadhaar संबंधी digital assistance।</p>
+    <a href="aadhaar.html" class="btn">Open</a>
+</div>
+
+<div class="card">
+    <h3>Voter</h3>
+    <p>Voter registration एवं correction सहायता।</p>
+    <a href="voter.html" class="btn">Open</a>
+</div>
+
+<div class="card">
+    <h3>PAN Card</h3>
+    <p>PAN application एवं correction सहायता।</p>
+    <a href="pan-card.html" class="btn">Open</a>
+</div>
+
+<div class="card">
+    <h3>Print & Scan</h3>
+    <p>Document print, scan एवं photocopy सुविधा।</p>
+    <a href="print-scan.html" class="btn">Open</a>
+</div>
+
+</div>
+
+
+<div class="contact-box">
+
+<h2>📞 A1 Computer Shop</h2>
+
+<p>Certificate या अन्य online service के लिए संपर्क करें।</p>
+
+<p>
+<strong>📍 New Bus Stand, Ajaigarh, Madhya Pradesh</strong>
+</p>
+
+<p>
+<strong>📱 9993831755</strong>
+</p>
+
+<a class="whatsapp"
+href="https://wa.me/919993831755"
+target="_blank">
+💬 WhatsApp पर संपर्क करें
+</a>
+
+<br>
+
+<a class="btn" href="index.html">
+🏠 Home पर जाएँ
+</a>
+
+<a class="btn" href="services.html">
+📋 सभी Services
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<p><strong>A1 COMPUTER SHOP</strong></p>
+
+<p>
+New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+Mobile: 9993831755
+</p>
+
+<p>
+© 2026 A1 Computer Shop. All Rights Reserved.
+</p>
+
+<p>
+यह एक निजी डिजिटल सेवा केंद्र है। यह किसी सरकारी विभाग या सरकारी पोर्टल की आधिकारिक वेबसाइट नहीं है।
+</p>
+
+</footer>
+
+
+<a class="float-wa"
+href="https://wa.me/919993831755"
+target="_blank"
+title="WhatsApp">
+💬
+</a>
+
+</body>
+</html>
