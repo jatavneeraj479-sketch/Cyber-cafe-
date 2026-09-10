@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>A1 Smart AI Assistant</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#eef3f9;
+min-height:100vh;
+}
+
+.header{
+background:linear-gradient(135deg,#063b73,#0757a6);
+color:white;
+padding:18px;
+text-align:center;
+}
+
+.header h1{
+font-size:24px;
+margin-bottom:6px;
+}
+
+.header p{
+font-size:13px;
+opacity:.9;
+}
+
+.chat{
+max-width:900px;
+margin:auto;
+padding:15px;
+padding-bottom:120px;
+}
+
+.welcome{
+background:white;
+border-radius:16px;
+padding:20px;
+margin-bottom:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.welcome h2{
+color:#063b73;
+margin-bottom:10px;
+}
+
+.welcome p{
+line-height:1.6;
+color:#475569;
+}
+
+.messages{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.message{
+max-width:85%;
+padding:13px 15px;
+border-radius:15px;
+line-height:1.55;
+white-space:pre-wrap;
+}
+
+.user{
+align-self:flex-end;
+background:#0757a6;
+color:white;
+border-bottom-right-radius:4px;
+}
+
+.ai{
+align-self:flex-start;
+background:white;
+color:#172033;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
+border-bottom-left-radius:4px;
+}
+
+.loading{
+color:#64748b;
+font-style:italic;
+}
+
+.input-area{
+position:fixed;
+left:0;
+right:0;
+bottom:0;
+background:white;
+border-top:1px solid #dbe2ea;
+padding:12px;
+box-shadow:0 -4px 20px rgba(0,0,0,.08);
+}
+
+.input-box{
+max-width:900px;
+margin:auto;
+display:flex;
+gap:8px;
+}
+
+#question{
+flex:1;
+padding:14px;
+border:1px solid #ccd5df;
+border-radius:12px;
+font-size:16px;
+outline:none;
+}
+
+#question:focus{
+border-color:#0757a6;
+}
+
+#send{
+border:0;
+background:#0757a6;
+color:white;
+padding:0 20px;
+border-radius:12px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+#send:disabled{
+opacity:.6;
+}
+
+.back{
+display:inline-block;
+margin-top:12px;
+color:white;
+text-decoration:none;
+font-size:13px;
+}
+
+.notice{
+max-width:900px;
+margin:12px auto;
+padding:12px 15px;
+background:#fff3cd;
+border-left:4px solid #f5a623;
+border-radius:8px;
+font-size:13px;
+line-height:1.5;
+}
+
+@media(max-width:600px){
+
+.message{
+max-width:92%;
+}
+
+.header h1{
+font-size:21px;
+}
+
+#send{
+padding:0 15px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>🤖 A1 Smart AI Assistant</h1>
+
+<p>Online Services की जानकारी के लिए पूछें</p>
+
+<a href="index.html" class="back">
+← A1 Computer Shop पर वापस जाएं
+</a>
+
+</div>
+
+
+<div class="notice">
+
+<strong>🔐 सुरक्षा:</strong>
+OTP, Password, UPI PIN, ATM PIN या Banking credentials
+AI Assistant में भी दर्ज न करें।
+
+</div>
+
+
+<main class="chat">
+
+<div class="welcome">
+
+<h2>नमस्ते! 👋</h2>
+
+<p>
+मैं A1 Smart AI Assistant हूँ।
+आप Government Job, Scholarship, College,
+Exam Form, Admit Card, Result, Aadhaar,
+PAN, Voter और Online Services से जुड़े सवाल पूछ सकते हैं।
+</p>
+
+</div>
+
+
+<div id="messages" class="messages">
+
+<div class="message ai">
+
+नमस्ते! 👋
+
+मैं आपकी Online Services से संबंधित जानकारी में मदद कर सकता हूँ।
+
+अपना सवाल नीचे लिखें।
+
+</div>
+
+</div>
+
+</main>
+
+
+<div class="input-area">
+
+<div class="input-box">
+
+<input
+id="question"
+type="text"
+placeholder="अपना सवाल लिखें..."
+autocomplete="off"
+>
+
+<button id="send">
+Send
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+const questionInput =
+document.getElementById("question");
+
+const sendButton =
+document.getElementById("send");
+
+const messages =
+document.getElementById("messages");
+
+
+let conversation = [];
+
+
+function addMessage(text,type){
+
+const div =
+document.createElement("div");
+
+div.className =
+"message " + type;
+
+div.textContent = text;
+
+messages.appendChild(div);
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+return div;
+
+}
+
+
+async function askAI(){
+
+const question =
+questionInput.value.trim();
+
+if(!question){
+return;
+}
+
+
+addMessage(question,"user");
+
+questionInput.value="";
+
+sendButton.disabled=true;
+
+const loading =
+addMessage("AI जवाब तैयार कर रहा है...","ai");
+
+loading.classList.add("loading");
+
+
+try{
+
+const response =
+await fetch("/api/a1-ai",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+message:question,
+
+history:conversation.slice(-10)
+
+})
+
+});
+
+
+const data =
+await response.json();
+
+
+if(!response.ok){
+
+throw new Error(
+data.error ||
+"AI service error"
+);
+
+}
+
+
+loading.remove();
+
+
+addMessage(
+data.answer ||
+"माफ़ कीजिए, अभी जवाब नहीं मिला।",
+"ai"
+);
+
+
+conversation.push({
+role:"user",
+content:question
+});
+
+conversation.push({
+role:"assistant",
+content:data.answer
+});
+
+
+}catch(error){
+
+loading.remove();
+
+addMessage(
+"❌ अभी AI से connection नहीं हो पाया। थोड़ी देर बाद फिर कोशिश करें।\n\nError: "
++ error.message,
+"ai"
+);
+
+}
+
+
+sendButton.disabled=false;
+
+questionInput.focus();
+
+}
+
+
+sendButton.addEventListener(
+"click",
+askAI
+);
+
+
+questionInput.addEventListener(
+"keydown",
+function(event){
+
+if(event.key==="Enter"){
+askAI();
+}
+
+});
+
+
+</script>
+
+</body>
+</html>
