@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>All Online Services | A1 Computer Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#172033;
+}
+
+.topbar{
+    background:#063b73;
+    color:white;
+    padding:9px 5%;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    font-size:14px;
+}
+
+header{
+    background:white;
+    box-shadow:0 2px 12px rgba(0,0,0,.12);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#0757a6;
+    text-decoration:none;
+}
+
+.logo span{
+    color:#f0a500;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#172033;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#0757a6;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:35px 5%;
+}
+
+.breadcrumb{
+    color:#64748b;
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+h1{
+    color:#063b73;
+    margin-bottom:10px;
+}
+
+.intro{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin:20px 0;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.search{
+    width:100%;
+    padding:15px;
+    border:1px solid #ccd5df;
+    border-radius:9px;
+    font-size:16px;
+    margin:15px 0 25px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:18px;
+}
+
+.service{
+    background:white;
+    padding:23px;
+    border-radius:14px;
+    text-decoration:none;
+    color:#172033;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    border:1px solid #e4e9ef;
+    transition:.2s;
+}
+
+.service:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.icon{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.service h3{
+    color:#063b73;
+    margin-bottom:8px;
+}
+
+.service p{
+    color:#64748b;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.open{
+    display:inline-block;
+    margin-top:15px;
+    background:#eaf2fb;
+    color:#0757a6;
+    padding:7px 11px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.notice{
+    background:#fff3cd;
+    border-left:5px solid #f5a623;
+    padding:18px;
+    border-radius:8px;
+    margin-top:30px;
+}
+
+footer{
+    background:#062f5d;
+    color:white;
+    margin-top:40px;
+    padding:40px 5%;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
+
+footer h3{
+    margin-bottom:12px;
+}
+
+footer p{
+    color:#d7e3ef;
+    line-height:1.7;
+}
+
+.whatsapp{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    background:#16a34a;
+    color:white;
+    padding:14px 20px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    z-index:9999;
+}
+
+@media(max-width:700px){
+
+    nav{
+        display:none;
+    }
+
+    .navbar{
+        justify-content:center;
+    }
+
+    .topbar{
+        justify-content:center;
+        gap:5px 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <div>📍 New Bus Stand, Ajaigarh, Madhya Pradesh</div>
+    <div>📞 9993831755</div>
+</div>
+
+<header>
+
+<div class="navbar">
+
+<a href="index.html" class="logo">
+A1 <span>COMPUTER SHOP</span>
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="notices.html">Notices</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</div>
+
+</header>
+
+<main class="container">
+
+<div class="breadcrumb">
+Home → All Services
+</div>
+
+<h1>🖥️ सभी Online Services</h1>
+
+<p>
+नीचे किसी भी service पर click करके उसका पूरा अलग information page खोलें।
+</p>
+
+<div class="intro">
+
+<strong>⚡ A1 Computer Shop Online Service Center</strong>
+
+<p style="margin-top:8px;">
+Government forms, scholarship, college forms, exam forms,
+certificates, PAN, voter, Aadhaar assistance, print, scan
+और अन्य digital services के लिए सहायता।
+</p>
+
+</div>
+
+<input
+type="text"
+id="search"
+class="search"
+placeholder="🔎 Service खोजें..."
+onkeyup="searchServices()"
+>
+
+<div class="service-grid" id="serviceGrid">
+
+<a class="service" href="mp-online.html">
+<div class="icon">🖥️</div>
+<h3>MP Online Services</h3>
+<p>Online services और portal assistance।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="government-jobs.html">
+<div class="icon">💼</div>
+<h3>Government Jobs</h3>
+<p>सरकारी नौकरी forms और application assistance।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="scholarship.html">
+<div class="icon">🎓</div>
+<h3>Scholarship</h3>
+<p>Scholarship application और documents assistance।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="college.html">
+<div class="icon">🏫</div>
+<h3>College & University</h3>
+<p>Admission, examination और university services।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="exam-form.html">
+<div class="icon">📝</div>
+<h3>Exam Forms</h3>
+<p>विभिन्न examination forms भरने की सहायता।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="admit-card.html">
+<div class="icon">🎫</div>
+<h3>Admit Card</h3>
+<p>Admit card download और print assistance।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="result.html">
+<div class="icon">📊</div>
+<h3>Results</h3>
+<p>Exam result देखने और print करने की सहायता।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="ayushman.html">
+<div class="icon">🏥</div>
+<h3>Ayushman</h3>
+<p>Ayushman Card related assistance।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="samagra.html">
+<div class="icon">🪪</div>
+<h3>Samagra</h3>
+<p>Samagra ID और संबंधित online services।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="pan-card.html">
+<div class="icon">💳</div>
+<h3>PAN Card</h3>
+<p>PAN application और correction assistance।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="voter.html">
+<div class="icon">🗳️</div>
+<h3>Voter Services</h3>
+<p>Voter registration और correction assistance।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="certificate.html">
+<div class="icon">📄</div>
+<h3>Certificates</h3>
+<p>Income, Caste, Residence आदि certificate assistance।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="aadhaar.html">
+<div class="icon">🆔</div>
+<h3>Aadhaar Assistance</h3>
+<p>Aadhaar related सामान्य online assistance।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="print-scan.html">
+<div class="icon">🖨️</div>
+<h3>Print & Scan</h3>
+<p>Print, Scan, Photocopy और Passport Photo।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="ticket.html">
+<div class="icon">🎟️</div>
+<h3>Ticket Assistance</h3>
+<p>Authorized platforms पर ticket assistance।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+<a class="service" href="csc.html">
+<div class="icon">🏢</div>
+<h3>CSC Services</h3>
+<p>CSC और digital service assistance।</p>
+<span class="open">पूरी जानकारी →</span>
+</a>
+
+</div>
+
+<div class="notice">
+
+<strong>⚠️ Important:</strong>
+
+यह A1 Computer Shop का private service portal है।
+यह official MPOnline या किसी सरकारी विभाग की official website नहीं है।
+सरकारी आवेदन/भुगतान के लिए संबंधित official portal को ही verify करें।
+
+</div>
+
+</main>
+
+<a
+class="whatsapp"
+href="https://wa.me/919993831755"
+target="_blank">
+💬 WhatsApp
+</a>
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>A1 Computer Shop</h3>
+
+<p>
+📍 New Bus Stand,<br>
+Ajaigarh, Madhya Pradesh
+</p>
+
+<p>📞 9993831755</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<p>
+<a href="index.html">Home</a><br>
+<a href="services.html">Services</a><br>
+<a href="notices.html">Notices</a><br>
+<a href="contact.html">Contact</a>
+</p>
+
+</div>
+
+<div>
+
+<h3>Security</h3>
+
+<p>
+OTP, Password, UPI PIN, ATM PIN या banking credentials
+किसी व्यक्ति को न दें। Sensitive authentication स्वयं करें।
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<script>
+
+function searchServices(){
+
+let input =
+document.getElementById("search")
+.value
+.toLowerCase();
+
+let cards =
+document.querySelectorAll(".service");
+
+cards.forEach(function(card){
+
+let text =
+card.innerText.toLowerCase();
+
+if(text.includes(input)){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
