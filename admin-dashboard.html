@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A1 Computer Shop | Admin Dashboard</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#172033;
+}
+
+header{
+    background:#063b73;
+    color:white;
+    padding:18px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#f5a623;
+}
+
+.logout{
+    border:0;
+    background:#dc2626;
+    color:white;
+    padding:10px 15px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 5%;
+}
+
+.welcome{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    margin-bottom:25px;
+}
+
+.welcome h1{
+    color:#063b73;
+    margin-bottom:10px;
+}
+
+.welcome p{
+    color:#64748b;
+    line-height:1.6;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    border:1px solid #e4e9ef;
+}
+
+.card-icon{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.card h2{
+    color:#063b73;
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#64748b;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.card button,
+.card a{
+    display:inline-block;
+    margin-top:15px;
+    text-decoration:none;
+    border:0;
+    background:#0757a6;
+    color:white;
+    padding:10px 14px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.notice{
+    margin-top:25px;
+    background:#fff3cd;
+    border-left:5px solid #f5a623;
+    padding:18px;
+    border-radius:8px;
+    line-height:1.6;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#64748b;
+}
+
+@media(max-width:600px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .container{
+        padding:20px 5%;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+A1 <span>COMPUTER SHOP</span>
+</div>
+
+<button class="logout" onclick="logout()">
+🚪 Logout
+</button>
+
+</header>
+
+<main class="container">
+
+<section class="welcome">
+
+<h1>🔐 Admin Dashboard</h1>
+
+<p>
+A1 Computer Shop के Admin Panel में आपका स्वागत है।
+यहाँ से website की administrative सुविधाएँ manage की जा सकती हैं।
+</p>
+
+</section>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="card-icon">📢</div>
+
+<h2>Notices</h2>
+
+<p>
+Website के notices और announcements manage करें।
+</p>
+
+<a href="notices.html">
+View Notices
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">🖥️</div>
+
+<h2>Services</h2>
+
+<p>
+Website पर उपलब्ध online services देखें।
+</p>
+
+<a href="services.html">
+View Services
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">🌐</div>
+
+<h2>Website</h2>
+
+<p>
+मुख्य website खोलें और सभी pages देखें।
+</p>
+
+<a href="index.html">
+Open Website
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">📞</div>
+
+<h2>Contact</h2>
+
+<p>
+Website का contact page देखें।
+</p>
+
+<a href="contact.html">
+View Contact
+</a>
+
+</div>
+
+</div>
+
+
+<div class="notice">
+
+<strong>🔒 Security Notice</strong><br>
+
+Admin password को किसी के साथ share न करें।
+Browser में password save करने से बचें और काम पूरा होने के बाद
+Logout जरूर करें।
+
+</div>
+
+</main>
+
+<footer>
+
+A1 Computer Shop © 2026
+
+</footer>
+
+
+<script>
+
+function logout(){
+
+    sessionStorage.removeItem("adminLoggedIn");
+
+    window.location.href="admin.html";
+
+}
+
+</script>
+
+</body>
+</html>
