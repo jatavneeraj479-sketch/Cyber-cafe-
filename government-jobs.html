@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Government Jobs - A1 Computer Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:#0b1f3a;
+    color:white;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#ffd54a;
+}
+
+.header-contact{
+    font-size:14px;
+}
+
+nav{
+    background:#12345b;
+    padding:12px 5%;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#ffd54a;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.breadcrumb{
+    padding:18px 0;
+    font-size:14px;
+}
+
+.breadcrumb a{
+    color:#0759a5;
+    text-decoration:none;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0759a5,#0b1f3a);
+    color:white;
+    padding:40px 25px;
+    border-radius:15px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    line-height:1.7;
+}
+
+.notice{
+    background:#fff3cd;
+    border-left:5px solid #ffb300;
+    padding:15px;
+    margin-bottom:25px;
+    border-radius:8px;
+    line-height:1.6;
+}
+
+.section-title{
+    text-align:center;
+    margin:30px 0 20px;
+}
+
+.section-title h2{
+    color:#0b1f3a;
+    margin-bottom:8px;
+}
+
+.search{
+    margin:20px 0;
+}
+
+.search input{
+    width:100%;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.icon{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#0759a5;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:14px;
+    line-height:1.6;
+    color:#555;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 16px;
+    background:#0759a5;
+    color:white;
+    text-decoration:none;
+    border-radius:7px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#0b1f3a;
+}
+
+.info-box{
+    background:white;
+    padding:25px;
+    margin:30px 0;
+    border-radius:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.info-box h2{
+    color:#0b1f3a;
+    margin-bottom:15px;
+}
+
+.info-box ul{
+    padding-left:22px;
+    line-height:2;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.step{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+
+.step-number{
+    width:45px;
+    height:45px;
+    line-height:45px;
+    margin:auto auto 10px;
+    background:#0759a5;
+    color:white;
+    border-radius:50%;
+    font-weight:bold;
+}
+
+.contact-box{
+    background:#0b1f3a;
+    color:white;
+    padding:30px;
+    border-radius:15px;
+    margin:30px 0;
+    text-align:center;
+}
+
+.contact-box h2{
+    color:#ffd54a;
+    margin-bottom:12px;
+}
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#25D366;
+    color:white;
+    padding:14px 18px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
+}
+
+footer{
+    background:#08182d;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+    line-height:1.8;
+}
+
+@media(max-width:600px){
+    .hero h1{
+        font-size:27px;
+    }
+
+    header{
+        gap:10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">A1 COMPUTER SHOP</div>
+    <div class="header-contact">
+        📞 9993831755
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">All Services</a>
+    <a href="mp-online.html">MP Online</a>
+    <a href="government-jobs.html">Government Jobs</a>
+    <a href="scholarship.html">Scholarship</a>
+    <a href="college.html">College</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> /
+        <a href="services.html">Services</a> /
+        Government Jobs
+    </div>
+
+    <section class="hero">
+        <h1>Government Jobs & Recruitment</h1>
+        <p>
+            सरकारी नौकरी से संबंधित आवेदन, भर्ती जानकारी,
+            ऑनलाइन फॉर्म, परीक्षा फॉर्म, एडमिट कार्ड और रिजल्ट
+            जैसी सेवाओं के लिए A1 Computer Shop से सहायता प्राप्त करें।
+        </p>
+    </section>
+
+    <div class="notice">
+        ⚠️ <strong>महत्वपूर्ण:</strong>
+        A1 Computer Shop एक निजी ऑनलाइन सेवा केंद्र है।
+        यह किसी सरकारी विभाग, MP Online या भर्ती बोर्ड की आधिकारिक वेबसाइट नहीं है।
+        अंतिम जानकारी और आवेदन की शर्तें संबंधित आधिकारिक भर्ती संस्था से जरूर जांचें।
+    </div>
+
+    <div class="section-title">
+        <h2>Government Job Categories</h2>
+        <p>अपनी जरूरत के अनुसार नीचे दी गई category चुनें</p>
+    </div>
+
+    <div class="search">
+        <input
+            type="text"
+            id="jobSearch"
+            placeholder="🔍 Job category खोजें..."
+            onkeyup="searchJobs()"
+        >
+    </div>
+
+    <div class="grid" id="jobGrid">
+
+        <div class="card job-card">
+            <div class="icon">📋</div>
+            <h3>SSC Jobs</h3>
+            <p>
+                SSC से संबंधित विभिन्न भर्ती परीक्षाओं,
+                आवेदन और परीक्षा जानकारी के लिए।
+            </p>
+            <a class="btn" href="ssc-jobs.html">Open Page →</a>
+        </div>
+
+        <div class="card job-card">
+            <div class="icon">🚆</div>
+            <h3>Railway Jobs</h3>
+            <p>
+                Railway भर्ती, Group C/D, Technician,
+                NTPC आदि से संबंधित जानकारी।
+            </p>
+            <a class="btn" href="railway-jobs.html">Open Page →</a>
+        </div>
+
+        <div class="card job-card">
+            <div class="icon">👮</div>
+            <h3>Police Jobs</h3>
+            <p>
+                Police Constable, SI और अन्य पुलिस भर्ती
+                से संबंधित जानकारी।
+            </p>
+            <a class="btn" href="police-jobs.html">Open Page →</a>
+        </div>
+
+        <div class="card job-card">
+            <div class="icon">🪖</div>
+            <h3>Defence Jobs</h3>
+            <p>
+                Army, Navy, Air Force और Defence भर्ती
+                से संबंधित जानकारी।
+            </p>
+            <a class="btn" href="defence-jobs.html">Open Page →</a>
+        </div>
+
+        <div class="card job-card">
+            <div class="icon">🏦</div>
+            <h3>Banking Jobs</h3>
+            <p>
+                Banking sector में विभिन्न भर्ती और
+                competitive examinations की जानकारी।
+            </p>
+            <a class="btn" href="banking-jobs.html">Open Page →</a>
+        </div>
+
+        <div class="card job-card">
+            <div class="icon">👨‍🏫</div>
+            <h3>Teaching Jobs</h3>
+            <p>
+                Teacher भर्ती, TET और education sector
+                से संबंधित नौकरी की जानकारी।
+            </p>
+            <a class="btn" href="teaching-jobs.html">Open Page →</a>
+        </div>
+
+        <div class="card job-card">
+            <div class="icon">🏛️</div>
+            <h3>MP Government Jobs</h3>
+            <p>
+                मध्य प्रदेश में निकलने वाली विभिन्न
+                सरकारी भर्तियों की जानकारी।
+            </p>
+            <a class="btn" href="mp-govt-jobs.html">Open Page →</a>
+        </div>
+
+        <div class="card job-card">
+            <div class="icon">📮</div>
+            <h3>Post Office Jobs</h3>
+            <p>
+                India Post से संबंधित भर्ती और
+                आवेदन प्रक्रिया की जानकारी।
+            </p>
+            <a class="btn" href="post-office-jobs.html">Open Page →</a>
+        </div>
+
+    </div>
+
+    <div class="info-box">
+        <h2>📄 Government Job Form के लिए सामान्य Documents</h2>
+
+        <ul>
+            <li>आधार कार्ड</li>
+            <li>मोबाइल नंबर</li>
+            <li>ईमेल ID</li>
+            <li>पासपोर्ट साइज फोटो</li>
+            <li>हस्ताक्षर की स्कैन कॉपी</li>
+            <li>10वीं की मार्कशीट</li>
+            <li>12वीं की मार्कशीट</li>
+            <li>Graduation की मार्कशीट / Certificate</li>
+            <li>जाति प्रमाण पत्र — यदि लागू हो</li>
+            <li>आय प्रमाण पत्र — यदि लागू हो</li>
+            <li>निवास प्रमाण पत्र — यदि लागू हो</li>
+            <li>अन्य documents जैसा कि संबंधित भर्ती notification में मांगा गया हो</li>
+        </ul>
+    </div>
+
+    <div class="section-title">
+        <h2>📝 Online Job Form Process</h2>
+        <p>A1 Computer Shop पर सामान्य प्रक्रिया</p>
+    </div>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>Notification</h3>
+            <p>भर्ती की eligibility और notification check करें।</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>Documents</h3>
+            <p>आवश्यक documents साथ लाएं।</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>Form Fill</h3>
+            <p>ऑनलाइन application form भरें।</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <h3>Payment</h3>
+            <p>यदि शुल्क लागू है तो payment करें।</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">5</div>
+            <h3>Print</h3>
+            <p>Application form और payment receipt सुरक्षित रखें।</p>
+        </div>
+
+    </div>
+
+    <div class="info-box">
+        <h2>✅ Form भरने से पहले ध्यान रखें</h2>
+
+        <ul>
+            <li>Age limit जरूर check करें।</li>
+            <li>Educational qualification check करें।</li>
+            <li>Category और reservation rules check करें।</li>
+            <li>Application की last date देखें।</li>
+            <li>Photo और signature सही format में रखें।</li>
+            <li>Form submit करने के बाद application number सुरक्षित रखें।</li>
+            <li>Admit Card और exam date बाद में जरूर check करें।</li>
+        </ul>
+    </div>
+
+    <div class="contact-box">
+        <h2>💻 Government Job Form भरवाने के लिए संपर्क करें</h2>
+
+        <p>
+            A1 Computer Shop<br>
+            New Bus Stand, Ajaigarh, Madhya Pradesh
+        </p>
+
+        <p style="margin-top:10px;">
+            📞 <strong>9993831755</strong>
+        </p>
+
+        <a
+            class="btn"
+            style="background:#25D366;margin-top:18px;"
+            href="https://wa.me/919993831755"
+            target="_blank"
+        >
+            WhatsApp करें
+        </a>
+    </div>
+
+    <div style="text-align:center;margin:30px 0;">
+        <a class="btn" href="services.html">
+            ← All Services
+        </a>
+
+        <a class="btn" href="index.html">
+            🏠 Home
+        </a>
+    </div>
+
+</div>
+
+<a
+    class="whatsapp"
+    href="https://wa.me/919993831755"
+    target="_blank"
+>
+    💬 WhatsApp
+</a>
+
+<footer>
+    <strong>A1 COMPUTER SHOP</strong><br>
+    New Bus Stand, Ajaigarh, Madhya Pradesh<br>
+    📞 9993831755<br><br>
+
+    यह एक निजी ऑनलाइन सेवा केंद्र है।
+    यह किसी सरकारी विभाग या MP Online की आधिकारिक वेबसाइट नहीं है।
+    <br><br>
+
+    © 2026 A1 Computer Shop. All Rights Reserved.
+</footer>
+
+<script>
+
+function searchJobs(){
+
+    let input =
+        document.getElementById("jobSearch")
+        .value
+        .toLowerCase();
+
+    let cards =
+        document.querySelectorAll(".job-card");
+
+    cards.forEach(function(card){
+
+        let text =
+            card.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            card.style.display = "block";
+        }else{
+            card.style.display = "none";
+        }
+
+    });
+}
+
+</script>
+
+</body>
+</html>
