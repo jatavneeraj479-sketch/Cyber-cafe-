@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banking Jobs - A1 Computer Shop</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+header{
+    background:#0b1f3a;
+    color:white;
+}
+
+.topbar{
+    background:#07162a;
+    padding:8px 5%;
+    text-align:right;
+    font-size:14px;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 5%;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#ffd54a;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin:5px 8px;
+    font-size:15px;
+}
+
+.navbar a:hover{
+    color:#ffd54a;
+}
+
+.hero{
+    background:linear-gradient(135deg,#12345b,#0759a5);
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:800px;
+    margin:auto;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:30px auto;
+}
+
+.breadcrumb{
+    margin-bottom:20px;
+    color:#555;
+    font-size:14px;
+}
+
+.breadcrumb a{
+    color:#0759a5;
+    text-decoration:none;
+}
+
+.notice{
+    background:#fff3cd;
+    border-left:5px solid #ffc107;
+    padding:18px;
+    margin-bottom:25px;
+    border-radius:8px;
+}
+
+.section-title{
+    text-align:center;
+    margin:35px 0 20px;
+    color:#0b1f3a;
+    font-size:28px;
+}
+
+.job-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.job-card{
+    background:white;
+    padding:24px;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.10);
+    border-top:4px solid #0759a5;
+    transition:.2s;
+}
+
+.job-card:hover{
+    transform:translateY(-4px);
+}
+
+.job-card h3{
+    color:#0759a5;
+    margin-bottom:10px;
+}
+
+.job-card p{
+    color:#555;
+    font-size:15px;
+}
+
+.btn{
+    display:inline-block;
+    background:#0759a5;
+    color:white;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:6px;
+    margin-top:15px;
+}
+
+.btn:hover{
+    background:#06467f;
+}
+
+.info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    margin-top:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.info-table th,
+.info-table td{
+    border:1px solid #ddd;
+    padding:13px;
+    text-align:left;
+}
+
+.info-table th{
+    background:#0b1f3a;
+    color:white;
+}
+
+.info-table tr:nth-child(even){
+    background:#f7f9fc;
+}
+
+.box{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    margin-top:25px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.box h3{
+    color:#0759a5;
+    margin-bottom:12px;
+}
+
+.box ul{
+    padding-left:22px;
+}
+
+.box li{
+    margin-bottom:8px;
+}
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.step{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.step-number{
+    width:42px;
+    height:42px;
+    background:#0759a5;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 10px;
+    font-weight:bold;
+}
+
+.whatsapp{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:14px 20px;
+    border-radius:50px;
+    font-weight:bold;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+    z-index:1000;
+}
+
+.contact-box{
+    background:#0b1f3a;
+    color:white;
+    padding:30px;
+    text-align:center;
+    border-radius:12px;
+    margin-top:30px;
+}
+
+.contact-box h2{
+    color:#ffd54a;
+    margin-bottom:10px;
+}
+
+.contact-box a{
+    color:#ffd54a;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+footer{
+    margin-top:40px;
+    background:#07162a;
+    color:#ddd;
+    text-align:center;
+    padding:25px 15px;
+    font-size:14px;
+}
+
+@media(max-width:700px){
+    .hero h1{
+        font-size:29px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .navbar{
+        text-align:center;
+        justify-content:center;
+        gap:8px;
+    }
+
+    .logo{
+        width:100%;
+        margin-bottom:8px;
+    }
+
+    .navbar a{
+        font-size:14px;
+    }
+
+    .info-table{
+        font-size:14px;
+    }
+
+    .info-table th,
+    .info-table td{
+        padding:9px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="topbar">
+📞 A1 Computer Shop | Mobile: 9993831755
+</div>
+
+<div class="navbar">
+
+<div class="logo">
+A1 COMPUTER SHOP
+</div>
+
+<div>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="government-jobs.html">Govt Jobs</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>🏦 Banking Jobs</h1>
+
+<p>
+Banking sector में नौकरी की तैयारी, भर्ती फॉर्म, आवेदन प्रक्रिया,
+जरूरी दस्तावेज और परीक्षा संबंधी सामान्य जानकारी।
+</p>
+
+</section>
+
+
+<div class="container">
+
+<div class="breadcrumb">
+<a href="index.html">Home</a> →
+<a href="government-jobs.html">Government Jobs</a> →
+Banking Jobs
+</div>
+
+
+<div class="notice">
+
+<strong>⚠️ महत्वपूर्ण सूचना:</strong><br>
+
+यह पेज Banking Jobs की सामान्य जानकारी और ऑनलाइन आवेदन में सहायता के लिए है।
+भर्ती की वास्तविक योग्यता, आयु सीमा, फीस, परीक्षा पैटर्न और अंतिम तिथि
+हमेशा संबंधित भर्ती की आधिकारिक notification से जांचें।
+
+<br><br>
+
+<strong>A1 Computer Shop किसी बैंक या सरकारी विभाग की आधिकारिक वेबसाइट नहीं है।</strong>
+
+</div>
+
+
+<h2 class="section-title">
+🏦 Banking Jobs की प्रमुख श्रेणियां
+</h2>
+
+
+<div class="job-grid">
+
+
+<div class="job-card">
+
+<h3>IBPS PO</h3>
+
+<p>
+Public Sector Banks में Probationary Officer / Management Trainee
+भर्ती के लिए सामान्य प्रतियोगी परीक्षा।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>IBPS Clerk</h3>
+
+<p>
+Banking sector में clerical level की भर्ती के लिए परीक्षा।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>SBI PO</h3>
+
+<p>
+State Bank of India में Probationary Officer पद के लिए भर्ती।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>SBI Clerk</h3>
+
+<p>
+State Bank of India में Junior Associate / Clerk level भर्ती।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>RRB Office Assistant</h3>
+
+<p>
+Regional Rural Banks में Office Assistant पद के लिए भर्ती।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>RRB Officer</h3>
+
+<p>
+Regional Rural Banks में Officer Scale पदों के लिए भर्ती।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>Bank Specialist Officer</h3>
+
+<p>
+IT, Agriculture, Law, HR, Marketing आदि specialist क्षेत्रों में
+Officer level opportunities।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>Other Bank Jobs</h3>
+
+<p>
+समय-समय पर अलग-अलग बैंकों द्वारा विभिन्न पदों पर भर्ती निकल सकती है।
+</p>
+
+</div>
+
+
+</div>
+
+
+<h2 class="section-title">
+📋 सामान्य योग्यता
+</h2>
+
+
+<table class="info-table">
+
+<tr>
+<th>विषय</th>
+<th>सामान्य जानकारी</th>
+</tr>
+
+<tr>
+<td>शैक्षणिक योग्यता</td>
+<td>कई graduate-level banking exams में Graduation मांगी जाती है।</td>
+</tr>
+
+<tr>
+<td>आयु सीमा</td>
+<td>पद और notification के अनुसार अलग-अलग हो सकती है।</td>
+</tr>
+
+<tr>
+<td>Nationality</td>
+<td>भर्ती notification में दी गई eligibility लागू होती है।</td>
+</tr>
+
+<tr>
+<td>Computer Knowledge</td>
+<td>कई banking roles में computer awareness उपयोगी/आवश्यक हो सकती है।</td>
+</tr>
+
+<tr>
+<td>Selection</td>
+<td>आमतौर पर परीक्षा और पद के अनुसार अन्य stages हो सकते हैं।</td>
+</tr>
+
+</table>
+
+
+<div class="box">
+
+<h3>📚 Banking Exam में सामान्य विषय</h3>
+
+<ul>
+
+<li>Reasoning Ability</li>
+
+<li>Quantitative Aptitude</li>
+
+<li>English Language</li>
+
+<li>General Awareness</li>
+
+<li>Current Affairs</li>
+
+<li>Banking Awareness</li>
+
+<li>Computer Awareness</li>
+
+</ul>
+
+</div>
+
+
+<div class="box">
+
+<h3>📄 आवेदन के लिए सामान्य दस्तावेज</h3>
+
+<ul>
+
+<li>आधार कार्ड / पहचान पत्र</li>
+
+<li>पासपोर्ट साइज फोटो</li>
+
+<li>हस्ताक्षर</li>
+
+<li>शैक्षणिक प्रमाण पत्र</li>
+
+<li>Graduation संबंधित दस्तावेज</li>
+
+<li>जाति प्रमाण पत्र, यदि लागू हो</li>
+
+<li>आय प्रमाण पत्र, यदि notification में आवश्यक हो</li>
+
+<li>मोबाइल नंबर</li>
+
+<li>Email ID</li>
+
+<li>अन्य आवश्यक documents जैसा कि official notification में बताया गया हो</li>
+
+</ul>
+
+</div>
+
+
+<h2 class="section-title">
+📝 Online Form भरने की प्रक्रिया
+</h2>
+
+
+<div class="process">
+
+
+<div class="step">
+
+<div class="step-number">1</div>
+
+<h3>Notification</h3>
+
+<p>
+सबसे पहले भर्ती notification पढ़ें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">2</div>
+
+<h3>Registration</h3>
+
+<p>
+Candidate registration करें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">3</div>
+
+<h3>Details</h3>
+
+<p>
+Personal और educational details भरें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">4</div>
+
+<h3>Documents</h3>
+
+<p>
+Photo, signature और documents upload करें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">5</div>
+
+<h3>Fee</h3>
+
+<p>
+यदि लागू हो तो examination fee जमा करें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">6</div>
+
+<h3>Print</h3>
+
+<p>
+Final application form का print/save रखें।
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="box">
+
+<h3>💡 Banking Exam Preparation Tips</h3>
+
+<ul>
+
+<li>रोजाना Reasoning और Maths की practice करें।</li>
+
+<li>English grammar और vocabulary पर काम करें।</li>
+
+<li>Current Affairs नियमित पढ़ें।</li>
+
+<li>Banking और financial awareness के basic concepts समझें।</li>
+
+<li>Previous year questions हल करें।</li>
+
+<li>Mock tests देकर speed और accuracy सुधारें।</li>
+
+<li>समय प्रबंधन पर विशेष ध्यान दें।</li>
+
+</ul>
+
+</div>
+
+
+<div class="box">
+
+<h3>🔐 Form भरते समय सावधानी</h3>
+
+<ul>
+
+<li>नाम और जन्मतिथि documents के अनुसार भरें।</li>
+
+<li>Mobile number और Email ID सही रखें।</li>
+
+<li>Photo और signature निर्धारित format/size में upload करें।</li>
+
+<li>Fee payment के बाद transaction status जांचें।</li>
+
+<li>Final submitted form जरूर save करें।</li>
+
+<li>Application number और password सुरक्षित रखें।</li>
+
+<li>किसी भी भर्ती की अंतिम तारीख official notification से verify करें।</li>
+
+</ul>
+
+</div>
+
+
+<div class="contact-box">
+
+<h2>📞 Banking Form में सहायता चाहिए?</h2>
+
+<p>
+A1 Computer Shop, New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+Mobile:
+<a href="tel:9993831755">9993831755</a>
+</p>
+
+<p>
+WhatsApp पर जानकारी के लिए:
+<a href="https://wa.me/919993831755" target="_blank">
+WhatsApp करें
+</a>
+</p>
+
+<br>
+
+<a class="btn" href="government-jobs.html">
+⬅ Government Jobs
+</a>
+
+<a class="btn" href="index.html">
+🏠 Home
+</a>
+
+</div>
+
+</div>
+
+
+<a class="whatsapp"
+href="https://wa.me/919993831755"
+target="_blank">
+💬 WhatsApp
+</a>
+
+
+<footer>
+
+<p>
+<strong>A1 Computer Shop</strong>
+</p>
+
+<p>
+New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+Mobile: 9993831755
+</p>
+
+<p>
+© 2026 A1 Computer Shop. All Rights Reserved.
+</p>
+
+<p>
+यह एक निजी ऑनलाइन सेवा सहायता केंद्र है।
+यह किसी सरकारी विभाग, बैंक या MPOnline की आधिकारिक वेबसाइट नहीं है।
+</p>
+
+</footer>
+
+</body>
+</html>
