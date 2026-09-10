@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exam Form Services | A1 Computer Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+header{
+    background:#0b1f3a;
+    color:white;
+}
+
+.topbar{
+    background:#07162a;
+    padding:8px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+}
+
+.logo{
+    padding:18px 5%;
+    font-size:26px;
+    font-weight:bold;
+    color:#ffd54a;
+}
+
+nav{
+    background:#12345b;
+    padding:12px 5%;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:5px;
+}
+
+nav a:hover{
+    background:#0759a5;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0b1f3a,#0759a5);
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    max-width:850px;
+    margin:auto;
+    font-size:18px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.breadcrumb{
+    padding:18px 0;
+    font-size:14px;
+}
+
+.breadcrumb a{
+    color:#0759a5;
+    text-decoration:none;
+}
+
+.notice{
+    background:#fff3cd;
+    border-left:5px solid #ffc107;
+    padding:18px;
+    margin-bottom:30px;
+    border-radius:8px;
+}
+
+.section{
+    margin:35px 0;
+}
+
+.section h2{
+    color:#0b1f3a;
+    font-size:28px;
+    margin-bottom:18px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:12px;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.card h3{
+    color:#0759a5;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#555;
+    font-size:15px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:14px;
+    padding:10px 16px;
+    background:#0759a5;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.btn:hover{
+    background:#0b1f3a;
+}
+
+.info{
+    background:#e8f4ff;
+    border-left:5px solid #0759a5;
+    padding:18px;
+    border-radius:8px;
+}
+
+.warning{
+    background:#ffe8e8;
+    border-left:5px solid #dc3545;
+    padding:18px;
+    border-radius:8px;
+}
+
+.success{
+    background:#e8f8ed;
+    border-left:5px solid #198754;
+    padding:18px;
+    border-radius:8px;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:15px;
+}
+
+.step{
+    background:white;
+    padding:20px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.07);
+}
+
+.number{
+    width:45px;
+    height:45px;
+    margin:0 auto 12px;
+    border-radius:50%;
+    background:#0759a5;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 3px 12px rgba(0,0,0,.06);
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:left;
+}
+
+th{
+    background:#0b1f3a;
+    color:white;
+}
+
+tr:nth-child(even){
+    background:#f8f9fa;
+}
+
+.contact-box{
+    background:#0b1f3a;
+    color:white;
+    padding:30px;
+    text-align:center;
+    border-radius:12px;
+}
+
+.contact-box h2{
+    color:#ffd54a;
+}
+
+.contact-btn{
+    display:inline-block;
+    margin:12px 5px 0;
+    padding:12px 20px;
+    color:white;
+    text-decoration:none;
+    border-radius:7px;
+    font-weight:bold;
+}
+
+.call{
+    background:#0759a5;
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+.float-wa{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:58px;
+    height:58px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:27px;
+    text-decoration:none;
+    box-shadow:0 4px 15px rgba(0,0,0,.3);
+    z-index:100;
+}
+
+footer{
+    margin-top:45px;
+    background:#07162a;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+    font-size:14px;
+}
+
+@media(max-width:600px){
+
+    .topbar{
+        flex-direction:column;
+        gap:5px;
+        text-align:center;
+    }
+
+    .logo{
+        text-align:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    table{
+        font-size:13px;
+    }
+
+    th,td{
+        padding:8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="topbar">
+    <div>📍 New Bus Stand, Ajaigarh, Madhya Pradesh</div>
+    <div>📞 9993831755</div>
+</div>
+
+<div class="logo">
+    A1 COMPUTER SHOP
+</div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">All Services</a>
+    <a href="mp-online.html">MP Online</a>
+    <a href="government-jobs.html">Government Jobs</a>
+    <a href="scholarship.html">Scholarship</a>
+    <a href="college.html">College</a>
+    <a href="exam-form.html">Exam Form</a>
+    <a href="admit-card.html">Admit Card</a>
+    <a href="result.html">Result</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<h1>📝 Exam Form Services</h1>
+
+<p>
+College, University, Board और अन्य उपलब्ध examination forms
+भरने में A1 Computer Shop से सहायता प्राप्त करें।
+</p>
+
+</section>
+
+
+<div class="container">
+
+<div class="breadcrumb">
+    <a href="index.html">Home</a> →
+    <a href="services.html">Services</a> →
+    Exam Form
+</div>
+
+
+<div class="notice">
+
+<strong>⚠️ महत्वपूर्ण सूचना:</strong>
+
+A1 Computer Shop एक निजी online/computer service center है।
+यह किसी सरकारी विभाग, university या MP Online की official website नहीं है।
+
+Exam form की eligibility, fee, last date और नियम संबंधित संस्था की
+official सूचना से verify करें।
+
+</div>
+
+
+<!-- EXAM SERVICES -->
+
+<section class="section">
+
+<h2>📚 Exam Form Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🎓 College Exam Form</h3>
+<p>
+College और university के उपलब्ध examination forms भरने में सहायता।
+</p>
+<a href="#process" class="btn">जानकारी देखें</a>
+</div>
+
+
+<div class="card">
+<h3>🏫 University Exam Form</h3>
+<p>
+University semester/annual examination application में सहायता।
+</p>
+<a href="#process" class="btn">जानकारी देखें</a>
+</div>
+
+
+<div class="card">
+<h3>📖 Semester Exam</h3>
+<p>
+Semester examination form भरने और receipt print करने में सहायता।
+</p>
+<a href="#process" class="btn">जानकारी देखें</a>
+</div>
+
+
+<div class="card">
+<h3>🔄 Regular Exam</h3>
+<p>
+Regular students के लिए उपलब्ध examination application assistance।
+</p>
+<a href="#process" class="btn">जानकारी देखें</a>
+</div>
+
+
+<div class="card">
+<h3>🔁 Private Exam</h3>
+<p>
+जहां उपलब्ध हो, private candidate examination form assistance।
+</p>
+<a href="#process" class="btn">जानकारी देखें</a>
+</div>
+
+
+<div class="card">
+<h3>📝 Supplementary Exam</h3>
+<p>
+Supplementary/Additional examination form में सहायता।
+</p>
+<a href="#process" class="btn">जानकारी देखें</a>
+</div>
+
+
+<div class="card">
+<h3>📄 Revaluation</h3>
+<p>
+जहां university सुविधा उपलब्ध कराए, revaluation application assistance।
+</p>
+<a href="#revaluation" class="btn">जानकारी देखें</a>
+</div>
+
+
+<div class="card">
+<h3>📊 Back Paper</h3>
+<p>
+Available back paper examination applications में सहायता।
+</p>
+<a href="#backpaper" class="btn">जानकारी देखें</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GENERAL PROCESS -->
+
+<section class="section" id="process">
+
+<h2>⚙️ Exam Form भरने की सामान्य प्रक्रिया</h2>
+
+<div class="steps">
+
+<div class="step">
+<div class="number">1</div>
+<h3>Exam जानकारी</h3>
+<p>
+Exam, course और university की जानकारी बताएं।
+</p>
+</div>
+
+
+<div class="step">
+<div class="number">2</div>
+<h3>Documents</h3>
+<p>
+आवश्यक documents उपलब्ध कराएं।
+</p>
+</div>
+
+
+<div class="step">
+<div class="number">3</div>
+<h3>Details भरना</h3>
+<p>
+Student की personal और academic details भरी जाती हैं।
+</p>
+</div>
+
+
+<div class="step">
+<div class="number">4</div>
+<h3>Verify</h3>
+<p>
+Form submit करने से पहले सभी जानकारी check करें।
+</p>
+</div>
+
+
+<div class="step">
+<div class="number">5</div>
+<h3>Fee Payment</h3>
+<p>
+लागू examination fee payment process पूरा करें।
+</p>
+</div>
+
+
+<div class="step">
+<div class="number">6</div>
+<h3>Receipt</h3>
+<p>
+Final application और payment receipt सुरक्षित रखें।
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DOCUMENTS -->
+
+<section class="section">
+
+<h2>📄 सामान्य Documents</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🪪 Identity Proof</h3>
+<p>
+जहां आवश्यक हो, valid identity document।
+</p>
+</div>
+
+
+<div class="card">
+<h3>📑 Previous Marksheet</h3>
+<p>
+Previous semester/year की marksheet जहां आवश्यक हो।
+</p>
+</div>
+
+
+<div class="card">
+<h3>🆔 Enrollment Number</h3>
+<p>
+University/college द्वारा दिया गया enrollment number।
+</p>
+</div>
+
+
+<div class="card">
+<h3>🎫 Roll Number</h3>
+<p>
+जहां student के लिए roll number पहले से जारी हो।
+</p>
+</div>
+
+
+<div class="card">
+<h3>📸 Photograph</h3>
+<p>
+निर्धारित size और format में passport photo।
+</p>
+</div>
+
+
+<div class="card">
+<h3>✍️ Signature</h3>
+<p>
+जहां online form में signature upload आवश्यक हो।
+</p>
+</div>
+
+
+<div class="card">
+<h3>📱 Mobile Number</h3>
+<p>
+Active mobile number उपलब्ध रखें।
+</p>
+</div>
+
+
+<div class="card">
+<h3>📧 Email ID</h3>
+<p>
+जहां आवश्यक हो active email address रखें।
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FORM TYPES -->
+
+<section class="section">
+
+<h2>📋 Common Examination Types</h2>
+
+<table>
+
+<tr>
+<th>Exam Type</th>
+<th>सामान्य जानकारी</th>
+<th>क्या जांचें</th>
+</tr>
+
+<tr>
+<td>Regular</td>
+<td>Regular enrolled students के लिए</td>
+<td>Eligibility और exam schedule</td>
+</tr>
+
+<tr>
+<td>Private</td>
+<td>जहां institution/private scheme उपलब्ध हो</td>
+<td>Eligibility और registration rules</td>
+</tr>
+
+<tr>
+<td>Semester</td>
+<td>Semester आधारित examination</td>
+<td>Semester और subject details</td>
+</tr>
+
+<tr>
+<td>Annual</td>
+<td>Annual examination system</td>
+<td>Course/year details</td>
+</tr>
+
+<tr>
+<td>Back Paper</td>
+<td>Previous subject में pending exam के लिए जहां उपलब्ध हो</td>
+<td>Subject और eligibility</td>
+</tr>
+
+<tr>
+<td>Supplementary</td>
+<td>जहां institution supplementary exam कराता हो</td>
+<td>Official notification</td>
+</tr>
+
+<tr>
+<td>Revaluation</td>
+<td>Result के बाद marks review के लिए जहां सुविधा हो</td>
+<td>Application window</td>
+</tr>
+
+</table>
+
+</section>
+
+
+<!-- BACK PAPER -->
+
+<section class="section" id="backpaper">
+
+<h2>🔄 Back Paper / ATKT Form</h2>
+
+<div class="info">
+
+<p>
+कुछ universities में failed या pending subjects के लिए
+Back Paper/ATKT examination की सुविधा हो सकती है।
+</p>
+
+<br>
+
+<p>
+इसकी eligibility, subject limit, fee और application dates
+हर university के नियमों पर निर्भर करती हैं।
+</p>
+
+</div>
+
+</section>
+
+
+<!-- REVALUATION -->
+
+<section class="section" id="revaluation">
+
+<h2>📊 Revaluation / Retotaling</h2>
+
+<div class="info">
+
+<p>
+Result घोषित होने के बाद कुछ institutions students को
+revaluation या retotaling के लिए आवेदन करने की सुविधा देते हैं।
+</p>
+
+<br>
+
+<p>
+Application करने से पहले संबंधित university के rules,
+fee और last date जरूर check करें।
+</p>
+
+</div>
+
+</section>
+
+
+<!-- IMPORTANT CHECK -->
+
+<section class="section">
+
+<h2>🔍 Submit करने से पहले क्या Check करें?</h2>
+
+<div class="success">
+
+<ul>
+
+<li>Student का नाम सही है या नहीं।</li>
+
+<li>Father/Mother name सही है या नहीं।</li>
+
+<li>Date of Birth सही है या नहीं।</li>
+
+<li>Enrollment/Roll Number सही है या नहीं।</li>
+
+<li>Course और semester/year सही चुना है या नहीं।</li>
+
+<li>Subjects सही selected हैं या नहीं।</li>
+
+<li>Photograph और signature सही upload हुए हैं या नहीं।</li>
+
+<li>Fee amount और payment status check करें।</li>
+
+<li>Final application preview जरूर देखें।</li>
+
+<li>Application receipt download/print करके सुरक्षित रखें।</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- COMMON PROBLEMS -->
+
+<section class="section">
+
+<h2>⚠️ Common Problems</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>❌ Payment Failed</h3>
+
+<p>
+Payment failed होने पर तुरंत दोबारा payment करने से पहले
+transaction status check करें।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>❌ Website Slow</h3>
+
+<p>
+Exam dates के दौरान server पर अधिक traffic होने से website slow हो सकती है।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>❌ Wrong Details</h3>
+
+<p>
+Final submission से पहले personal और academic details carefully check करें।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>❌ Document Upload</h3>
+
+<p>
+Photo/signature/document का format और size institution के निर्देश के अनुसार रखें।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>❌ Application Not Found</h3>
+
+<p>
+Application number और registration details से status verify करें।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>❌ Fee Status Pending</h3>
+
+<p>
+Payment confirmation आने तक transaction details सुरक्षित रखें।
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SAFETY -->
+
+<section class="section">
+
+<h2>🔐 Student Safety</h2>
+
+<div class="warning">
+
+<ul>
+
+<li>अपना OTP किसी को न बताएं।</li>
+
+<li>ATM PIN/UPI PIN/password किसी को न दें।</li>
+
+<li>Unknown payment links पर payment न करें।</li>
+
+<li>Application number और receipt सुरक्षित रखें।</li>
+
+<li>Official website पर दी गई जानकारी को प्राथमिकता दें।</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- RELATED -->
+
+<section class="section">
+
+<h2>🔗 Related Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🎓 College</h3>
+<p>College और university services.</p>
+<a href="college.html" class="btn">Open</a>
+</div>
+
+
+<div class="card">
+<h3>🎫 Admit Card</h3>
+<p>Available admit card download/print assistance.</p>
+<a href="admit-card.html" class="btn">Open</a>
+</div>
+
+
+<div class="card">
+<h3>📊 Result</h3>
+<p>Exam result देखने और print करने की सहायता।</p>
+<a href="result.html" class="btn">Open</a>
+</div>
+
+
+<div class="card">
+<h3>🎓 Scholarship</h3>
+<p>Student scholarship services.</p>
+<a href="scholarship.html" class="btn">Open</a>
+</div>
+
+
+<div class="card">
+<h3>🖨️ Print & Scan</h3>
+<p>Documents और application printing.</p>
+<a href="print-scan.html" class="btn">Open</a>
+</div>
+
+
+<div class="card">
+<h3>📋 All Services</h3>
+<p>A1 Computer Shop की सभी services देखें।</p>
+<a href="services.html" class="btn">View All</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="section">
+
+<div class="contact-box">
+
+<h2>📞 A1 Computer Shop</h2>
+
+<p>
+Exam Form और Online Services के लिए संपर्क करें।
+</p>
+
+<p>
+📍 New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+📱 9993831755
+</p>
+
+<a href="tel:9993831755" class="contact-btn call">
+📞 Call Now
+</a>
+
+<a href="https://wa.me/919993831755"
+class="contact-btn whatsapp"
+target="_blank">
+💬 WhatsApp
+</a>
+
+</div>
+
+</section>
+
+</div>
+
+
+<a href="https://wa.me/919993831755"
+class="float-wa"
+target="_blank">
+💬
+</a>
+
+
+<footer>
+
+<p>
+© 2026 A1 Computer Shop. All Rights Reserved.
+</p>
+
+<p>
+New Bus Stand, Ajaigarh, Madhya Pradesh | 9993831755
+</p>
+
+<p>
+This is a private online/computer service center.
+It is not an official government or MP Online website.
+</p>
+
+</footer>
+
+</body>
+</html>
