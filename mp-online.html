@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MP Online Services | A1 Computer Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.6;
+}
+
+.topbar{
+    background:#063b73;
+    color:white;
+    padding:9px 5%;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    font-size:14px;
+}
+
+header{
+    background:white;
+    box-shadow:0 2px 12px rgba(0,0,0,.12);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#0757a6;
+    text-decoration:none;
+}
+
+.logo span{
+    color:#f0a500;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#172033;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#0757a6;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:35px 5%;
+}
+
+.breadcrumb{
+    color:#64748b;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.breadcrumb a{
+    color:#0757a6;
+    text-decoration:none;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0757a6,#062f5d);
+    color:white;
+    padding:45px 5%;
+    border-radius:0 0 25px 25px;
+}
+
+.hero-inner{
+    max-width:1200px;
+    margin:auto;
+}
+
+.hero h1{
+    font-size:clamp(30px,5vw,48px);
+    margin-bottom:10px;
+}
+
+.hero p{
+    max-width:800px;
+}
+
+.notice{
+    background:#fff3cd;
+    border-left:5px solid #f5a623;
+    padding:18px;
+    border-radius:8px;
+    margin:25px 0;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:14px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    border:1px solid #e4e9ef;
+}
+
+.card h3{
+    color:#063b73;
+    margin-bottom:8px;
+}
+
+.icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#64748b;
+}
+
+.steps{
+    margin-top:15px;
+}
+
+.step{
+    background:white;
+    padding:18px 18px 18px 55px;
+    border-radius:12px;
+    margin:10px 0;
+    position:relative;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+
+.step-number{
+    position:absolute;
+    left:16px;
+    top:17px;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:#0757a6;
+    color:white;
+    text-align:center;
+    line-height:28px;
+    font-weight:bold;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:12px;
+    padding:11px 17px;
+    background:#0757a6;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.btn.gold{
+    background:#f5a623;
+    color:#111;
+}
+
+.inner-links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:15px;
+    margin-top:15px;
+}
+
+.inner-link{
+    background:white;
+    padding:18px;
+    border-radius:12px;
+    text-decoration:none;
+    color:#172033;
+    border:1px solid #e1e7ee;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+
+.inner-link:hover{
+    border-color:#0757a6;
+    transform:translateY(-2px);
+}
+
+footer{
+    background:#062f5d;
+    color:white;
+    margin-top:40px;
+    padding:40px 5%;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
+
+footer p{
+    color:#d7e3ef;
+}
+
+footer a{
+    color:white;
+}
+
+.whatsapp{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    background:#16a34a;
+    color:white;
+    padding:14px 20px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    z-index:9999;
+}
+
+@media(max-width:700px){
+
+nav{
+    display:none;
+}
+
+.navbar{
+    justify-content:center;
+}
+
+.topbar{
+    justify-content:center;
+    gap:5px 15px;
+}
+
+.hero{
+    padding:40px 5%;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+<div>
+📍 New Bus Stand, Ajaigarh, Madhya Pradesh
+</div>
+
+<div>
+📞 9993831755
+</div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="navbar">
+
+<a href="index.html" class="logo">
+A1 <span>COMPUTER SHOP</span>
+</a>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="services.html">Services</a>
+
+<a href="notices.html">Notices</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+<h1>🖥️ MP Online Services</h1>
+
+<p>
+MP Online एवं विभिन्न online government services के लिए
+A1 Computer Shop पर सहायता प्राप्त करें।
+</p>
+
+</div>
+
+</section>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+
+<div class="breadcrumb">
+
+<a href="index.html">Home</a>
+ →
+<a href="services.html">Services</a>
+ →
+MP Online
+
+</div>
+
+
+<!-- DISCLAIMER -->
+
+<div class="notice">
+
+<strong>⚠️ महत्वपूर्ण सूचना</strong>
+
+<p>
+
+A1 Computer Shop एक निजी online service assistance center है।
+यह MPOnline या किसी सरकारी विभाग की official website नहीं है।
+
+सरकारी आवेदन, eligibility, शुल्क और अंतिम तारीख के लिए
+संबंधित official portal/notification को जरूर verify करें।
+
+</p>
+
+</div>
+
+
+<!-- INTRO -->
+
+<div class="card">
+
+<h2>MP Online क्या है?</h2>
+
+<p>
+
+MP Online मध्य प्रदेश में विभिन्न online services तक पहुंचने
+के लिए उपयोग किए जाने वाले digital service platforms में से
+एक है। अलग-अलग विभाग और सेवाओं के अपने official portals,
+rules और application process हो सकते हैं।
+
+</p>
+
+<p style="margin-top:10px;">
+
+A1 Computer Shop में हम online form filling, document upload,
+print, scan और portal navigation जैसी सामान्य सहायता प्रदान
+कर सकते हैं।
+
+</p>
+
+</div>
+
+
+<!-- SERVICE CATEGORIES -->
+
+<h2 style="margin-top:35px;">
+📂 मुख्य Service Categories
+</h2>
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="icon">💼</div>
+
+<h3>Government Jobs</h3>
+
+<p>
+सरकारी भर्ती और online application assistance।
+</p>
+
+<a class="btn" href="government-jobs.html">
+Open Page →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎓</div>
+
+<h3>Scholarship</h3>
+
+<p>
+Scholarship application एवं document assistance।
+</p>
+
+<a class="btn" href="scholarship.html">
+Open Page →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🏫</div>
+
+<h3>College & University</h3>
+
+<p>
+Admission, examination और university services।
+</p>
+
+<a class="btn" href="college.html">
+Open Page →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📝</div>
+
+<h3>Exam Forms</h3>
+
+<p>
+Online examination forms भरने की सहायता।
+</p>
+
+<a class="btn" href="exam-form.html">
+Open Page →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🏥</div>
+
+<h3>Ayushman</h3>
+
+<p>
+Ayushman card related सामान्य online assistance।
+</p>
+
+<a class="btn" href="ayushman.html">
+Open Page →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🪪</div>
+
+<h3>Samagra</h3>
+
+<p>
+Samagra ID एवं संबंधित services।
+</p>
+
+<a class="btn" href="samagra.html">
+Open Page →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📄</div>
+
+<h3>Certificates</h3>
+
+<p>
+Income, Caste, Residence आदि certificate assistance।
+</p>
+
+<a class="btn" href="certificate.html">
+Open Page →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🗳️</div>
+
+<h3>Voter Services</h3>
+
+<p>
+Voter registration एवं correction assistance।
+</p>
+
+<a class="btn" href="voter.html">
+Open Page →
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- PROCESS -->
+
+<h2 style="margin-top:35px;">
+⚙️ Online Service Process
+</h2>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">1</div>
+
+<strong>Service चुनें</strong>
+
+<p>
+अपनी जरूरत के अनुसार service category चुनें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">2</div>
+
+<strong>Eligibility देखें</strong>
+
+<p>
+Official notification में eligibility और conditions verify करें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">3</div>
+
+<strong>Documents तैयार करें</strong>
+
+<p>
+Service के अनुसार जरूरी documents तैयार रखें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">4</div>
+
+<strong>Online Form भरें</strong>
+
+<p>
+सही जानकारी के साथ application form भरें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">5</div>
+
+<strong>Documents Upload करें</strong>
+
+<p>
+आवश्यक documents official portal पर upload करें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">6</div>
+
+<strong>Preview Check करें</strong>
+
+<p>
+Submit करने से पहले नाम, DOB और अन्य details जांचें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">7</div>
+
+<strong>Submit & Receipt</strong>
+
+<p>
+Application submit करके application number और receipt सुरक्षित रखें।
+</p>
+
+</div>
+
+</div>
+
+
+<!-- DOCUMENTS -->
+
+<h2 style="margin-top:35px;">
+📑 सामान्य Documents
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+<h3>🪪 Identity Proof</h3>
+<p>
+लागू पहचान प्रमाण।
+</p>
+</div>
+
+
+<div class="card">
+<h3>🏠 Address Proof</h3>
+<p>
+जहां आवश्यक हो, लागू पता प्रमाण।
+</p>
+</div>
+
+
+<div class="card">
+<h3>📸 Photograph</h3>
+<p>
+Service के अनुसार passport-size photograph।
+</p>
+</div>
+
+
+<div class="card">
+<h3>🎓 Education Documents</h3>
+<p>
+जहां आवश्यक हो marksheet/certificate।
+</p>
+</div>
+
+
+<div class="card">
+<h3>📱 Mobile Number</h3>
+<p>
+Application में स्वयं का active mobile number उपयोग करें।
+</p>
+</div>
+
+
+<div class="card">
+<h3>📄 Other Documents</h3>
+<p>
+हर service के अनुसार अतिरिक्त documents अलग हो सकते हैं।
+</p>
+</div>
+
+
+</div>
+
+
+<!-- INNER PAGES -->
+
+<h2 style="margin-top:35px;">
+📚 Related Information
+</h2>
+
+<p>
+नीचे दिए गए pages पर click करके अंदर की जानकारी खोल सकते हैं।
+</p>
+
+
+<div class="inner-links">
+
+
+<a class="inner-link" href="government-jobs.html">
+
+<strong>💼 Government Jobs</strong>
+
+<br>
+
+सरकारी नौकरी forms →
+
+</a>
+
+
+<a class="inner-link" href="scholarship.html">
+
+<strong>🎓 Scholarship</strong>
+
+<br>
+
+Scholarship information →
+
+</a>
+
+
+<a class="inner-link" href="college.html">
+
+<strong>🏫 College</strong>
+
+<br>
+
+College & University →
+
+</a>
+
+
+<a class="inner-link" href="exam-form.html">
+
+<strong>📝 Exam Forms</strong>
+
+<br>
+
+Exam application →
+
+</a>
+
+
+<a class="inner-link" href="admit-card.html">
+
+<strong>🎫 Admit Card</strong>
+
+<br>
+
+Admit card assistance →
+
+</a>
+
+
+<a class="inner-link" href="result.html">
+
+<strong>📊 Results</strong>
+
+<br>
+
+Result assistance →
+
+</a>
+
+
+<a class="inner-link" href="certificate.html">
+
+<strong>📄 Certificates</strong>
+
+<br>
+
+Certificate services →
+
+</a>
+
+
+<a class="inner-link" href="contact.html">
+
+<strong>📞 Contact A1</strong>
+
+<br>
+
+Call / WhatsApp →
+
+</a>
+
+
+</div>
+
+
+<!-- SECURITY -->
+
+<div class="notice" style="margin-top:35px;">
+
+<strong>🔐 Security Notice</strong>
+
+<p>
+
+OTP, password, UPI PIN, ATM PIN और banking credentials
+किसी व्यक्ति के साथ share न करें।
+
+जहां OTP या password की आवश्यकता हो,
+उसे स्वयं दर्ज करें।
+
+</p>
+
+</div>
+
+
+<a href="services.html" class="btn">
+← All Services
+</a>
+
+<a href="contact.html" class="btn gold">
+A1 Computer Shop से सहायता
+</a>
+
+
+</main>
+
+
+<!-- WHATSAPP -->
+
+<a
+class="whatsapp"
+href="https://wa.me/919993831755"
+target="_blank">
+
+💬 WhatsApp
+
+</a>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>A1 Computer Shop</h3>
+
+<p>
+📍 New Bus Stand,<br>
+Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+📞 9993831755
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Quick Links</h3>
+
+<p>
+
+<a href="index.html">Home</a><br>
+
+<a href="services.html">Services</a><br>
+
+<a href="notices.html">Notices</a><br>
+
+<a href="contact.html">Contact</a>
+
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Disclaimer</h3>
+
+<p>
+
+यह A1 Computer Shop का private online service portal है।
+यह official MPOnline या किसी सरकारी विभाग की official website नहीं है।
+
+Official application और payment के लिए संबंधित official portal
+का ही उपयोग करें।
+
+</p>
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
