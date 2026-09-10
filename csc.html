@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CSC & Digital Services | A1 Computer Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+header{
+    background:#0b1f3a;
+    color:white;
+}
+
+.topbar{
+    background:#07162b;
+    padding:8px 5%;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    font-size:14px;
+}
+
+.navbar{
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    color:#ffd54a;
+    font-size:25px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:9px 12px;
+    border-radius:5px;
+}
+
+nav a:hover{
+    background:#0759a5;
+}
+
+.hero{
+    background:linear-gradient(135deg,#12345b,#0759a5);
+    color:white;
+    padding:50px 5%;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    max-width:850px;
+    margin:auto;
+    font-size:17px;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:30px auto;
+}
+
+.breadcrumb{
+    background:white;
+    padding:14px 18px;
+    border-radius:8px;
+    margin-bottom:25px;
+    box-shadow:0 2px 8px #00000012;
+}
+
+.breadcrumb a{
+    color:#0759a5;
+    text-decoration:none;
+}
+
+.notice{
+    background:#fff3cd;
+    border-left:5px solid #ffc107;
+    padding:16px;
+    border-radius:6px;
+    margin-bottom:25px;
+}
+
+.section-title{
+    text-align:center;
+    margin:35px 0 20px;
+    color:#0b1f3a;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:10px;
+    box-shadow:0 3px 12px #00000012;
+    transition:.2s;
+    border-top:4px solid #0759a5;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.card h3{
+    color:#0b1f3a;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#555;
+    font-size:14px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:12px;
+    padding:10px 15px;
+    background:#0759a5;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.btn:hover{
+    background:#043f76;
+}
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:18px;
+}
+
+.step{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px #00000012;
+    text-align:center;
+}
+
+.step span{
+    display:block;
+    width:45px;
+    height:45px;
+    line-height:45px;
+    margin:0 auto 10px;
+    background:#0759a5;
+    color:white;
+    border-radius:50%;
+    font-weight:bold;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    margin-top:15px;
+    box-shadow:0 2px 10px #00000010;
+}
+
+th,td{
+    padding:13px;
+    border:1px solid #ddd;
+    text-align:left;
+}
+
+th{
+    background:#0b1f3a;
+    color:white;
+}
+
+tr:nth-child(even){
+    background:#f7f9fc;
+}
+
+.info-box{
+    background:white;
+    padding:22px;
+    border-radius:10px;
+    margin-top:20px;
+    box-shadow:0 2px 10px #00000012;
+}
+
+.info-box h3{
+    color:#0759a5;
+    margin-bottom:10px;
+}
+
+ul{
+    padding-left:22px;
+}
+
+li{
+    margin:7px 0;
+}
+
+.faq{
+    background:white;
+    padding:18px;
+    margin-bottom:12px;
+    border-radius:8px;
+    box-shadow:0 2px 8px #00000010;
+}
+
+.faq h3{
+    color:#0b1f3a;
+    margin-bottom:7px;
+}
+
+.contact-box{
+    background:#0b1f3a;
+    color:white;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    margin-top:35px;
+}
+
+.contact-box h2{
+    color:#ffd54a;
+    margin-bottom:10px;
+}
+
+.whatsapp{
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    padding:12px 20px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+footer{
+    background:#07162b;
+    color:#ddd;
+    text-align:center;
+    padding:25px 5%;
+    margin-top:40px;
+    font-size:14px;
+}
+
+.float-wa{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    background:#25D366;
+    color:white;
+    width:58px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    text-decoration:none;
+    font-size:27px;
+    box-shadow:0 4px 15px #00000040;
+    z-index:999;
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .topbar{
+        justify-content:center;
+        gap:5px;
+    }
+
+    .navbar{
+        justify-content:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    nav a{
+        font-size:13px;
+        padding:7px 9px;
+    }
+
+    table{
+        font-size:13px;
+    }
+
+    th,td{
+        padding:9px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+
+<div class="topbar">
+
+<div>
+📍 New Bus Stand, Ajaigarh, Madhya Pradesh
+</div>
+
+<div>
+📞 9993831755
+</div>
+
+</div>
+
+
+<div class="navbar">
+
+<div class="logo">
+A1 COMPUTER SHOP
+</div>
+
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="services.html">Services</a>
+
+<a href="government-jobs.html">Jobs</a>
+
+<a href="scholarship.html">Scholarship</a>
+
+<a href="college.html">College</a>
+
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<section class="hero">
+
+<h1>💻 CSC & Digital Services</h1>
+
+<p>
+Online applications, digital services, document assistance,
+printing, scanning और विभिन्न online कामों में सहायता।
+</p>
+
+</section>
+
+
+
+<div class="container">
+
+
+<div class="breadcrumb">
+
+<a href="index.html">Home</a>
+/
+<a href="services.html">Services</a>
+/
+CSC & Digital Services
+
+</div>
+
+
+
+<div class="notice">
+
+<strong>⚠️ महत्वपूर्ण सूचना:</strong>
+
+A1 Computer Shop एक निजी digital service center है।
+यह Common Service Centre (CSC) या किसी सरकारी विभाग
+का आधिकारिक कार्यालय होने का दावा नहीं करता।
+
+किसी specific CSC service की availability संबंधित
+authorized platform/provider पर निर्भर करती है।
+
+</div>
+
+
+
+<h2 class="section-title">
+💻 Digital Services
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>📝 Online Form</h3>
+
+<p>
+विभिन्न सरकारी, शिक्षा और अन्य online forms भरने में सहायता।
+</p>
+
+<a href="exam-form.html" class="btn">
+Exam Forms
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>💼 Job Form</h3>
+
+<p>
+सरकारी भर्ती applications में सामान्य online form assistance।
+</p>
+
+<a href="government-jobs.html" class="btn">
+Job Services
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🎓 Scholarship</h3>
+
+<p>
+Scholarship application और document upload में सहायता।
+</p>
+
+<a href="scholarship.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🪪 Aadhaar</h3>
+
+<p>
+Aadhaar related information और digital assistance।
+</p>
+
+<a href="aadhaar.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>💳 PAN Card</h3>
+
+<p>
+PAN application और correction related assistance।
+</p>
+
+<a href="pan-card.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🗳️ Voter</h3>
+
+<p>
+Voter registration, correction और online information।
+</p>
+
+<a href="voter.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>📄 Certificate</h3>
+
+<p>
+आय, जाति, निवास आदि certificate services में सहायता।
+</p>
+
+<a href="certificate.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🖨️ Print & Scan</h3>
+
+<p>
+Print, photocopy, scanning, PDF और document services।
+</p>
+
+<a href="print-scan.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<h2 class="section-title">
+📋 CSC / Digital Service Categories
+</h2>
+
+
+
+<table>
+
+<tr>
+
+<th>
+Service Category
+</th>
+
+<th>
+उदाहरण
+</th>
+
+<th>
+स्थिति
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>
+Government Services
+</td>
+
+<td>
+Online forms, certificates, applications
+</td>
+
+<td>
+Service availability पर निर्भर
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Education
+</td>
+
+<td>
+Admission, exam form, scholarship
+</td>
+
+<td>
+उपलब्ध portal के अनुसार
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Employment
+</td>
+
+<td>
+Recruitment forms, admit card, result
+</td>
+
+<td>
+Official notification के अनुसार
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Digital Documents
+</td>
+
+<td>
+PDF, scan, print, upload
+</td>
+
+<td>
+A1 Computer Shop पर सहायता
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Citizen Services
+</td>
+
+<td>
+विभिन्न online applications
+</td>
+
+<td>
+संबंधित platform के अनुसार
+</td>
+
+</tr>
+
+
+</table>
+
+
+
+<h2 class="section-title">
+📝 Online Service Process
+</h2>
+
+
+
+<div class="process">
+
+
+<div class="step">
+
+<span>1</span>
+
+<h3>Service चुनें</h3>
+
+<p>
+बताएँ कि आपको कौन-सी online service चाहिए।
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<span>2</span>
+
+<h3>Documents</h3>
+
+<p>
+आवश्यक documents और जानकारी उपलब्ध कराएँ।
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<span>3</span>
+
+<h3>Form</h3>
+
+<p>
+उपलब्ध online portal के अनुसार application तैयार करें।
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<span>4</span>
+
+<h3>Check</h3>
+
+<p>
+Submit करने से पहले सभी जानकारी verify करें।
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<span>5</span>
+
+<h3>Submit</h3>
+
+<p>
+संबंधित platform की प्रक्रिया के अनुसार application submit करें।
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<span>6</span>
+
+<h3>Receipt</h3>
+
+<p>
+Application number/receipt को सुरक्षित रखें।
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<h2 class="section-title">
+📑 सामान्य Documents
+</h2>
+
+
+
+<div class="info-box">
+
+<h3>
+Online services के लिए उपयोग होने वाले सामान्य documents
+</h3>
+
+<ul>
+
+<li>
+Aadhaar Card
+</li>
+
+<li>
+PAN Card
+</li>
+
+<li>
+Voter ID
+</li>
+
+<li>
+Passport Size Photo
+</li>
+
+<li>
+Mobile Number
+</li>
+
+<li>
+Email ID
+</li>
+
+<li>
+Marksheet
+</li>
+
+<li>
+Income/Caste/Residence Certificate
+</li>
+
+<li>
+Bank Account details, जहाँ संबंधित service में आवश्यक हों
+</li>
+
+<li>
+अन्य संबंधित documents
+</li>
+
+</ul>
+
+<p>
+
+<strong>
+नोट:
+</strong>
+
+हर service के लिए documents अलग हो सकते हैं।
+केवल वही documents दें जो संबंधित application में आवश्यक हों।
+
+</p>
+
+</div>
+
+
+
+<h2 class="section-title">
+📤 Online Document Upload
+</h2>
+
+
+
+<div class="info-box">
+
+<h3>
+Upload करने से पहले
+</h3>
+
+<ul>
+
+<li>
+File format check करें।
+</li>
+
+<li>
+File size limit check करें।
+</li>
+
+<li>
+Photo और signature की requirements check करें।
+</li>
+
+<li>
+Document साफ और readable होना चाहिए।
+</li>
+
+<li>
+गलत document upload न करें।
+</li>
+
+<li>
+Final submit से पहले uploaded files verify करें।
+</li>
+
+</ul>
+
+</div>
+
+
+
+<h2 class="section-title">
+🖨️ Print, Scan & PDF
+</h2>
+
+
+
+<div class="info-box">
+
+<p>
+
+A1 Computer Shop पर online services के साथ
+document printing, scanning, photocopy और PDF
+से संबंधित digital assistance उपलब्ध है।
+
+</p>
+
+<br>
+
+<a href="print-scan.html" class="btn">
+🖨️ Print & Scan Service
+</a>
+
+</div>
+
+
+
+<h2 class="section-title">
+🎓 Education Digital Services
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+College Admission
+</h3>
+
+<p>
+College/university admission process में online assistance।
+</p>
+
+<a href="college.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Exam Form
+</h3>
+
+<p>
+College, university और अन्य exam forms।
+</p>
+
+<a href="exam-form.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Admit Card
+</h3>
+
+<p>
+Available admit card download और print assistance।
+</p>
+
+<a href="admit-card.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Result
+</h3>
+
+<p>
+Available examination results की जानकारी और print assistance।
+</p>
+
+<a href="result.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<h2 class="section-title">
+💼 Employment Services
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+Government Jobs
+</h3>
+
+<p>
+सरकारी भर्ती categories और application assistance।
+</p>
+
+<a href="government-jobs.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Scholarship
+</h3>
+
+<p>
+Scholarship forms और document assistance।
+</p>
+
+<a href="scholarship.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Admit Card
+</h3>
+
+<p>
+Recruitment exam admit card assistance।
+</p>
+
+<a href="admit-card.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Result
+</h3>
+
+<p>
+Exam result checking और print assistance।
+</p>
+
+<a href="result.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<h2 class="section-title">
+🔐 Digital Security
+</h2>
+
+
+
+<div class="info-box">
+
+<h3>
+Online काम करते समय इन बातों का ध्यान रखें
+</h3>
+
+<ul>
+
+<li>
+OTP किसी अनजान व्यक्ति को न बताएं।
+</li>
+
+<li>
+ATM PIN कभी share न करें।
+</li>
+
+<li>
+UPI PIN किसी को न दें।
+</li>
+
+<li>
+Bank password और CVV share न करें।
+</li>
+
+<li>
+Payment करने से पहले amount check करें।
+</li>
+
+<li>
+Application submit होने के बाद receipt सुरक्षित रखें।
+</li>
+
+<li>
+अपना mobile number और email सही दर्ज करें।
+</li>
+
+</ul>
+
+</div>
+
+
+
+<h2 class="section-title">
+❓ Frequently Asked Questions
+</h2>
+
+
+
+<div class="faq">
+
+<h3>
+1. क्या A1 Computer Shop सरकारी CSC केंद्र है?
+</h3>
+
+<p>
+A1 Computer Shop एक निजी digital service center है।
+यह किसी सरकारी विभाग या CSC network का official office होने का दावा नहीं करता।
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+2. क्या सभी सरकारी services यहाँ उपलब्ध हैं?
+</h3>
+
+<p>
+नहीं। किसी भी service की availability संबंधित online platform,
+authorization और वर्तमान प्रक्रिया पर निर्भर करती है।
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+3. क्या online form भरने में सहायता मिलती है?
+</h3>
+
+<p>
+हाँ। उपलब्ध online forms में details भरने, documents upload करने
+और print/receipt से संबंधित सामान्य सहायता दी जा सकती है।
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+4. क्या documents scan और PDF बन सकती है?
+</h3>
+
+<p>
+हाँ। Scan, PDF और print services उपलब्ध हैं।
+</p>
+
+<a href="print-scan.html" class="btn">
+Print & Scan
+</a>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+5. क्या A1 Computer Shop application approval की guarantee देता है?
+</h3>
+
+<p>
+नहीं। Application का approval या rejection संबंधित department/platform
+के नियमों और verification पर निर्भर करता है।
+</p>
+
+</div>
+
+
+
+<h2 class="section-title">
+🔗 Related Services
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+🪪 Aadhaar
+</h3>
+
+<p>
+Aadhaar related digital assistance।
+</p>
+
+<a href="aadhaar.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+💳 PAN Card
+</h3>
+
+<p>
+PAN services और correction assistance।
+</p>
+
+<a href="pan-card.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+📄 Certificate
+</h3>
+
+<p>
+Certificate related online assistance।
+</p>
+
+<a href="certificate.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🗳️ Voter
+</h3>
+
+<p>
+Voter related digital services।
+</p>
+
+<a href="voter.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🎫 Ticket
+</h3>
+
+<p>
+Travel ticket booking assistance।
+</p>
+
+<a href="ticket.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+📋 All Services
+</h3>
+
+<p>
+A1 Computer Shop की सभी services देखें।
+</p>
+
+<a href="services.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<div class="contact-box">
+
+<h2>
+📞 A1 COMPUTER SHOP
+</h2>
+
+<p>
+Online Form, CSC-related और Digital Services के लिए संपर्क करें।
+</p>
+
+<p>
+📍 New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+📱 9993831755
+</p>
+
+
+<a
+class="whatsapp"
+href="https://wa.me/919993831755"
+target="_blank">
+
+💬 WhatsApp पर संपर्क करें
+
+</a>
+
+
+<br>
+
+
+<a
+class="btn"
+href="index.html">
+
+🏠 Home
+
+</a>
+
+
+<a
+class="btn"
+href="services.html">
+
+📋 All Services
+
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<footer>
+
+<p>
+<strong>A1 COMPUTER SHOP</strong>
+</p>
+
+<p>
+New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+Mobile: 9993831755
+</p>
+
+<p>
+© 2026 A1 Computer Shop. All Rights Reserved.
+</p>
+
+<p>
+यह एक निजी डिजिटल सेवा केंद्र है।
+यह किसी सरकारी विभाग या CSC network का आधिकारिक कार्यालय नहीं है।
+</p>
+
+</footer>
+
+
+
+<a
+class="float-wa"
+href="https://wa.me/919993831755"
+target="_blank"
+title="WhatsApp">
+
+💬
+
+</a>
+
+
+</body>
+</html>
