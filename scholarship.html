@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Scholarship Services - A1 Computer Shop</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+header{
+    background:#0b1f3a;
+    color:white;
+}
+
+.topbar{
+    background:#07162a;
+    padding:8px 5%;
+    text-align:right;
+    font-size:14px;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 5%;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#ffd54a;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin:5px 8px;
+    font-size:15px;
+}
+
+.navbar a:hover{
+    color:#ffd54a;
+}
+
+.hero{
+    background:linear-gradient(135deg,#12345b,#0759a5);
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:850px;
+    margin:auto;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:30px auto;
+}
+
+.breadcrumb{
+    margin-bottom:20px;
+    color:#555;
+    font-size:14px;
+}
+
+.breadcrumb a{
+    color:#0759a5;
+    text-decoration:none;
+}
+
+.notice{
+    background:#fff3cd;
+    border-left:5px solid #ffc107;
+    padding:18px;
+    margin-bottom:25px;
+    border-radius:8px;
+}
+
+.section-title{
+    text-align:center;
+    margin:35px 0 20px;
+    color:#0b1f3a;
+    font-size:28px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:24px;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.10);
+    border-top:4px solid #0759a5;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.card h3{
+    color:#0759a5;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#555;
+    font-size:15px;
+}
+
+.btn{
+    display:inline-block;
+    background:#0759a5;
+    color:white;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:6px;
+    margin-top:15px;
+}
+
+.btn:hover{
+    background:#06467f;
+}
+
+.box{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    margin-top:25px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.box h3{
+    color:#0759a5;
+    margin-bottom:12px;
+}
+
+.box ul{
+    padding-left:22px;
+}
+
+.box li{
+    margin-bottom:8px;
+}
+
+.info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    margin-top:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.info-table th,
+.info-table td{
+    border:1px solid #ddd;
+    padding:13px;
+    text-align:left;
+}
+
+.info-table th{
+    background:#0b1f3a;
+    color:white;
+}
+
+.info-table tr:nth-child(even){
+    background:#f7f9fc;
+}
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.step{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.step-number{
+    width:42px;
+    height:42px;
+    background:#0759a5;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 10px;
+    font-weight:bold;
+}
+
+.contact-box{
+    background:#0b1f3a;
+    color:white;
+    padding:30px;
+    text-align:center;
+    border-radius:12px;
+    margin-top:30px;
+}
+
+.contact-box h2{
+    color:#ffd54a;
+    margin-bottom:10px;
+}
+
+.contact-box a{
+    color:#ffd54a;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.whatsapp{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:14px 20px;
+    border-radius:50px;
+    font-weight:bold;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+    z-index:1000;
+}
+
+footer{
+    margin-top:40px;
+    background:#07162a;
+    color:#ddd;
+    text-align:center;
+    padding:25px 15px;
+    font-size:14px;
+}
+
+@media(max-width:700px){
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .navbar{
+        text-align:center;
+        justify-content:center;
+        gap:8px;
+    }
+
+    .logo{
+        width:100%;
+        margin-bottom:8px;
+    }
+
+    .navbar a{
+        font-size:14px;
+    }
+
+    .info-table{
+        font-size:14px;
+    }
+
+    .info-table th,
+    .info-table td{
+        padding:9px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="topbar">
+📞 A1 Computer Shop | Mobile: 9993831755
+</div>
+
+<div class="navbar">
+
+<div class="logo">
+A1 COMPUTER SHOP
+</div>
+
+<div>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="government-jobs.html">Govt Jobs</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>🎓 Scholarship Services</h1>
+
+<p>
+Students के लिए scholarship से जुड़ी सामान्य जानकारी,
+online application, documents और application assistance।
+</p>
+
+</section>
+
+
+<div class="container">
+
+<div class="breadcrumb">
+
+<a href="index.html">Home</a>
+ →
+Scholarship
+
+</div>
+
+
+<div class="notice">
+
+<strong>⚠️ महत्वपूर्ण सूचना:</strong><br>
+
+Scholarship की eligibility, amount, income limit, documents,
+last date और verification rules योजना के अनुसार अलग-अलग हो सकते हैं।
+आवेदन करने से पहले संबंधित official portal और notification जरूर देखें।
+
+<br><br>
+
+<strong>
+A1 Computer Shop किसी scholarship department या government portal की official website नहीं है।
+</strong>
+
+</div>
+
+
+<h2 class="section-title">
+🎓 Scholarship की प्रमुख श्रेणियां
+</h2>
+
+
+<div class="service-grid">
+
+
+<div class="card">
+
+<h3>Pre-Matric Scholarship</h3>
+
+<p>
+स्कूल स्तर के eligible students के लिए उपलब्ध विभिन्न
+scholarship योजनाओं की सामान्य जानकारी।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Post-Matric Scholarship</h3>
+
+<p>
+10वीं के बाद पढ़ाई कर रहे eligible students के लिए
+विभिन्न scholarship schemes की जानकारी।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>College Scholarship</h3>
+
+<p>
+College और higher education students के लिए
+scholarship application assistance।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>University Scholarship</h3>
+
+<p>
+University level students के लिए उपलब्ध योजनाओं की
+सामान्य जानकारी और online application सहायता।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>SC / ST Scholarship</h3>
+
+<p>
+Eligible SC/ST students के लिए उपलब्ध scholarship
+schemes की सामान्य जानकारी।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>OBC Scholarship</h3>
+
+<p>
+Eligible OBC students के लिए scholarship schemes
+और application process की जानकारी।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Minority Scholarship</h3>
+
+<p>
+Eligible minority students के लिए उपलब्ध योजनाओं
+की सामान्य जानकारी।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Merit Scholarship</h3>
+
+<p>
+Academic performance के आधार पर उपलब्ध विभिन्न
+merit-based scholarships की जानकारी।
+</p>
+
+</div>
+
+
+</div>
+
+
+<h2 class="section-title">
+📋 Scholarship के लिए सामान्य पात्रता
+</h2>
+
+
+<table class="info-table">
+
+<tr>
+<th>विषय</th>
+<th>सामान्य जानकारी</th>
+</tr>
+
+<tr>
+<td>Student Status</td>
+<td>
+आवेदक का संबंधित school, college या institution में enrolled होना
+आवश्यक हो सकता है।
+</td>
+</tr>
+
+<tr>
+<td>Academic Qualification</td>
+<td>
+योजना के अनुसार minimum marks या academic criteria हो सकता है।
+</td>
+</tr>
+
+<tr>
+<td>Income Limit</td>
+<td>
+कुछ scholarships में family income limit लागू हो सकती है।
+</td>
+</tr>
+
+<tr>
+<td>Category</td>
+<td>
+कुछ schemes specific category के students के लिए हो सकती हैं।
+</td>
+</tr>
+
+<tr>
+<td>Domicile</td>
+<td>
+कुछ योजनाओं में state domicile requirement हो सकती है।
+</td>
+</tr>
+
+<tr>
+<td>Other Conditions</td>
+<td>
+योजना के अनुसार अतिरिक्त eligibility conditions लागू हो सकती हैं।
+</td>
+</tr>
+
+</table>
+
+
+<div class="box">
+
+<h3>📄 Scholarship के लिए सामान्य Documents</h3>
+
+<ul>
+
+<li>आधार कार्ड</li>
+
+<li>पासपोर्ट साइज फोटो</li>
+
+<li>Student ID / Enrollment details</li>
+
+<li>पिछली कक्षा की marksheet</li>
+
+<li>Current admission / fee details</li>
+
+<li>Bank account details</li>
+
+<li>जाति प्रमाण पत्र, यदि लागू हो</li>
+
+<li>आय प्रमाण पत्र, यदि लागू हो</li>
+
+<li>निवास प्रमाण पत्र, यदि लागू हो</li>
+
+<li>School / College certificate, यदि आवश्यक हो</li>
+
+<li>Mobile number</li>
+
+<li>Email ID, यदि आवश्यक हो</li>
+
+<li>अन्य documents जैसा संबंधित scheme में बताया गया हो</li>
+
+</ul>
+
+</div>
+
+
+<h2 class="section-title">
+📝 Scholarship Application Process
+</h2>
+
+
+<div class="process">
+
+
+<div class="step">
+
+<div class="step-number">1</div>
+
+<h3>Scheme</h3>
+
+<p>
+अपनी scholarship scheme identify करें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">2</div>
+
+<h3>Eligibility</h3>
+
+<p>
+Eligibility और conditions check करें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">3</div>
+
+<h3>Registration</h3>
+
+<p>
+Official portal पर registration करें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">4</div>
+
+<h3>Application</h3>
+
+<p>
+Application form में सही जानकारी भरें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">5</div>
+
+<h3>Documents</h3>
+
+<p>
+आवश्यक documents upload करें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">6</div>
+
+<h3>Submit</h3>
+
+<p>
+Final form submit करके copy सुरक्षित रखें।
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="box">
+
+<h3>🏦 Bank Account की जानकारी</h3>
+
+<ul>
+
+<li>Scholarship के लिए bank details सही भरना जरूरी हो सकता है।</li>
+
+<li>Account number और IFSC carefully check करें।</li>
+
+<li>Student या guardian account requirement scheme के अनुसार हो सकती है।</li>
+
+<li>Bank account active होना चाहिए, जहाँ applicable हो।</li>
+
+<li>नाम और bank records में mismatch होने पर समस्या आ सकती है।</li>
+
+</ul>
+
+</div>
+
+
+<div class="box">
+
+<h3>🔍 Scholarship Status Check</h3>
+
+<ul>
+
+<li>Application number सुरक्षित रखें।</li>
+
+<li>Registration/login details सुरक्षित रखें।</li>
+
+<li>Application status समय-समय पर check करें।</li>
+
+<li>Institute verification status देखें, यदि applicable हो।</li>
+
+<li>Document verification में objection आए तो समय पर correction करें।</li>
+
+<li>Payment status भी check करें, यदि scholarship में payment provision हो।</li>
+
+</ul>
+
+</div>
+
+
+<div class="box">
+
+<h3>⚠️ Common Problems</h3>
+
+<ul>
+
+<li>गलत bank account details</li>
+
+<li>Document upload में error</li>
+
+<li>Photo/signature format की समस्या</li>
+
+<li>Application में गलत information</li>
+
+<li>Institute verification pending</li>
+
+<li>Income या caste certificate की समस्या</li>
+
+<li>Application correction window की जानकारी न होना</li>
+
+<li>Last date निकल जाना</li>
+
+</ul>
+
+</div>
+
+
+<div class="box">
+
+<h3>💡 आवेदन करते समय ध्यान रखें</h3>
+
+<ul>
+
+<li>Form भरने से पहले पूरी eligibility पढ़ें।</li>
+
+<li>सभी documents की clear copies तैयार रखें।</li>
+
+<li>नाम और date of birth documents के अनुसार भरें।</li>
+
+<li>Bank details दोबारा check करें।</li>
+
+<li>Final submit करने से पहले पूरा form review करें।</li>
+
+<li>Application number और acknowledgement save करें।</li>
+
+<li>Scholarship की अंतिम तारीख official portal से verify करें।</li>
+
+</ul>
+
+</div>
+
+
+<div class="box">
+
+<h3>📌 महत्वपूर्ण नोट</h3>
+
+<p>
+Scholarship की राशि, eligibility, income limit, application dates,
+verification process और payment rules हर scheme में अलग हो सकते हैं।
+इसलिए किसी भी scholarship के बारे में अंतिम निर्णय संबंधित
+official notification/portal की जानकारी के आधार पर ही लें।
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<h2>📞 Scholarship Form में सहायता चाहिए?</h2>
+
+<p>
+<strong>A1 Computer Shop</strong>
+</p>
+
+<p>
+New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+Mobile:
+<a href="tel:9993831755">9993831755</a>
+</p>
+
+<p>
+WhatsApp:
+<a href="https://wa.me/919993831755" target="_blank">
+919993831755
+</a>
+</p>
+
+<br>
+
+<a class="btn" href="services.html">
+⬅ All Services
+</a>
+
+<a class="btn" href="index.html">
+🏠 Home
+</a>
+
+</div>
+
+</div>
+
+
+<a class="whatsapp"
+href="https://wa.me/919993831755"
+target="_blank">
+💬 WhatsApp
+</a>
+
+
+<footer>
+
+<p>
+<strong>A1 Computer Shop</strong>
+</p>
+
+<p>
+New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+Mobile: 9993831755
+</p>
+
+<p>
+© 2026 A1 Computer Shop. All Rights Reserved.
+</p>
+
+<p>
+यह एक निजी ऑनलाइन सेवा सहायता केंद्र है।
+यह किसी सरकारी विभाग, scholarship authority या government portal की आधिकारिक वेबसाइट नहीं है।
+</p>
+
+</footer>
+
+</body>
+</html>
