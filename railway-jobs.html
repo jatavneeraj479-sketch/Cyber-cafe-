@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Railway Jobs - A1 Computer Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:#0b1f3a;
+    color:white;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#ffd54a;
+}
+
+nav{
+    background:#12345b;
+    padding:12px 5%;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#ffd54a;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.breadcrumb{
+    padding:18px 0;
+    font-size:14px;
+}
+
+.breadcrumb a{
+    color:#0759a5;
+    text-decoration:none;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0759a5,#0b1f3a);
+    color:white;
+    padding:40px 25px;
+    border-radius:15px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    line-height:1.7;
+}
+
+.notice{
+    background:#fff3cd;
+    border-left:5px solid #ffb300;
+    padding:15px;
+    margin-bottom:25px;
+    border-radius:8px;
+    line-height:1.7;
+}
+
+.section-title{
+    text-align:center;
+    margin:30px 0 20px;
+}
+
+.section-title h2{
+    color:#0b1f3a;
+    margin-bottom:8px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.icon{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#0759a5;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:14px;
+    line-height:1.7;
+    color:#555;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 16px;
+    background:#0759a5;
+    color:white;
+    text-decoration:none;
+    border-radius:7px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#0b1f3a;
+}
+
+.info-box{
+    background:white;
+    padding:25px;
+    margin:30px 0;
+    border-radius:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.info-box h2{
+    color:#0b1f3a;
+    margin-bottom:15px;
+}
+
+.info-box ul{
+    padding-left:22px;
+    line-height:2;
+}
+
+.table-box{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:13px;
+    text-align:left;
+}
+
+th{
+    background:#0b1f3a;
+    color:white;
+}
+
+tr:nth-child(even){
+    background:#f5f7fa;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.step{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+
+.step-number{
+    width:45px;
+    height:45px;
+    line-height:45px;
+    margin:auto auto 10px;
+    background:#0759a5;
+    color:white;
+    border-radius:50%;
+    font-weight:bold;
+}
+
+.contact-box{
+    background:#0b1f3a;
+    color:white;
+    padding:30px;
+    border-radius:15px;
+    margin:30px 0;
+    text-align:center;
+}
+
+.contact-box h2{
+    color:#ffd54a;
+    margin-bottom:12px;
+}
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#25D366;
+    color:white;
+    padding:14px 18px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
+}
+
+footer{
+    background:#08182d;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+    line-height:1.8;
+}
+
+@media(max-width:600px){
+    .hero h1{
+        font-size:27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">A1 COMPUTER SHOP</div>
+    <div>📞 9993831755</div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">All Services</a>
+    <a href="mp-online.html">MP Online</a>
+    <a href="government-jobs.html">Government Jobs</a>
+    <a href="scholarship.html">Scholarship</a>
+    <a href="college.html">College</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+
+<div class="breadcrumb">
+    <a href="index.html">Home</a> /
+    <a href="government-jobs.html">Government Jobs</a> /
+    Railway Jobs
+</div>
+
+<section class="hero">
+    <h1>🚆 Railway Government Jobs</h1>
+
+    <p>
+        भारतीय रेलवे से संबंधित विभिन्न भर्ती,
+        online application, documents, exam,
+        admit card और result से जुड़ी सामान्य जानकारी।
+    </p>
+</section>
+
+<div class="notice">
+    ⚠️ <strong>महत्वपूर्ण:</strong>
+    A1 Computer Shop एक निजी ऑनलाइन सेवा केंद्र है।
+    यह Railway Recruitment Board या भारतीय रेलवे की आधिकारिक वेबसाइट नहीं है।
+    किसी भी भर्ती की vacancy, eligibility, age limit, fee और last date
+    संबंधित official notification से जरूर verify करें।
+</div>
+
+<div class="section-title">
+    <h2>🚆 Railway Job Categories</h2>
+    <p>अलग-अलग प्रकार की Railway भर्ती</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+    <div class="icon">🚆</div>
+    <h3>RRB NTPC</h3>
+    <p>
+        Non-Technical Popular Categories से संबंधित
+        विभिन्न पदों और भर्ती परीक्षाओं की जानकारी।
+    </p>
+    <a href="#ntpc" class="btn">Full Information →</a>
+</div>
+
+<div class="card">
+    <div class="icon">🔧</div>
+    <h3>RRB Technician</h3>
+    <p>
+        Technician और technical posts से संबंधित
+        भर्ती एवं आवेदन जानकारी।
+    </p>
+    <a href="#technician" class="btn">Full Information →</a>
+</div>
+
+<div class="card">
+    <div class="icon">🛠️</div>
+    <h3>RRB ALP</h3>
+    <p>
+        Assistant Loco Pilot से संबंधित recruitment,
+        examination और selection information।
+    </p>
+    <a href="#alp" class="btn">Full Information →</a>
+</div>
+
+<div class="card">
+    <div class="icon">👷</div>
+    <h3>Railway Group D</h3>
+    <p>
+        Level-1 और अन्य संबंधित recruitment की
+        सामान्य जानकारी।
+    </p>
+    <a href="#groupd" class="btn">Full Information →</a>
+</div>
+
+<div class="card">
+    <div class="icon">🏥</div>
+    <h3>Railway Paramedical</h3>
+    <p>
+        Medical और paramedical category की
+        भर्ती के बारे में जानकारी।
+    </p>
+    <a href="#paramedical" class="btn">Full Information →</a>
+</div>
+
+<div class="card">
+    <div class="icon">🎓</div>
+    <h3>Railway Apprentice</h3>
+    <p>
+        Apprentice recruitment और training
+        से संबंधित जानकारी।
+    </p>
+    <a href="#apprentice" class="btn">Full Information →</a>
+</div>
+
+</div>
+
+<div class="info-box">
+
+<h2>📊 Railway Jobs - सामान्य जानकारी</h2>
+
+<div class="table-box">
+
+<table>
+
+<tr>
+    <th>Recruitment</th>
+    <th>Qualification</th>
+    <th>Post Type</th>
+    <th>Selection</th>
+</tr>
+
+<tr id="ntpc">
+    <td>RRB NTPC</td>
+    <td>Post के अनुसार 12वीं / Graduation</td>
+    <td>Non-Technical Posts</td>
+    <td>Computer Based Examination आदि</td>
+</tr>
+
+<tr id="technician">
+    <td>RRB Technician</td>
+    <td>Post के अनुसार Technical Qualification</td>
+    <td>Technician</td>
+    <td>Examination आदि</td>
+</tr>
+
+<tr id="alp">
+    <td>RRB ALP</td>
+    <td>Technical Qualification / संबंधित eligibility</td>
+    <td>Assistant Loco Pilot</td>
+    <td>Examination / आगे के stages</td>
+</tr>
+
+<tr id="groupd">
+    <td>Railway Group D</td>
+    <td>Notification के अनुसार</td>
+    <td>Level-1 Posts</td>
+    <td>Examination / Physical आदि</td>
+</tr>
+
+<tr id="paramedical">
+    <td>Paramedical</td>
+    <td>Relevant Medical Qualification</td>
+    <td>Medical Posts</td>
+    <td>Examination / Document Verification आदि</td>
+</tr>
+
+<tr id="apprentice">
+    <td>Apprentice</td>
+    <td>Notification के अनुसार</td>
+    <td>Apprentice</td>
+    <td>Recruitment rules के अनुसार</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<h2>📄 Railway Form के लिए सामान्य Documents</h2>
+
+<ul>
+    <li>आधार कार्ड</li>
+    <li>Active Mobile Number</li>
+    <li>Email ID</li>
+    <li>10वीं की मार्कशीट</li>
+    <li>12वीं की मार्कशीट — यदि लागू हो</li>
+    <li>ITI / Diploma / Graduation Certificate — post के अनुसार</li>
+    <li>Passport Size Photograph</li>
+    <li>Signature की scanned copy</li>
+    <li>जाति प्रमाण पत्र — यदि लागू हो</li>
+    <li>निवास प्रमाण पत्र — यदि लागू हो</li>
+    <li>अन्य documents जैसा official notification में मांगा गया हो</li>
+</ul>
+
+</div>
+
+<div class="section-title">
+
+<h2>📝 Railway Online Form Process</h2>
+
+<p>A1 Computer Shop पर सामान्य प्रक्रिया</p>
+
+</div>
+
+<div class="steps">
+
+<div class="step">
+    <div class="step-number">1</div>
+    <h3>Notification</h3>
+    <p>Recruitment notification check करें।</p>
+</div>
+
+<div class="step">
+    <div class="step-number">2</div>
+    <h3>Eligibility</h3>
+    <p>Age और qualification check करें।</p>
+</div>
+
+<div class="step">
+    <div class="step-number">3</div>
+    <h3>Documents</h3>
+    <p>सभी जरूरी documents तैयार रखें।</p>
+</div>
+
+<div class="step">
+    <div class="step-number">4</div>
+    <h3>Application</h3>
+    <p>Online application form भरें।</p>
+</div>
+
+<div class="step">
+    <div class="step-number">5</div>
+    <h3>Payment</h3>
+    <p>यदि fee लागू हो तो payment करें।</p>
+</div>
+
+<div class="step">
+    <div class="step-number">6</div>
+    <h3>Print</h3>
+    <p>Application और receipt सुरक्षित रखें।</p>
+</div>
+
+</div>
+
+<div class="info-box">
+
+<h2>✅ Form Submit करने के बाद</h2>
+
+<ul>
+    <li>Application number सुरक्षित रखें।</li>
+    <li>Login details सुरक्षित रखें।</li>
+    <li>Admit Card जारी होने पर download करें।</li>
+    <li>Exam date और centre check करें।</li>
+    <li>Result और आगे की selection process देखें।</li>
+    <li>Document Verification के लिए original documents तैयार रखें।</li>
+</ul>
+
+</div>
+
+<div class="info-box">
+
+<h2>🎯 Railway Exam Preparation</h2>
+
+<div class="grid">
+
+<div class="card">
+    <div class="icon">➗</div>
+    <h3>Mathematics</h3>
+    <p>
+        Percentage, Ratio, Average, Profit-Loss,
+        Time & Work आदि।
+    </p>
+</div>
+
+<div class="card">
+    <div class="icon">🧠</div>
+    <h3>Reasoning</h3>
+    <p>
+        Series, Coding-Decoding, Analogy,
+        Classification आदि।
+    </p>
+</div>
+
+<div class="card">
+    <div class="icon">🌎</div>
+    <h3>General Awareness</h3>
+    <p>
+        सामान्य ज्ञान, इतिहास, भूगोल,
+        विज्ञान और current affairs।
+    </p>
+</div>
+
+<div class="card">
+    <div class="icon">🔬</div>
+    <h3>General Science</h3>
+    <p>
+        Physics, Chemistry और Biology
+        के सामान्य प्रश्न।
+    </p>
+</div>
+
+</div>
+
+</div>
+
+<div class="contact-box">
+
+<h2>💻 Railway Form भरवाने के लिए संपर्क करें</h2>
+
+<p>
+    A1 Computer Shop<br>
+    New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p style="margin-top:10px;">
+    📞 <strong>9993831755</strong>
+</p>
+
+<a
+    class="btn"
+    style="background:#25D366;margin-top:18px;"
+    href="https://wa.me/919993831755"
+    target="_blank">
+    💬 WhatsApp करें
+</a>
+
+</div>
+
+<div style="text-align:center;margin:30px 0;">
+
+<a class="btn" href="government-jobs.html">
+    ← Government Jobs
+</a>
+
+<a class="btn" href="index.html">
+    🏠 Home
+</a>
+
+</div>
+
+</div>
+
+<a
+    class="whatsapp"
+    href="https://wa.me/919993831755"
+    target="_blank">
+    💬 WhatsApp
+</a>
+
+<footer>
+
+<strong>A1 COMPUTER SHOP</strong><br>
+
+New Bus Stand, Ajaigarh, Madhya Pradesh<br>
+
+📞 9993831755
+
+<br><br>
+
+यह एक निजी ऑनलाइन सेवा केंद्र है।
+यह किसी सरकारी विभाग, Railway या MP Online की आधिकारिक वेबसाइट नहीं है।
+
+<br><br>
+
+© 2026 A1 Computer Shop. All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
