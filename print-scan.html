@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Print & Scan Services | A1 Computer Shop</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+header{
+    background:#0b1f3a;
+    color:white;
+}
+
+.topbar{
+    background:#07162b;
+    padding:8px 5%;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    font-size:14px;
+}
+
+.navbar{
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    color:#ffd54a;
+    font-size:25px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:9px 12px;
+    border-radius:5px;
+}
+
+nav a:hover{
+    background:#0759a5;
+}
+
+.hero{
+    background:linear-gradient(135deg,#12345b,#0759a5);
+    color:white;
+    padding:50px 5%;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    max-width:850px;
+    margin:auto;
+    font-size:17px;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:30px auto;
+}
+
+.breadcrumb{
+    background:white;
+    padding:14px 18px;
+    border-radius:8px;
+    margin-bottom:25px;
+    box-shadow:0 2px 8px #00000012;
+}
+
+.breadcrumb a{
+    color:#0759a5;
+    text-decoration:none;
+}
+
+.notice{
+    background:#fff3cd;
+    border-left:5px solid #ffc107;
+    padding:16px;
+    border-radius:6px;
+    margin-bottom:25px;
+}
+
+.section-title{
+    text-align:center;
+    margin:35px 0 20px;
+    color:#0b1f3a;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:10px;
+    box-shadow:0 3px 12px #00000012;
+    transition:.2s;
+    border-top:4px solid #0759a5;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.card h3{
+    color:#0b1f3a;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#555;
+    font-size:14px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:12px;
+    padding:10px 15px;
+    background:#0759a5;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.btn:hover{
+    background:#043f76;
+}
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:18px;
+}
+
+.step{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px #00000012;
+    text-align:center;
+}
+
+.step span{
+    display:block;
+    width:45px;
+    height:45px;
+    line-height:45px;
+    margin:0 auto 10px;
+    background:#0759a5;
+    color:white;
+    border-radius:50%;
+    font-weight:bold;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    margin-top:15px;
+    box-shadow:0 2px 10px #00000010;
+}
+
+th,td{
+    padding:13px;
+    border:1px solid #ddd;
+    text-align:left;
+}
+
+th{
+    background:#0b1f3a;
+    color:white;
+}
+
+tr:nth-child(even){
+    background:#f7f9fc;
+}
+
+.info-box{
+    background:white;
+    padding:22px;
+    border-radius:10px;
+    margin-top:20px;
+    box-shadow:0 2px 10px #00000012;
+}
+
+.info-box h3{
+    color:#0759a5;
+    margin-bottom:10px;
+}
+
+ul{
+    padding-left:22px;
+}
+
+li{
+    margin:7px 0;
+}
+
+.faq{
+    background:white;
+    padding:18px;
+    margin-bottom:12px;
+    border-radius:8px;
+    box-shadow:0 2px 8px #00000010;
+}
+
+.faq h3{
+    color:#0b1f3a;
+    margin-bottom:7px;
+}
+
+.contact-box{
+    background:#0b1f3a;
+    color:white;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    margin-top:35px;
+}
+
+.contact-box h2{
+    color:#ffd54a;
+    margin-bottom:10px;
+}
+
+.whatsapp{
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    padding:12px 20px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+footer{
+    background:#07162b;
+    color:#ddd;
+    text-align:center;
+    padding:25px 5%;
+    margin-top:40px;
+    font-size:14px;
+}
+
+.float-wa{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    background:#25D366;
+    color:white;
+    width:58px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    text-decoration:none;
+    font-size:27px;
+    box-shadow:0 4px 15px #00000040;
+    z-index:999;
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .topbar{
+        justify-content:center;
+        gap:5px;
+    }
+
+    .navbar{
+        justify-content:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    nav a{
+        font-size:13px;
+        padding:7px 9px;
+    }
+
+    table{
+        font-size:13px;
+    }
+
+    th,td{
+        padding:9px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+
+<div class="topbar">
+
+<div>
+📍 New Bus Stand, Ajaigarh, Madhya Pradesh
+</div>
+
+<div>
+📞 9993831755
+</div>
+
+</div>
+
+
+<div class="navbar">
+
+<div class="logo">
+A1 COMPUTER SHOP
+</div>
+
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="services.html">Services</a>
+
+<a href="government-jobs.html">Jobs</a>
+
+<a href="scholarship.html">Scholarship</a>
+
+<a href="college.html">College</a>
+
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<section class="hero">
+
+<h1>🖨️ Print & Scan Services</h1>
+
+<p>
+Document Printing, Scanning, Photocopy, PDF,
+Photo Print और Digital Document Services
+एक ही जगह।
+</p>
+
+</section>
+
+
+
+<div class="container">
+
+
+<div class="breadcrumb">
+
+<a href="index.html">Home</a>
+/
+<a href="services.html">Services</a>
+/
+Print & Scan
+
+</div>
+
+
+
+<div class="notice">
+
+<strong>📌 A1 Computer Shop:</strong>
+
+यहाँ विभिन्न online forms और documents के लिए
+print, scan, photocopy तथा digital document assistance
+की सुविधा उपलब्ध है।
+
+</div>
+
+
+
+<h2 class="section-title">
+🖨️ हमारी Print & Scan Services
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>📄 B/W Print</h3>
+
+<p>
+Black & White document printing की सुविधा।
+</p>
+
+<a href="#services" class="btn">
+जानकारी देखें
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🌈 Color Print</h3>
+
+<p>
+Color documents और forms की printing।
+</p>
+
+<a href="#services" class="btn">
+जानकारी देखें
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>📑 Photocopy</h3>
+
+<p>
+Documents की photocopy/duplicate copy की सुविधा।
+</p>
+
+<a href="#services" class="btn">
+जानकारी देखें
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>📷 Photo Print</h3>
+
+<p>
+Passport size और अन्य सामान्य photo printing।
+</p>
+
+<a href="#services" class="btn">
+जानकारी देखें
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>📠 Document Scan</h3>
+
+<p>
+Documents को digital PDF/image format में scan करने की सुविधा।
+</p>
+
+<a href="#services" class="btn">
+जानकारी देखें
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>📕 PDF बनाना</h3>
+
+<p>
+Multiple documents को scan करके PDF बनाने में सहायता।
+</p>
+
+<a href="#services" class="btn">
+जानकारी देखें
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>📤 Document Upload</h3>
+
+<p>
+Online forms में आवश्यक documents upload करने में सहायता।
+</p>
+
+<a href="#services" class="btn">
+जानकारी देखें
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>💾 Digital Document</h3>
+
+<p>
+Documents को digital format में व्यवस्थित करने में सहायता।
+</p>
+
+<a href="#services" class="btn">
+जानकारी देखें
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<h2 class="section-title" id="services">
+📋 Available Services
+</h2>
+
+
+
+<table>
+
+<tr>
+
+<th>
+Service
+</th>
+
+<th>
+उपयोग
+</th>
+
+<th>
+Format
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>
+B/W Print
+</td>
+
+<td>
+Forms, Documents, Notes
+</td>
+
+<td>
+A4 / अन्य उपलब्ध size
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Color Print
+</td>
+
+<td>
+Certificates, Forms, Photos
+</td>
+
+<td>
+Color
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Photocopy
+</td>
+
+<td>
+Documents की अतिरिक्त copies
+</td>
+
+<td>
+Paper Copy
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Scanning
+</td>
+
+<td>
+Paper document को digital बनाना
+</td>
+
+<td>
+PDF / Image
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+PDF Creation
+</td>
+
+<td>
+Multiple pages को एक PDF में बनाना
+</td>
+
+<td>
+PDF
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Photo Print
+</td>
+
+<td>
+Online forms और सामान्य उपयोग
+</td>
+
+<td>
+Photo
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Document Upload
+</td>
+
+<td>
+Online application में documents upload
+</td>
+
+<td>
+PDF / JPG आदि
+</td>
+
+</tr>
+
+
+</table>
+
+
+
+<h2 class="section-title">
+📝 Print & Scan Process
+</h2>
+
+
+
+<div class="process">
+
+
+<div class="step">
+
+<span>1</span>
+
+<h3>Document लाएँ</h3>
+
+<p>
+Original या digital document लेकर आएँ।
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<span>2</span>
+
+<h3>Service चुनें</h3>
+
+<p>
+Print, Scan, Copy या PDF service चुनें।
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<span>3</span>
+
+<h3>Details Check</h3>
+
+<p>
+Print से पहले document की जानकारी जाँचें।
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<span>4</span>
+
+<h3>Processing</h3>
+
+<p>
+Document को requested format में तैयार किया जाएगा।
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<span>5</span>
+
+<h3>Final Check</h3>
+
+<p>
+Print या digital file को प्राप्त करने से पहले जाँच करें।
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<span>6</span>
+
+<h3>Receive</h3>
+
+<p>
+अपना printed या digital document प्राप्त करें।
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<h2 class="section-title">
+📄 किन Documents का Print/Scan?
+</h2>
+
+
+
+<div class="info-box">
+
+<ul>
+
+<li>
+Aadhaar Card / e-Aadhaar
+</li>
+
+<li>
+PAN Card
+</li>
+
+<li>
+Voter Card
+</li>
+
+<li>
+जाति प्रमाण पत्र
+</li>
+
+<li>
+आय प्रमाण पत्र
+</li>
+
+<li>
+निवास प्रमाण पत्र
+</li>
+
+<li>
+Birth Certificate
+</li>
+
+<li>
+Death Certificate
+</li>
+
+<li>
+Marksheet
+</li>
+
+<li>
+Admit Card
+</li>
+
+<li>
+Government Job Form
+</li>
+
+<li>
+Scholarship Documents
+</li>
+
+<li>
+College Documents
+</li>
+
+<li>
+Passport Size Photo
+</li>
+
+<li>
+अन्य सामान्य documents
+</li>
+
+</ul>
+
+</div>
+
+
+
+<h2 class="section-title">
+📱 Online Form के लिए Document Upload
+</h2>
+
+
+
+<div class="info-box">
+
+<h3>
+Online Application में अक्सर इस्तेमाल होने वाले files
+</h3>
+
+<ul>
+
+<li>
+Passport size photograph
+</li>
+
+<li>
+Signature image
+</li>
+
+<li>
+Aadhaar/PAN जैसे आवश्यक documents
+</li>
+
+<li>
+Marksheet
+</li>
+
+<li>
+Certificate
+</li>
+
+<li>
+Address/Identity proof
+</li>
+
+<li>
+अन्य संबंधित supporting documents
+</li>
+
+</ul>
+
+<p>
+
+<strong>ध्यान दें:</strong>
+
+हर online form में file size, format और document
+requirements अलग हो सकती हैं।
+
+</p>
+
+</div>
+
+
+
+<h2 class="section-title">
+📕 PDF बनाने की सुविधा
+</h2>
+
+
+
+<div class="info-box">
+
+<p>
+
+यदि आपके पास कई pages के documents हैं,
+तो उन्हें scan करके एक PDF file में व्यवस्थित
+करने में सहायता की जा सकती है।
+
+</p>
+
+<br>
+
+<ul>
+
+<li>
+Multiple pages scan
+</li>
+
+<li>
+PDF creation
+</li>
+
+<li>
+Page sequence check
+</li>
+
+<li>
+Basic document arrangement
+</li>
+
+<li>
+Digital copy तैयार करना
+</li>
+
+</ul>
+
+</div>
+
+
+
+<h2 class="section-title">
+📸 Photo Services
+</h2>
+
+
+
+<div class="info-box">
+
+<h3>
+Online Form के लिए Photo
+</h3>
+
+<p>
+
+जहाँ उपलब्ध हो, online application के लिए
+आवश्यक photo को digital format में तैयार करने
+और print करने में सहायता की जा सकती है।
+
+</p>
+
+<ul>
+
+<li>
+Passport size photo
+</li>
+
+<li>
+Photo print
+</li>
+
+<li>
+Digital photo assistance
+</li>
+
+<li>
+Form upload के लिए basic file preparation
+</li>
+
+</ul>
+
+</div>
+
+
+
+<h2 class="section-title">
+🔐 Document Privacy
+</h2>
+
+
+
+<div class="info-box">
+
+<h3>
+अपने documents को सुरक्षित रखें
+</h3>
+
+<ul>
+
+<li>
+अनावश्यक documents किसी के साथ share न करें।
+</li>
+
+<li>
+OTP किसी को न बताएं।
+</li>
+
+<li>
+ATM PIN/UPI PIN कभी share न करें।
+</li>
+
+<li>
+Bank password किसी को न दें।
+</li>
+
+<li>
+महत्वपूर्ण documents की digital copies सुरक्षित रखें।
+</li>
+
+<li>
+Print/scan करवाने से पहले सही document चुनें।
+</li>
+
+</ul>
+
+</div>
+
+
+
+<h2 class="section-title">
+❓ Frequently Asked Questions
+</h2>
+
+
+
+<div class="faq">
+
+<h3>
+1. क्या PDF को print किया जा सकता है?
+</h3>
+
+<p>
+हाँ, उपलब्ध PDF document को print किया जा सकता है।
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+2. क्या documents scan करके PDF बनाई जा सकती है?
+</h3>
+
+<p>
+हाँ, multiple pages को scan करके PDF format में तैयार करने में सहायता की जा सकती है।
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+3. क्या Color और Black & White दोनों print मिलते हैं?
+</h3>
+
+<p>
+उपलब्ध सुविधा के अनुसार B/W और Color printing की सेवा दी जा सकती है।
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+4. क्या online form में document upload करने में सहायता मिलेगी?
+</h3>
+
+<p>
+हाँ, आवश्यक documents और form requirements के अनुसार upload प्रक्रिया में सहायता की जा सकती है।
+</p>
+
+</div>
+
+
+
+<div class="faq">
+
+<h3>
+5. क्या Aadhaar/PAN जैसे documents का print कराया जा सकता है?
+</h3>
+
+<p>
+यदि आपके पास वैध रूप से प्राप्त digital document है,
+तो उसका print कराया जा सकता है।
+</p>
+
+</div>
+
+
+
+<h2 class="section-title">
+🔗 Related Services
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+🪪 Aadhaar
+</h3>
+
+<p>
+Aadhaar related services और information।
+</p>
+
+<a href="aadhaar.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+💳 PAN Card
+</h3>
+
+<p>
+PAN application और correction assistance।
+</p>
+
+<a href="pan-card.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🗳️ Voter
+</h3>
+
+<p>
+Voter registration और correction services।
+</p>
+
+<a href="voter.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+📄 Certificate
+</h3>
+
+<p>
+Certificate related online assistance।
+</p>
+
+<a href="certificate.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🏥 Ayushman</h3>
+
+<p>
+Ayushman card related services।
+</p>
+
+<a href="ayushman.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+👨‍👩‍👧 Samagra
+</h3>
+
+<p>
+Samagra ID related services।
+</p>
+
+<a href="samagra.html" class="btn">
+Open
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<div class="contact-box">
+
+<h2>
+📞 A1 COMPUTER SHOP
+</h2>
+
+<p>
+Print, Scan, Photocopy और Online Document Services के लिए संपर्क करें।
+</p>
+
+<p>
+📍 New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+📱 9993831755
+</p>
+
+
+<a
+class="whatsapp"
+href="https://wa.me/919993831755"
+target="_blank">
+
+💬 WhatsApp पर संपर्क करें
+
+</a>
+
+
+<br>
+
+
+<a
+class="btn"
+href="index.html">
+
+🏠 Home
+
+</a>
+
+
+<a
+class="btn"
+href="services.html">
+
+📋 All Services
+
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<footer>
+
+<p>
+<strong>A1 COMPUTER SHOP</strong>
+</p>
+
+<p>
+New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+Mobile: 9993831755
+</p>
+
+<p>
+© 2026 A1 Computer Shop. All Rights Reserved.
+</p>
+
+<p>
+यह एक निजी डिजिटल सेवा केंद्र है।
+यह किसी सरकारी विभाग या सरकारी पोर्टल की आधिकारिक वेबसाइट नहीं है।
+</p>
+
+</footer>
+
+
+
+<a
+class="float-wa"
+href="https://wa.me/919993831755"
+target="_blank"
+title="WhatsApp">
+
+💬
+
+</a>
+
+
+</body>
+</html>
