@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A1 AI Assistant</title>
+<style>
+*{box-sizing:border-box}.a1-ai{position:fixed;right:18px;bottom:18px;z-index:9999;font-family:Arial,sans-serif}.ai-btn{width:62px;height:62px;border:0;border-radius:50%;background:linear-gradient(135deg,#0757a5,#10a3ff);color:#fff;font-size:28px;box-shadow:0 8px 24px #0003;cursor:pointer}.chat{display:none;width:min(370px,calc(100vw - 30px));height:560px;background:#fff;border-radius:20px;box-shadow:0 15px 45px #0003;overflow:hidden;margin-bottom:10px}.head{background:linear-gradient(135deg,#062d59,#0879d5);color:#fff;padding:15px}.head b{font-size:18px}.body{height:430px;padding:12px;overflow:auto;background:#f5f8fc}.msg{padding:10px 12px;border-radius:14px;margin:8px 0;max-width:88%;line-height:1.4;white-space:pre-wrap}.bot{background:#fff;border:1px solid #e3e9f0}.user{background:#0879d5;color:#fff;margin-left:auto}.foot{padding:10px;display:flex;gap:7px}.foot input{flex:1;padding:11px;border:1px solid #d5deea;border-radius:10px}.foot button{border:0;border-radius:10px;padding:11px;background:#0879d5;color:#fff;font-weight:700}
+</style>
+</head>
+<body>
+<div class="a1-ai">
+<div class="chat" id="chat">
+<div class="head"><b>🤖 A1 AI Assistant</b><div style="font-size:12px;opacity:.9">Jobs • Forms • Services</div></div>
+<div class="body" id="messages"><div class="msg bot">Namaste! 👋 Main A1 AI Assistant hoon. Job, form, last date, eligibility ya A1 Computer Shop ki service ke baare mein poochho.</div></div>
+<div class="foot"><input id="q" placeholder="Apna question likho..." onkeydown="if(event.key==='Enter')ask()"><button onclick="ask()">Send</button></div>
+</div>
+<button class="ai-btn" onclick="toggle()">🤖</button>
+</div>
+<script>
+/*
+  Secure setup:
+  This page intentionally does NOT contain an OpenAI secret key.
+  Set your server endpoint in AI_ENDPOINT. The endpoint should verify the
+  request and call OpenAI server-side, then return JSON: { "answer": "..." }.
+*/
+const AI_ENDPOINT="/api/a1-ai";
+function toggle(){const c=document.getElementById("chat");c.style.display=c.style.display==="block"?"none":"block"}
+function add(text,who){const d=document.createElement("div");d.className="msg "+who;d.textContent=text;document.getElementById("messages").appendChild(d);const b=document.getElementById("messages");b.scrollTop=b.scrollHeight}
+async function ask(){
+ const q=document.getElementById("q").value.trim();if(!q)return;
+ document.getElementById("q").value="";add(q,"user");add("⏳ Information check kar raha hoon...","bot");
+ try{
+   const r=await fetch(AI_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q})});
+   const j=await r.json();document.querySelector("#messages .bot:last-child").textContent=j.answer||"Abhi answer available nahi hai.";
+ }catch(e){document.querySelector("#messages .bot:last-child").textContent="AI backend connect nahi hai. Admin/website setup mein /api/a1-ai endpoint configure karo."}
+}
+</script>
+</body>
+</html>
