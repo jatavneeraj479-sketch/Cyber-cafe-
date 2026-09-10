@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post Office Jobs - A1 Computer Shop</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+header{
+    background:#0b1f3a;
+    color:white;
+}
+
+.topbar{
+    background:#07162a;
+    padding:8px 5%;
+    text-align:right;
+    font-size:14px;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 5%;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#ffd54a;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin:5px 8px;
+    font-size:15px;
+}
+
+.navbar a:hover{
+    color:#ffd54a;
+}
+
+.hero{
+    background:linear-gradient(135deg,#12345b,#0759a5);
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:850px;
+    margin:auto;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:30px auto;
+}
+
+.breadcrumb{
+    margin-bottom:20px;
+    color:#555;
+    font-size:14px;
+}
+
+.breadcrumb a{
+    color:#0759a5;
+    text-decoration:none;
+}
+
+.notice{
+    background:#fff3cd;
+    border-left:5px solid #ffc107;
+    padding:18px;
+    margin-bottom:25px;
+    border-radius:8px;
+}
+
+.section-title{
+    text-align:center;
+    margin:35px 0 20px;
+    color:#0b1f3a;
+    font-size:28px;
+}
+
+.job-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.job-card{
+    background:white;
+    padding:24px;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.10);
+    border-top:4px solid #0759a5;
+    transition:.2s;
+}
+
+.job-card:hover{
+    transform:translateY(-4px);
+}
+
+.job-card h3{
+    color:#0759a5;
+    margin-bottom:10px;
+}
+
+.job-card p{
+    color:#555;
+    font-size:15px;
+}
+
+.btn{
+    display:inline-block;
+    background:#0759a5;
+    color:white;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:6px;
+    margin-top:15px;
+}
+
+.btn:hover{
+    background:#06467f;
+}
+
+.info-table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    margin-top:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.info-table th,
+.info-table td{
+    border:1px solid #ddd;
+    padding:13px;
+    text-align:left;
+}
+
+.info-table th{
+    background:#0b1f3a;
+    color:white;
+}
+
+.info-table tr:nth-child(even){
+    background:#f7f9fc;
+}
+
+.box{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    margin-top:25px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.box h3{
+    color:#0759a5;
+    margin-bottom:12px;
+}
+
+.box ul{
+    padding-left:22px;
+}
+
+.box li{
+    margin-bottom:8px;
+}
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.step{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.step-number{
+    width:42px;
+    height:42px;
+    background:#0759a5;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 10px;
+    font-weight:bold;
+}
+
+.contact-box{
+    background:#0b1f3a;
+    color:white;
+    padding:30px;
+    text-align:center;
+    border-radius:12px;
+    margin-top:30px;
+}
+
+.contact-box h2{
+    color:#ffd54a;
+    margin-bottom:10px;
+}
+
+.contact-box a{
+    color:#ffd54a;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.whatsapp{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:14px 20px;
+    border-radius:50px;
+    font-weight:bold;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+    z-index:1000;
+}
+
+footer{
+    margin-top:40px;
+    background:#07162a;
+    color:#ddd;
+    text-align:center;
+    padding:25px 15px;
+    font-size:14px;
+}
+
+@media(max-width:700px){
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .navbar{
+        text-align:center;
+        justify-content:center;
+        gap:8px;
+    }
+
+    .logo{
+        width:100%;
+        margin-bottom:8px;
+    }
+
+    .navbar a{
+        font-size:14px;
+    }
+
+    .info-table{
+        font-size:14px;
+    }
+
+    .info-table th,
+    .info-table td{
+        padding:9px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="topbar">
+📞 A1 Computer Shop | Mobile: 9993831755
+</div>
+
+<div class="navbar">
+
+<div class="logo">
+A1 COMPUTER SHOP
+</div>
+
+<div>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="government-jobs.html">Govt Jobs</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>📮 Post Office Jobs</h1>
+
+<p>
+India Post से संबंधित सरकारी नौकरी और भर्ती की सामान्य जानकारी,
+योग्यता, दस्तावेज और ऑनलाइन आवेदन प्रक्रिया।
+</p>
+
+</section>
+
+
+<div class="container">
+
+<div class="breadcrumb">
+
+<a href="index.html">Home</a>
+ →
+<a href="government-jobs.html">Government Jobs</a>
+ →
+Post Office Jobs
+
+</div>
+
+
+<div class="notice">
+
+<strong>⚠️ महत्वपूर्ण सूचना:</strong><br>
+
+यह पेज Post Office Jobs की सामान्य जानकारी और ऑनलाइन आवेदन सहायता
+के लिए बनाया गया है। किसी भी भर्ती की वास्तविक योग्यता, आयु सीमा,
+vacancy, fee, selection process और अंतिम तिथि संबंधित official
+notification से जरूर verify करें।
+
+<br><br>
+
+<strong>
+A1 Computer Shop India Post या किसी सरकारी विभाग की आधिकारिक वेबसाइट नहीं है।
+</strong>
+
+</div>
+
+
+<h2 class="section-title">
+📮 Post Office Jobs की प्रमुख श्रेणियां
+</h2>
+
+
+<div class="job-grid">
+
+
+<div class="job-card">
+
+<h3>India Post GDS</h3>
+
+<p>
+Gramin Dak Sevak से संबंधित भर्ती। इसमें Branch Postmaster,
+Assistant Branch Postmaster आदि पद शामिल हो सकते हैं।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>Postman</h3>
+
+<p>
+डाक वितरण और संबंधित postal services से जुड़े पद।
+भर्ती की eligibility notification के अनुसार होती है।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>Mail Guard</h3>
+
+<p>
+Mail processing और postal operations से संबंधित पद।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>Postal Assistant</h3>
+
+<p>
+Postal और office work से संबंधित clerical/assistant level पद।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>Sorting Assistant</h3>
+
+<p>
+Mail sorting और postal processing से संबंधित कार्य।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>India Post Recruitment</h3>
+
+<p>
+समय-समय पर अलग-अलग पदों के लिए recruitment notification जारी हो सकते हैं।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>Postal Department Jobs</h3>
+
+<p>
+डाक विभाग में विभिन्न technical, administrative और अन्य पदों की
+भर्तियां notification के अनुसार हो सकती हैं।
+</p>
+
+</div>
+
+
+<div class="job-card">
+
+<h3>Other Postal Posts</h3>
+
+<p>
+अन्य पदों की vacancy संबंधित recruitment rules और official notification
+के आधार पर हो सकती है।
+</p>
+
+</div>
+
+
+</div>
+
+
+<h2 class="section-title">
+🎓 सामान्य योग्यता
+</h2>
+
+
+<table class="info-table">
+
+<tr>
+<th>योग्यता</th>
+<th>सामान्य जानकारी</th>
+</tr>
+
+<tr>
+<td>10वीं पास</td>
+<td>
+कुछ postal recruitments में 10वीं qualification मांगी जा सकती है।
+</td>
+</tr>
+
+<tr>
+<td>12वीं पास</td>
+<td>
+कुछ clerical या अन्य पदों के लिए 12वीं qualification आवश्यक हो सकती है।
+</td>
+</tr>
+
+<tr>
+<td>Graduation</td>
+<td>
+कुछ higher-level postal posts के लिए Graduation मांगी जा सकती है।
+</td>
+</tr>
+
+<tr>
+<td>Computer Knowledge</td>
+<td>
+कुछ पदों में computer knowledge या skill requirement हो सकती है।
+</td>
+</tr>
+
+<tr>
+<td>Local Language</td>
+<td>
+कुछ recruitments में संबंधित क्षेत्र की language requirement लागू हो सकती है।
+</td>
+</tr>
+
+<tr>
+<td>Age Limit</td>
+<td>
+पद और recruitment notification के अनुसार अलग-अलग हो सकती है।
+</td>
+</tr>
+
+</table>
+
+
+<div class="box">
+
+<h3>📋 Post Office में संभावित कार्य</h3>
+
+<ul>
+
+<li>डाक वितरण से संबंधित कार्य</li>
+
+<li>Mail sorting और processing</li>
+
+<li>Postal office में customer service</li>
+
+<li>Data entry और computer-related work</li>
+
+<li>Records और documents management</li>
+
+<li>Branch Post Office से संबंधित कार्य</li>
+
+<li>अन्य विभागीय कार्य</li>
+
+</ul>
+
+</div>
+
+
+<h2 class="section-title">
+📝 Online Form भरने की प्रक्रिया
+</h2>
+
+
+<div class="process">
+
+
+<div class="step">
+
+<div class="step-number">1</div>
+
+<h3>Notification</h3>
+
+<p>
+सबसे पहले official recruitment notification पढ़ें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">2</div>
+
+<h3>Eligibility</h3>
+
+<p>
+अपनी qualification और age check करें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">3</div>
+
+<h3>Registration</h3>
+
+<p>
+Recruitment portal पर registration करें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">4</div>
+
+<h3>Details</h3>
+
+<p>
+Personal और educational details भरें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">5</div>
+
+<h3>Documents</h3>
+
+<p>
+Photo, signature और आवश्यक documents upload करें।
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">6</div>
+
+<h3>Submit</h3>
+
+<p>
+Application submit करके print/save रखें।
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="box">
+
+<h3>📄 सामान्य Documents</h3>
+
+<ul>
+
+<li>आधार कार्ड / पहचान पत्र</li>
+
+<li>10वीं की marksheet</li>
+
+<li>12वीं की marksheet, यदि लागू हो</li>
+
+<li>Graduation documents, यदि लागू हो</li>
+
+<li>पासपोर्ट साइज फोटो</li>
+
+<li>हस्ताक्षर</li>
+
+<li>जाति प्रमाण पत्र, यदि लागू हो</li>
+
+<li>आय प्रमाण पत्र, यदि लागू हो</li>
+
+<li>निवास / अन्य certificate, यदि notification में आवश्यक हो</li>
+
+<li>मोबाइल नंबर</li>
+
+<li>Email ID</li>
+
+<li>अन्य आवश्यक documents</li>
+
+</ul>
+
+</div>
+
+
+<div class="box">
+
+<h3>📚 Post Office Exam की तैयारी</h3>
+
+<ul>
+
+<li>General Knowledge</li>
+
+<li>Current Affairs</li>
+
+<li>General Hindi</li>
+
+<li>General English, जहाँ लागू हो</li>
+
+<li>Mathematics</li>
+
+<li>Reasoning</li>
+
+<li>Computer Knowledge</li>
+
+<li>Postal / General Awareness, जहाँ लागू हो</li>
+
+</ul>
+
+</div>
+
+
+<div class="box">
+
+<h3>💡 तैयारी के आसान तरीके</h3>
+
+<ul>
+
+<li>सबसे पहले official syllabus देखें।</li>
+
+<li>Previous Year Questions की practice करें।</li>
+
+<li>Maths और Reasoning रोजाना पढ़ें।</li>
+
+<li>Current Affairs का नियमित revision करें।</li>
+
+<li>General Knowledge के short notes बनाएं।</li>
+
+<li>Mock tests देकर speed और accuracy सुधारें।</li>
+
+<li>गलत questions का दोबारा अभ्यास करें।</li>
+
+</ul>
+
+</div>
+
+
+<div class="box">
+
+<h3>🔐 Form भरते समय सावधानी</h3>
+
+<ul>
+
+<li>नाम और जन्मतिथि documents के अनुसार भरें।</li>
+
+<li>Qualification details सही भरें।</li>
+
+<li>Category details सही चुनें।</li>
+
+<li>Photo और signature निर्धारित format में upload करें।</li>
+
+<li>Application fee, यदि लागू हो, जमा करने के बाद status check करें।</li>
+
+<li>Final application form download करके सुरक्षित रखें।</li>
+
+<li>Registration number और login details सुरक्षित रखें।</li>
+
+<li>Last date हमेशा official notification से verify करें।</li>
+
+</ul>
+
+</div>
+
+
+<div class="box">
+
+<h3>📌 जरूरी बात</h3>
+
+<p>
+Post Office की अलग-अलग recruitments के नियम अलग हो सकते हैं।
+किसी भर्ती में merit-based selection हो सकता है, जबकि किसी अन्य
+recruitment में written examination, skill test या अन्य selection
+stage हो सकती है।
+</p>
+
+<p style="margin-top:12px;">
+इसलिए केवल सोशल मीडिया या किसी दूसरे व्यक्ति की जानकारी के आधार पर
+form न भरें। संबंधित official notification को जरूर पढ़ें।
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<h2>📞 Post Office Form में सहायता चाहिए?</h2>
+
+<p>
+<strong>A1 Computer Shop</strong>
+</p>
+
+<p>
+New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+Mobile:
+<a href="tel:9993831755">9993831755</a>
+</p>
+
+<p>
+WhatsApp:
+<a href="https://wa.me/919993831755" target="_blank">
+919993831755
+</a>
+</p>
+
+<br>
+
+<a class="btn" href="government-jobs.html">
+⬅ Government Jobs
+</a>
+
+<a class="btn" href="index.html">
+🏠 Home
+</a>
+
+</div>
+
+</div>
+
+
+<a class="whatsapp"
+href="https://wa.me/919993831755"
+target="_blank">
+💬 WhatsApp
+</a>
+
+
+<footer>
+
+<p>
+<strong>A1 Computer Shop</strong>
+</p>
+
+<p>
+New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+Mobile: 9993831755
+</p>
+
+<p>
+© 2026 A1 Computer Shop. All Rights Reserved.
+</p>
+
+<p>
+यह एक निजी ऑनलाइन सेवा सहायता केंद्र है।
+यह India Post या किसी सरकारी विभाग की आधिकारिक वेबसाइट नहीं है।
+</p>
+
+</footer>
+
+</body>
+</html>
