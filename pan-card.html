@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAN Card Services | A1 Computer Shop</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f4f7fb;
+  color:#222;
+  line-height:1.6;
+}
+
+header{
+  background:#0b1f3a;
+  color:white;
+}
+
+.topbar{
+  background:#061426;
+  padding:8px 5%;
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:5px;
+}
+
+.header-main{
+  padding:18px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.logo{
+  color:#ffd54a;
+  font-size:28px;
+  font-weight:bold;
+}
+
+.shop-info{
+  text-align:right;
+  font-size:14px;
+}
+
+nav{
+  background:#12345b;
+  padding:12px 5%;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:5px;
+  font-size:14px;
+}
+
+nav a:hover{
+  background:#0759a5;
+}
+
+.hero{
+  background:linear-gradient(135deg,#0759a5,#0b1f3a);
+  color:white;
+  text-align:center;
+  padding:55px 5%;
+}
+
+.hero h1{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  max-width:850px;
+  margin:auto;
+  font-size:17px;
+}
+
+.container{
+  width:90%;
+  max-width:1150px;
+  margin:30px auto;
+}
+
+.breadcrumb{
+  margin-bottom:20px;
+  font-size:14px;
+  color:#666;
+}
+
+.breadcrumb a{
+  color:#0759a5;
+  text-decoration:none;
+}
+
+.notice{
+  background:#fff8d8;
+  border-left:5px solid #f0c000;
+  padding:18px;
+  border-radius:7px;
+  margin-bottom:25px;
+}
+
+.notice strong{
+  color:#8a6800;
+}
+
+.section-title{
+  text-align:center;
+  margin:35px 0 20px;
+}
+
+.section-title h2{
+  color:#0b1f3a;
+  font-size:28px;
+}
+
+.section-title p{
+  color:#666;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.card{
+  background:white;
+  padding:22px;
+  border-radius:10px;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.icon{
+  font-size:34px;
+  margin-bottom:8px;
+}
+
+.card h3{
+  color:#0b1f3a;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#666;
+  font-size:14px;
+}
+
+.info-box{
+  background:white;
+  padding:25px;
+  margin-top:25px;
+  border-radius:10px;
+  box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+
+.info-box h3{
+  color:#0759a5;
+  margin-bottom:10px;
+}
+
+.info-box ul{
+  padding-left:22px;
+}
+
+.info-box li{
+  margin-bottom:7px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.step{
+  background:white;
+  padding:20px;
+  text-align:center;
+  border-radius:10px;
+  box-shadow:0 3px 10px rgba(0,0,0,.07);
+}
+
+.step-number{
+  width:42px;
+  height:42px;
+  line-height:42px;
+  margin:0 auto 10px;
+  border-radius:50%;
+  background:#0759a5;
+  color:white;
+  font-weight:bold;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  margin-top:15px;
+}
+
+th,td{
+  border:1px solid #ddd;
+  padding:13px;
+  text-align:left;
+}
+
+th{
+  background:#0b1f3a;
+  color:white;
+}
+
+tr:nth-child(even){
+  background:#f7f9fc;
+}
+
+.faq{
+  background:white;
+  padding:18px;
+  margin-bottom:12px;
+  border-radius:8px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+
+.faq h3{
+  color:#0b1f3a;
+  margin-bottom:6px;
+}
+
+.buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.btn{
+  display:inline-block;
+  padding:11px 18px;
+  background:#0759a5;
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:bold;
+}
+
+.btn:hover{
+  background:#043e75;
+}
+
+.whatsapp-btn{
+  background:#25D366;
+}
+
+.whatsapp-btn:hover{
+  background:#1da851;
+}
+
+.back-btn{
+  background:#555;
+}
+
+footer{
+  background:#061426;
+  color:white;
+  padding:30px 5%;
+  margin-top:45px;
+}
+
+.footer-grid{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+footer h3{
+  color:#ffd54a;
+  margin-bottom:10px;
+}
+
+footer a{
+  color:white;
+  text-decoration:none;
+}
+
+.copyright{
+  text-align:center;
+  border-top:1px solid #33445a;
+  margin-top:25px;
+  padding-top:18px;
+  color:#bbb;
+  font-size:13px;
+}
+
+.float-whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#25D366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:28px;
+  box-shadow:0 4px 15px rgba(0,0,0,.25);
+  z-index:99;
+}
+
+@media(max-width:900px){
+  .cards{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .steps{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+  .hero h1{
+    font-size:29px;
+  }
+
+  .cards,
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .shop-info{
+    text-align:left;
+  }
+
+  nav{
+    padding:10px 3%;
+  }
+
+  table{
+    font-size:13px;
+  }
+
+  th,td{
+    padding:9px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="topbar">
+  <div>📍 New Bus Stand, Ajaigarh, Madhya Pradesh</div>
+  <div>📞 9993831755</div>
+</div>
+
+<div class="header-main">
+  <div class="logo">A1 COMPUTER SHOP</div>
+
+  <div class="shop-info">
+    Private Online Service Center<br>
+    New Bus Stand, Ajaigarh
+  </div>
+</div>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">All Services</a>
+  <a href="mp-online.html">MP Online</a>
+  <a href="government-jobs.html">Govt Jobs</a>
+  <a href="scholarship.html">Scholarship</a>
+  <a href="college.html">College</a>
+  <a href="exam-form.html">Exam Form</a>
+  <a href="admit-card.html">Admit Card</a>
+  <a href="result.html">Result</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+  <h1>PAN Card Services</h1>
+  <p>
+    PAN Card आवेदन, correction, reprint, status check और
+    PAN से संबंधित ऑनलाइन प्रक्रियाओं में सहायता।
+  </p>
+</section>
+
+<div class="container">
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> /
+  <a href="services.html">Services</a> /
+  PAN Card
+</div>
+
+<div class="notice">
+  <strong>महत्वपूर्ण सूचना:</strong>
+  A1 Computer Shop एक निजी ऑनलाइन सेवा केंद्र है।
+  यह Income Tax Department या किसी सरकारी विभाग का आधिकारिक कार्यालय नहीं है।
+  PAN से संबंधित आवेदन/जारी होने का अंतिम निर्णय संबंधित अधिकृत प्रणाली और विभाग के नियमों के अनुसार होता है।
+</div>
+
+<div class="section-title">
+  <h2>PAN Card की सेवाएँ</h2>
+  <p>PAN से संबंधित ऑनलाइन प्रक्रिया में सहायता</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+  <div class="icon">🪪</div>
+  <h3>New PAN Application</h3>
+  <p>
+    नए PAN Card के ऑनलाइन आवेदन की प्रक्रिया में सहायता।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">✏️</div>
+  <h3>PAN Correction</h3>
+  <p>
+    नाम, जन्मतिथि या अन्य उपलब्ध विवरण में correction प्रक्रिया की सहायता।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">♻️</div>
+  <h3>PAN Reprint</h3>
+  <p>
+    PAN Card उपलब्ध रिकॉर्ड के अनुसार reprint प्रक्रिया में सहायता।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">🔎</div>
+  <h3>PAN Status</h3>
+  <p>
+    आवेदन की उपलब्ध स्थिति ऑनलाइन देखने में सहायता।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">📄</div>
+  <h3>Document Guidance</h3>
+  <p>
+    आवेदन के लिए सामान्यतः आवश्यक दस्तावेज़ों की जानकारी।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">📱</div>
+  <h3>Online Form Help</h3>
+  <p>
+    ऑनलाइन फॉर्म में जानकारी भरने और submit करने में सहायता।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">🖨️</div>
+  <h3>Print Service</h3>
+  <p>
+    PAN acknowledgement और उपलब्ध दस्तावेज़ों का print।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">💻</div>
+  <h3>Digital Assistance</h3>
+  <p>
+    PAN से जुड़ी ऑनलाइन प्रक्रिया को समझने और पूरा करने में सहायता।
+  </p>
+</div>
+
+</div>
+
+<div class="section-title">
+  <h2>PAN Card क्या है?</h2>
+</div>
+
+<div class="info-box">
+
+<h3>Permanent Account Number</h3>
+
+<p>
+PAN एक विशिष्ट पहचान संख्या है जिसका उपयोग आयकर और कई वित्तीय
+लेन-देन से संबंधित प्रक्रियाओं में किया जाता है। PAN से संबंधित
+आवेदन, correction और अन्य सेवाएँ अधिकृत प्रक्रिया के माध्यम से की जाती हैं।
+</p>
+
+<br>
+
+<h3>PAN Card कब उपयोगी हो सकता है?</h3>
+
+<ul>
+  <li>Income Tax से संबंधित कार्यों में</li>
+  <li>विभिन्न वित्तीय प्रक्रियाओं में</li>
+  <li>कुछ बैंकिंग/वित्तीय सेवाओं में</li>
+  <li>निवेश और अन्य निर्धारित लेन-देन में</li>
+  <li>जहाँ PAN की आवश्यकता नियमों के अनुसार हो</li>
+</ul>
+
+</div>
+
+<div class="section-title">
+<h2>PAN आवेदन की सामान्य प्रक्रिया</h2>
+<p>A1 Computer Shop पर ऑनलाइन सहायता लेने के चरण</p>
+</div>
+
+<div class="steps">
+
+<div class="step">
+  <div class="step-number">1</div>
+  <h3>Details</h3>
+  <p>
+    नाम और आवश्यक व्यक्तिगत जानकारी उपलब्ध कराएँ।
+  </p>
+</div>
+
+<div class="step">
+  <div class="step-number">2</div>
+  <h3>Documents</h3>
+  <p>
+    प्रक्रिया के अनुसार आवश्यक दस्तावेज़ उपलब्ध कराएँ।
+  </p>
+</div>
+
+<div class="step">
+  <div class="step-number">3</div>
+  <h3>Online Form</h3>
+  <p>
+    उपलब्ध अधिकृत ऑनलाइन प्रक्रिया में फॉर्म भरने में सहायता।
+  </p>
+</div>
+
+<div class="step">
+  <div class="step-number">4</div>
+  <h3>Submit</h3>
+  <p>
+    जानकारी जांचने के बाद आवेदन submit करने में सहायता।
+  </p>
+</div>
+
+</div>
+
+<div class="section-title">
+<h2>सामान्य दस्तावेज़</h2>
+</div>
+
+<table>
+
+<tr>
+  <th>दस्तावेज़</th>
+  <th>उपयोग</th>
+</tr>
+
+<tr>
+  <td>पहचान प्रमाण</td>
+  <td>आवेदक की पहचान के लिए, जैसा संबंधित प्रक्रिया में स्वीकार हो</td>
+</tr>
+
+<tr>
+  <td>पता प्रमाण</td>
+  <td>जहाँ आवश्यक हो वहाँ address verification के लिए</td>
+</tr>
+
+<tr>
+  <td>जन्मतिथि प्रमाण</td>
+  <td>जहाँ संबंधित आवेदन में आवश्यक हो</td>
+</tr>
+
+<tr>
+  <td>मोबाइल नंबर</td>
+  <td>OTP/संपर्क प्रक्रिया में जहाँ आवश्यक हो</td>
+</tr>
+
+<tr>
+  <td>ईमेल ID</td>
+  <td>जहाँ ऑनलाइन आवेदन में आवश्यक हो</td>
+</tr>
+
+</table>
+
+<div class="info-box">
+
+<h3>✏️ PAN Correction में क्या-क्या बदल सकता है?</h3>
+
+<ul>
+  <li>नाम से संबंधित correction</li>
+  <li>जन्मतिथि से संबंधित correction</li>
+  <li>पिता/माता संबंधी उपलब्ध विवरण में correction</li>
+  <li>अन्य उपलब्ध व्यक्तिगत विवरण</li>
+  <li>Correction के लिए supporting documents की आवश्यकता हो सकती है</li>
+</ul>
+
+<p>
+<strong>ध्यान दें:</strong>
+कौन-सा correction किस दस्तावेज़ से किया जा सकता है,
+यह संबंधित अधिकृत प्रक्रिया के नियमों पर निर्भर करता है।
+</p>
+
+</div>
+
+<div class="section-title">
+<h2>आम समस्याएँ</h2>
+</div>
+
+<div class="faq">
+
+<h3>❓ PAN आवेदन का status कैसे देखें?</h3>
+
+<p>
+आवेदन से संबंधित acknowledgement/application details का उपयोग करके
+उपलब्ध अधिकृत status-check सुविधा में स्थिति देखी जा सकती है।
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>❓ PAN Card में नाम गलत है?</h3>
+
+<p>
+PAN correction की उपलब्ध प्रक्रिया के माध्यम से आवश्यक supporting
+documents के साथ correction request की जा सकती है।
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>❓ PAN Card खो गया है?</h3>
+
+<p>
+उपलब्ध अधिकृत प्रक्रिया के अनुसार PAN details के आधार पर reprint/
+प्रतिलिपि प्राप्त करने की प्रक्रिया की जा सकती है।
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>❓ क्या A1 Computer Shop PAN विभाग का कार्यालय है?</h3>
+
+<p>
+नहीं। A1 Computer Shop एक निजी ऑनलाइन सेवा केंद्र है।
+हम ऑनलाइन फॉर्म, दस्तावेज़, प्रिंट और डिजिटल सेवाओं में सहायता करते हैं।
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>🔐 PAN और दस्तावेज़ सुरक्षा</h3>
+
+<ul>
+  <li>OTP किसी अनजान व्यक्ति को साझा न करें।</li>
+  <li>बैंक PIN, ATM PIN और UPI PIN कभी साझा न करें।</li>
+  <li>अपने PAN की फोटो/कॉपी अनावश्यक जगह पर शेयर न करें।</li>
+  <li>फॉर्म submit करने से पहले नाम और जन्मतिथि जांचें।</li>
+  <li>Payment करने से पहले राशि और आवेदन विवरण जांचें।</li>
+</ul>
+
+</div>
+
+<div class="section-title">
+<h2>संबंधित सेवाएँ</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+  <div class="icon">🪪</div>
+  <h3>Aadhaar</h3>
+  <p>Aadhaar से संबंधित उपलब्ध ऑनलाइन सेवाओं की जानकारी।</p>
+  <div class="buttons">
+    <a class="btn" href="aadhaar.html">Open</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="icon">👤</div>
+  <h3>Samagra</h3>
+  <p>Samagra ID और संबंधित ऑनलाइन सहायता।</p>
+  <div class="buttons">
+    <a class="btn" href="samagra.html">Open</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="icon">🗳️</div>
+  <h3>Voter</h3>
+  <p>मतदाता संबंधी ऑनलाइन सेवाओं में सहायता।</p>
+  <div class="buttons">
+    <a class="btn" href="voter.html">Open</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="icon">📄</div>
+  <h3>Certificate</h3>
+  <p>विभिन्न प्रमाण-पत्रों की ऑनलाइन सहायता।</p>
+  <div class="buttons">
+    <a class="btn" href="certificate.html">Open</a>
+  </div>
+</div>
+
+</div>
+
+<div class="info-box">
+
+<h3>📍 A1 Computer Shop</h3>
+
+<p>
+<strong>Address:</strong>
+New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+<strong>Mobile:</strong>
+9993831755
+</p>
+
+<div class="buttons">
+
+<a class="btn whatsapp-btn"
+   href="https://wa.me/919993831755"
+   target="_blank">
+  💬 WhatsApp करें
+</a>
+
+<a class="btn"
+   href="tel:9993831755">
+  📞 Call करें
+</a>
+
+<a class="btn back-btn"
+   href="services.html">
+  ← All Services
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>A1 Computer Shop</h3>
+<p>New Bus Stand, Ajaigarh, Madhya Pradesh</p>
+<p>Private Online Service Center</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<p><a href="index.html">Home</a></p>
+<p><a href="services.html">All Services</a></p>
+<p><a href="mp-online.html">MP Online</a></p>
+<p><a href="government-jobs.html">Government Jobs</a></p>
+<p><a href="contact.html">Contact</a></p>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>📞 9993831755</p>
+<p>📍 New Bus Stand, Ajaigarh</p>
+<p>
+💬
+<a href="https://wa.me/919993831755" target="_blank">
+WhatsApp
+</a>
+</p>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 A1 Computer Shop. All Rights Reserved.
+<br>
+यह एक निजी ऑनलाइन सेवा केंद्र है। यह किसी सरकारी विभाग की आधिकारिक वेबसाइट नहीं है।
+</div>
+
+</footer>
+
+<a class="float-whatsapp"
+   href="https://wa.me/919993831755"
+   target="_blank"
+   title="WhatsApp">
+  💬
+</a>
+
+</body>
+</html>
