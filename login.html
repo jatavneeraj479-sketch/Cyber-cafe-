@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Login | A1 Computer Shop</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    linear-gradient(135deg,#061a35,#0759a5);
+    padding:20px;
+}
+
+.login-box{
+    width:100%;
+    max-width:420px;
+    background:white;
+    padding:35px 28px;
+    border-radius:18px;
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.logo{
+    width:70px;
+    height:70px;
+    margin:0 auto 15px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#0759a5,#00a6ff);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    font-weight:900;
+}
+
+h1{
+    text-align:center;
+    color:#0b1f3a;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#777;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    margin-bottom:7px;
+    color:#172033;
+    font-weight:bold;
+    font-size:14px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:1px solid #ccd5df;
+    border-radius:9px;
+    font-size:16px;
+    outline:none;
+    margin-bottom:15px;
+}
+
+input:focus{
+    border-color:#0759a5;
+}
+
+button{
+    width:100%;
+    border:0;
+    padding:14px;
+    border-radius:9px;
+    background:#0759a5;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:disabled{
+    opacity:.6;
+}
+
+.message{
+    display:none;
+    margin-top:15px;
+    padding:12px;
+    border-radius:8px;
+    text-align:center;
+    font-size:14px;
+}
+
+.error{
+    background:#ffe5e5;
+    color:#b00020;
+}
+
+.success{
+    background:#e5f8eb;
+    color:#08752b;
+}
+
+.back{
+    display:block;
+    text-align:center;
+    margin-top:20px;
+    color:#0759a5;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.security{
+    text-align:center;
+    margin-top:20px;
+    color:#777;
+    font-size:12px;
+    line-height:1.5;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <div class="logo">
+        A1
+    </div>
+
+    <h1>Admin Login</h1>
+
+    <p class="subtitle">
+        A1 Computer Shop Admin Panel
+    </p>
+
+    <form id="loginForm">
+
+        <label for="password">
+            Admin Password
+        </label>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Password enter करें"
+            required
+            autocomplete="current-password"
+        >
+
+        <button
+            type="submit"
+            id="loginButton"
+        >
+            🔐 Login
+        </button>
+
+    </form>
+
+    <div
+        id="message"
+        class="message"
+    ></div>
+
+    <a
+        href="index.html"
+        class="back"
+    >
+        ← Back to Website
+    </a>
+
+    <div class="security">
+        🔒 आपका password browser में save नहीं किया जाता।
+    </div>
+
+</div>
+
+
+<script>
+
+const form =
+    document.getElementById("loginForm");
+
+const password =
+    document.getElementById("password");
+
+const button =
+    document.getElementById("loginButton");
+
+const message =
+    document.getElementById("message");
+
+
+form.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    message.style.display = "none";
+
+    button.disabled = true;
+    button.textContent = "Checking...";
+
+    try {
+
+        const response = await fetch(
+            "/api/admin-login",
+            {
+                method:"POST",
+
+                headers:{
+                    "Content-Type":"application/json"
+                },
+
+                body:JSON.stringify({
+                    password:password.value
+                })
+            }
+        );
+
+        const data =
+            await response.json();
+
+        if(data.success){
+
+            message.className =
+                "message success";
+
+            message.textContent =
+                "Login successful. Opening Admin Panel...";
+
+            message.style.display =
+                "block";
+
+            setTimeout(function(){
+
+                window.location.href =
+                    "admin.html";
+
+            },700);
+
+        }else{
+
+            message.className =
+                "message error";
+
+            message.textContent =
+                data.message ||
+                "Wrong password";
+
+            message.style.display =
+                "block";
+
+            password.value = "";
+
+            password.focus();
+
+        }
+
+    } catch(error){
+
+        message.className =
+            "message error";
+
+        message.textContent =
+            "Server से connection नहीं हो पाया।";
+
+        message.style.display =
+            "block";
+
+    }
+
+    button.disabled = false;
+    button.textContent = "🔐 Login";
+
+});
+
+</script>
+
+</body>
+</html>
