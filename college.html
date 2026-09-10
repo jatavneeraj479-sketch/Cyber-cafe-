@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College & University Services | A1 Computer Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+header{
+    background:#0b1f3a;
+    color:white;
+}
+
+.topbar{
+    background:#07162a;
+    padding:8px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+}
+
+.logo{
+    padding:18px 5%;
+    font-size:26px;
+    font-weight:bold;
+    color:#ffd54a;
+}
+
+nav{
+    background:#12345b;
+    padding:12px 5%;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:5px;
+}
+
+nav a:hover{
+    background:#0759a5;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0b1f3a,#0759a5);
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:800px;
+    margin:auto;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.breadcrumb{
+    padding:18px 0;
+    font-size:14px;
+}
+
+.breadcrumb a{
+    color:#0759a5;
+    text-decoration:none;
+}
+
+.notice{
+    background:#fff3cd;
+    border-left:5px solid #ffc107;
+    padding:18px;
+    margin:10px 0 30px;
+    border-radius:8px;
+}
+
+.section{
+    margin:35px 0;
+}
+
+.section h2{
+    color:#0b1f3a;
+    margin-bottom:18px;
+    font-size:28px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:12px;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.card h3{
+    color:#0759a5;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#555;
+    font-size:15px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:14px;
+    padding:10px 16px;
+    background:#0759a5;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.btn:hover{
+    background:#0b1f3a;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 3px 12px rgba(0,0,0,.06);
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:left;
+}
+
+th{
+    background:#0b1f3a;
+    color:white;
+}
+
+tr:nth-child(even){
+    background:#f8f9fa;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.step{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.07);
+}
+
+.number{
+    width:45px;
+    height:45px;
+    margin:0 auto 12px;
+    border-radius:50%;
+    background:#0759a5;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.info{
+    background:#e8f4ff;
+    border-left:5px solid #0759a5;
+    padding:18px;
+    border-radius:8px;
+}
+
+.warning{
+    background:#ffe8e8;
+    border-left:5px solid #dc3545;
+    padding:18px;
+    border-radius:8px;
+}
+
+.contact-box{
+    background:#0b1f3a;
+    color:white;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.contact-box h2{
+    color:#ffd54a;
+    margin-bottom:10px;
+}
+
+.contact-btn{
+    display:inline-block;
+    margin:10px 5px;
+    padding:12px 20px;
+    border-radius:7px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.call{
+    background:#0759a5;
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+footer{
+    margin-top:45px;
+    background:#07162a;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+    font-size:14px;
+}
+
+.float-wa{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:58px;
+    height:58px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:27px;
+    box-shadow:0 4px 15px rgba(0,0,0,.3);
+    z-index:100;
+}
+
+@media(max-width:600px){
+    .topbar{
+        flex-direction:column;
+        gap:5px;
+        text-align:center;
+    }
+
+    .logo{
+        text-align:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    table{
+        font-size:13px;
+    }
+
+    th,td{
+        padding:8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="topbar">
+        <div>📍 New Bus Stand, Ajaigarh, Madhya Pradesh</div>
+        <div>📞 9993831755</div>
+    </div>
+
+    <div class="logo">
+        A1 COMPUTER SHOP
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">All Services</a>
+        <a href="mp-online.html">MP Online</a>
+        <a href="government-jobs.html">Government Jobs</a>
+        <a href="scholarship.html">Scholarship</a>
+        <a href="college.html">College</a>
+        <a href="exam-form.html">Exam Form</a>
+        <a href="admit-card.html">Admit Card</a>
+        <a href="result.html">Result</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<section class="hero">
+    <h1>🎓 College & University Services</h1>
+    <p>
+        College admission, university forms, examination forms,
+        enrollment, scholarship और अन्य student services के लिए
+        A1 Computer Shop से सहायता प्राप्त करें।
+    </p>
+</section>
+
+<div class="container">
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> →
+        <a href="services.html">Services</a> →
+        College & University
+    </div>
+
+    <div class="notice">
+        <strong>⚠️ महत्वपूर्ण सूचना:</strong>
+        A1 Computer Shop एक निजी computer/online service center है।
+        यह किसी सरकारी विभाग, विश्वविद्यालय या MP Online की official website नहीं है।
+        Admission, fee, eligibility और अंतिम तारीख हमेशा संबंधित official institution की सूचना के अनुसार जांचें।
+    </div>
+
+    <!-- SERVICES -->
+
+    <section class="section">
+
+        <h2>🎓 College Services</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>College Admission</h3>
+                <p>
+                    कॉलेज में admission form भरने और application process में सहायता।
+                </p>
+                <a href="#admission" class="btn">जानकारी देखें</a>
+            </div>
+
+            <div class="card">
+                <h3>University Admission</h3>
+                <p>
+                    University admission/application से संबंधित online सहायता।
+                </p>
+                <a href="#admission" class="btn">जानकारी देखें</a>
+            </div>
+
+            <div class="card">
+                <h3>Online Enrollment</h3>
+                <p>
+                    Enrollment या registration form भरने में सहायता।
+                </p>
+                <a href="#enrollment" class="btn">जानकारी देखें</a>
+            </div>
+
+            <div class="card">
+                <h3>Exam Form</h3>
+                <p>
+                    Semester, annual और university examination form भरने की सुविधा।
+                </p>
+                <a href="exam-form.html" class="btn">Exam Form</a>
+            </div>
+
+            <div class="card">
+                <h3>Admit Card</h3>
+                <p>
+                    उपलब्ध होने पर examination admit card download/print सहायता।
+                </p>
+                <a href="admit-card.html" class="btn">Admit Card</a>
+            </div>
+
+            <div class="card">
+                <h3>Result</h3>
+                <p>
+                    University/college result देखने और print करने में सहायता।
+                </p>
+                <a href="result.html" class="btn">Result देखें</a>
+            </div>
+
+            <div class="card">
+                <h3>Scholarship</h3>
+                <p>
+                    Students के लिए scholarship application और document assistance।
+                </p>
+                <a href="scholarship.html" class="btn">Scholarship</a>
+            </div>
+
+            <div class="card">
+                <h3>Fee Payment Assistance</h3>
+                <p>
+                    उपलब्ध online fee payment process में सहायता।
+                </p>
+                <a href="#fee" class="btn">जानकारी देखें</a>
+            </div>
+
+            <div class="card">
+                <h3>Migration / Certificate</h3>
+                <p>
+                    उपलब्ध university certificate या application process में सहायता।
+                </p>
+                <a href="#certificate" class="btn">जानकारी देखें</a>
+            </div>
+
+            <div class="card">
+                <h3>Document Printing</h3>
+                <p>
+                    Application, receipt, marksheet और अन्य documents का print।
+                </p>
+                <a href="print-scan.html" class="btn">Print Service</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ADMISSION -->
+
+    <section class="section" id="admission">
+
+        <h2>📝 College Admission में सामान्य जानकारी</h2>
+
+        <div class="info">
+            <p>
+                College admission की प्रक्रिया अलग-अलग college/university में
+                अलग हो सकती है। आमतौर पर student को registration,
+                application form, documents upload और fee payment करना पड़ सकता है।
+            </p>
+        </div>
+
+        <br>
+
+        <table>
+
+            <tr>
+                <th>Step</th>
+                <th>सामान्य प्रक्रिया</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>College/University और course की जानकारी लेना</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Eligibility और admission rules जांचना</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Online registration/application करना</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Personal और academic details भरना</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>Documents upload करना</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>Applicable application/admission fee जमा करना</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>Application receipt सुरक्षित रखना</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- COURSES -->
+
+    <section class="section">
+
+        <h2>📚 Common College Courses</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>B.A.</h3>
+                <p>
+                    Arts और humanities से संबंधित undergraduate course।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>B.Sc.</h3>
+                <p>
+                    Science stream से संबंधित undergraduate course।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>B.Com.</h3>
+                <p>
+                    Commerce और accounting से संबंधित undergraduate course।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>BBA</h3>
+                <p>
+                    Business administration से संबंधित course।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>BCA</h3>
+                <p>
+                    Computer application और IT से संबंधित course।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>B.Ed.</h3>
+                <p>
+                    Teacher education से संबंधित professional course।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>M.A.</h3>
+                <p>
+                    Arts subjects में postgraduate course।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>M.Sc.</h3>
+                <p>
+                    Science subjects में postgraduate course।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>M.Com.</h3>
+                <p>
+                    Commerce में postgraduate course।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>MCA</h3>
+                <p>
+                    Computer applications में postgraduate course।
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ENROLLMENT -->
+
+    <section class="section" id="enrollment">
+
+        <h2>🆔 Enrollment / Registration</h2>
+
+        <p>
+            University enrollment या student registration के दौरान सामान्यतः
+            student की personal, academic और course-related जानकारी मांगी जा सकती है।
+        </p>
+
+        <br>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Personal Details</h3>
+                <p>
+                    नाम, जन्मतिथि, माता-पिता का नाम आदि सही जानकारी रखें।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Academic Details</h3>
+                <p>
+                    Previous class/board/university की marksheet और details रखें।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Mobile Number</h3>
+                <p>
+                    Active mobile number रखना उपयोगी होता है।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Email ID</h3>
+                <p>
+                    जहां आवश्यक हो, active email ID उपलब्ध रखें।
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DOCUMENTS -->
+
+    <section class="section">
+
+        <h2>📄 College Admission के लिए सामान्य Documents</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>10th Marksheet</h3>
+                <p>जन्मतिथि/academic verification के लिए जहां आवश्यक हो।</p>
+            </div>
+
+            <div class="card">
+                <h3>12th Marksheet</h3>
+                <p>Undergraduate admission में सामान्यतः उपयोगी।</p>
+            </div>
+
+            <div class="card">
+                <h3>Passport Photo</h3>
+                <p>Online application में निर्धारित format/size के अनुसार।</p>
+            </div>
+
+            <div class="card">
+                <h3>Signature</h3>
+                <p>जहां online form में signature upload आवश्यक हो।</p>
+            </div>
+
+            <div class="card">
+                <h3>Identity Proof</h3>
+                <p>Institution द्वारा मांगा गया valid identity document।</p>
+            </div>
+
+            <div class="card">
+                <h3>Caste Certificate</h3>
+                <p>आरक्षित category का लाभ लेने पर जहां लागू हो।</p>
+            </div>
+
+            <div class="card">
+                <h3>Income Certificate</h3>
+                <p>Scholarship या fee benefit में जहां आवश्यक हो।</p>
+            </div>
+
+            <div class="card">
+                <h3>Domicile</h3>
+                <p>जहां state domicile की आवश्यकता हो।</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEE -->
+
+    <section class="section" id="fee">
+
+        <h2>💳 College Fee Payment</h2>
+
+        <div class="info">
+            <p>
+                College/university की fee केवल संबंधित institution द्वारा
+                उपलब्ध official payment method पर ही जमा करें।
+            </p>
+            <br>
+            <p>
+                Payment के बाद receipt/transaction details सुरक्षित रखना जरूरी है।
+            </p>
+        </div>
+
+    </section>
+
+    <!-- CERTIFICATE -->
+
+    <section class="section" id="certificate">
+
+        <h2>📜 College Certificates</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Transfer Certificate</h3>
+                <p>
+                    Institution बदलने की स्थिति में TC process की जानकारी।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Migration Certificate</h3>
+                <p>
+                    University change के मामलों में जहां लागू हो।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Character Certificate</h3>
+                <p>
+                    Institution द्वारा जारी किया जाने वाला certificate।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Bonafide Certificate</h3>
+                <p>
+                    Student के institution में अध्ययनरत होने का प्रमाण।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Provisional Certificate</h3>
+                <p>
+                    Course completion के बाद जहां institution उपलब्ध कराए।
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Marksheet</h3>
+                <p>
+                    Examination result/marksheet download और print सहायता।
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROCESS -->
+
+    <section class="section">
+
+        <h2>⚙️ A1 Computer Shop पर सामान्य प्रक्रिया</h2>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="number">1</div>
+                <h3>जानकारी दें</h3>
+                <p>आपको किस college/university की service चाहिए बताएं।</p>
+            </div>
+
+            <div class="step">
+                <div class="number">2</div>
+                <h3>Documents दें</h3>
+                <p>आवश्यक documents उपलब्ध कराएं।</p>
+            </div>
+
+            <div class="step">
+                <div class="number">3</div>
+                <h3>Form भरें</h3>
+                <p>Application details carefully भरी जाती हैं।</p>
+            </div>
+
+            <div class="step">
+                <div class="number">4</div>
+                <h3>Verify करें</h3>
+                <p>Submit करने से पहले details check करें।</p>
+            </div>
+
+            <div class="step">
+                <div class="number">5</div>
+                <h3>Submit करें</h3>
+                <p>Application/fee process पूरा करें।</p>
+            </div>
+
+            <div class="step">
+                <div class="number">6</div>
+                <h3>Receipt लें</h3>
+                <p>Application और payment receipt सुरक्षित रखें।</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- IMPORTANT -->
+
+    <section class="section">
+
+        <h2>⚠️ Important Tips</h2>
+
+        <div class="warning">
+
+            <ul>
+                <li>नाम और जन्मतिथि documents के अनुसार ही भरें।</li>
+                <li>गलत mobile number या email देने से बचें।</li>
+                <li>Submit करने से पहले पूरा form दोबारा check करें।</li>
+                <li>Application number और receipt संभालकर रखें।</li>
+                <li>Fee payment के बाद transaction status जरूर check करें।</li>
+                <li>Admission की अंतिम तारीख official notice से verify करें।</li>
+                <li>Eligibility course और university के नियमों के अनुसार बदल सकती है।</li>
+                <li>किसी अनजान व्यक्ति को OTP, password या banking PIN न दें।</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- RELATED -->
+
+    <section class="section">
+
+        <h2>🔗 Related Services</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Scholarship</h3>
+                <p>Student scholarship services.</p>
+                <a href="scholarship.html" class="btn">Open</a>
+            </div>
+
+            <div class="card">
+                <h3>Exam Form</h3>
+                <p>University examination forms.</p>
+                <a href="exam-form.html" class="btn">Open</a>
+            </div>
+
+            <div class="card">
+                <h3>Admit Card</h3>
+                <p>Exam admit card services.</p>
+                <a href="admit-card.html" class="btn">Open</a>
+            </div>
+
+            <div class="card">
+                <h3>Result</h3>
+                <p>Result checking and printing.</p>
+                <a href="result.html" class="btn">Open</a>
+            </div>
+
+            <div class="card">
+                <h3>Print & Scan</h3>
+                <p>Document printing and scanning.</p>
+                <a href="print-scan.html" class="btn">Open</a>
+            </div>
+
+            <div class="card">
+                <h3>All Services</h3>
+                <p>A1 Computer Shop की सभी services देखें।</p>
+                <a href="services.html" class="btn">View All</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section class="section">
+
+        <div class="contact-box">
+
+            <h2>📞 A1 Computer Shop</h2>
+
+            <p>
+                College, University और Online Services के लिए संपर्क करें।
+            </p>
+
+            <p>
+                📍 New Bus Stand, Ajaigarh, Madhya Pradesh
+            </p>
+
+            <p>
+                📱 9993831755
+            </p>
+
+            <a href="tel:9993831755" class="contact-btn call">
+                📞 Call Now
+            </a>
+
+            <a href="https://wa.me/919993831755" class="contact-btn whatsapp" target="_blank">
+                💬 WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+<a href="https://wa.me/919993831755" class="float-wa" target="_blank">
+    💬
+</a>
+
+<footer>
+
+    <p>
+        © 2026 A1 Computer Shop. All Rights Reserved.
+    </p>
+
+    <p>
+        New Bus Stand, Ajaigarh, Madhya Pradesh | 9993831755
+    </p>
+
+    <p>
+        This is a private online/computer service center.
+        It is not an official government or MP Online website.
+    </p>
+
+</footer>
+
+</body>
+</html>
