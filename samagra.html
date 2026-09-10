@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samagra Services | A1 Computer Shop</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f4f7fb;
+  color:#222;
+  line-height:1.6;
+}
+
+header{
+  background:#0b1f3a;
+  color:white;
+}
+
+.topbar{
+  background:#061426;
+  padding:8px 5%;
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.header-main{
+  padding:18px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.logo{
+  color:#ffd54a;
+  font-size:28px;
+  font-weight:bold;
+}
+
+.shop-info{
+  text-align:right;
+  font-size:14px;
+}
+
+nav{
+  background:#12345b;
+  padding:12px 5%;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:5px;
+  font-size:14px;
+}
+
+nav a:hover{
+  background:#0759a5;
+}
+
+.hero{
+  background:linear-gradient(135deg,#0759a5,#0b1f3a);
+  color:white;
+  text-align:center;
+  padding:55px 5%;
+}
+
+.hero h1{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  max-width:850px;
+  margin:auto;
+  font-size:17px;
+}
+
+.container{
+  width:90%;
+  max-width:1150px;
+  margin:30px auto;
+}
+
+.breadcrumb{
+  margin-bottom:20px;
+  font-size:14px;
+  color:#666;
+}
+
+.breadcrumb a{
+  color:#0759a5;
+  text-decoration:none;
+}
+
+.notice{
+  background:#fff8d8;
+  border-left:5px solid #f0c000;
+  padding:18px;
+  border-radius:7px;
+  margin-bottom:25px;
+}
+
+.notice strong{
+  color:#8a6800;
+}
+
+.section-title{
+  text-align:center;
+  margin:35px 0 20px;
+}
+
+.section-title h2{
+  color:#0b1f3a;
+  font-size:28px;
+}
+
+.section-title p{
+  color:#666;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.card{
+  background:white;
+  padding:22px;
+  border-radius:10px;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.icon{
+  font-size:34px;
+  margin-bottom:8px;
+}
+
+.card h3{
+  color:#0b1f3a;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#666;
+  font-size:14px;
+}
+
+.info-box{
+  background:white;
+  padding:25px;
+  margin-top:25px;
+  border-radius:10px;
+  box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+
+.info-box h3{
+  color:#0759a5;
+  margin-bottom:10px;
+}
+
+.info-box ul{
+  padding-left:22px;
+}
+
+.info-box li{
+  margin-bottom:7px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.step{
+  background:white;
+  padding:20px;
+  text-align:center;
+  border-radius:10px;
+  box-shadow:0 3px 10px rgba(0,0,0,.07);
+}
+
+.step-number{
+  width:42px;
+  height:42px;
+  line-height:42px;
+  margin:0 auto 10px;
+  border-radius:50%;
+  background:#0759a5;
+  color:white;
+  font-weight:bold;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  margin-top:15px;
+}
+
+th,td{
+  border:1px solid #ddd;
+  padding:13px;
+  text-align:left;
+}
+
+th{
+  background:#0b1f3a;
+  color:white;
+}
+
+tr:nth-child(even){
+  background:#f7f9fc;
+}
+
+.faq{
+  background:white;
+  padding:18px;
+  margin-bottom:12px;
+  border-radius:8px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+
+.faq h3{
+  color:#0b1f3a;
+  margin-bottom:6px;
+}
+
+.buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.btn{
+  display:inline-block;
+  padding:11px 18px;
+  background:#0759a5;
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:bold;
+}
+
+.btn:hover{
+  background:#043e75;
+}
+
+.whatsapp-btn{
+  background:#25D366;
+}
+
+.whatsapp-btn:hover{
+  background:#1da851;
+}
+
+.back-btn{
+  background:#555;
+}
+
+footer{
+  background:#061426;
+  color:white;
+  padding:30px 5%;
+  margin-top:45px;
+}
+
+.footer-grid{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+footer h3{
+  color:#ffd54a;
+  margin-bottom:10px;
+}
+
+footer a{
+  color:white;
+  text-decoration:none;
+}
+
+.copyright{
+  text-align:center;
+  border-top:1px solid #33445a;
+  margin-top:25px;
+  padding-top:18px;
+  color:#bbb;
+  font-size:13px;
+}
+
+.float-whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#25D366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:28px;
+  box-shadow:0 4px 15px rgba(0,0,0,.25);
+  z-index:99;
+}
+
+@media(max-width:900px){
+  .cards{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .steps{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+  .hero h1{
+    font-size:29px;
+  }
+
+  .cards,
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .shop-info{
+    text-align:left;
+  }
+
+  nav{
+    padding:10px 3%;
+  }
+
+  table{
+    font-size:13px;
+  }
+
+  th,td{
+    padding:9px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="topbar">
+  <div>📍 New Bus Stand, Ajaigarh, Madhya Pradesh</div>
+  <div>📞 9993831755</div>
+</div>
+
+<div class="header-main">
+  <div class="logo">A1 COMPUTER SHOP</div>
+
+  <div class="shop-info">
+    Private Online Service Center<br>
+    New Bus Stand, Ajaigarh
+  </div>
+</div>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">All Services</a>
+  <a href="mp-online.html">MP Online</a>
+  <a href="government-jobs.html">Govt Jobs</a>
+  <a href="scholarship.html">Scholarship</a>
+  <a href="college.html">College</a>
+  <a href="exam-form.html">Exam Form</a>
+  <a href="admit-card.html">Admit Card</a>
+  <a href="result.html">Result</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+  <h1>Samagra Services</h1>
+  <p>
+    Samagra ID, परिवार संबंधी जानकारी, e-KYC सहायता,
+    प्रोफाइल/रिकॉर्ड से संबंधित ऑनलाइन सहायता और प्रिंट सेवाएँ।
+  </p>
+</section>
+
+<div class="container">
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> /
+  <a href="services.html">Services</a> /
+  Samagra
+</div>
+
+<div class="notice">
+  <strong>महत्वपूर्ण सूचना:</strong>
+  A1 Computer Shop एक निजी ऑनलाइन सेवा केंद्र है।
+  यह Samagra या किसी सरकारी विभाग का आधिकारिक कार्यालय नहीं है।
+  पात्रता, रिकॉर्ड और किसी आवेदन का अंतिम निर्णय संबंधित सरकारी सिस्टम
+  और नियमों के अनुसार होता है।
+</div>
+
+<div class="section-title">
+  <h2>Samagra से संबंधित सेवाएँ</h2>
+  <p>ऑनलाइन प्रक्रिया में सामान्य सहायता</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+  <div class="icon">🆔</div>
+  <h3>Samagra ID जानकारी</h3>
+  <p>
+    उपलब्ध रिकॉर्ड के अनुसार Samagra ID से संबंधित जानकारी
+    देखने में सहायता।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">👨‍👩‍👧‍👦</div>
+  <h3>Family ID</h3>
+  <p>
+    परिवार से संबंधित Samagra जानकारी और रिकॉर्ड देखने में सहायता।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">👤</div>
+  <h3>Member ID</h3>
+  <p>
+    परिवार के सदस्य की उपलब्ध जानकारी देखने में सहायता।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">🔐</div>
+  <h3>e-KYC Assistance</h3>
+  <p>
+    उपलब्ध ऑनलाइन प्रक्रिया में e-KYC संबंधी सहायता।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">✏️</div>
+  <h3>Profile Update Help</h3>
+  <p>
+    उपलब्ध सुविधा के अनुसार जानकारी अपडेट करने की प्रक्रिया में सहायता।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">🔎</div>
+  <h3>Record Search</h3>
+  <p>
+    उपलब्ध जानकारी के आधार पर Samagra रिकॉर्ड खोजने में सहायता।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">🖨️</div>
+  <h3>Samagra Print</h3>
+  <p>
+    उपलब्ध Samagra जानकारी का प्रिंट निकालने में सहायता।
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">📄</div>
+  <h3>Document Assistance</h3>
+  <p>
+    ऑनलाइन प्रक्रिया के लिए आवश्यक सामान्य दस्तावेज़ों की जानकारी।
+  </p>
+</div>
+
+</div>
+
+<div class="section-title">
+  <h2>Samagra क्या है?</h2>
+</div>
+
+<div class="info-box">
+
+<h3>Samagra व्यवस्था</h3>
+
+<p>
+Samagra व्यवस्था मध्य प्रदेश में परिवारों और सदस्यों से संबंधित
+सामाजिक एवं सरकारी सेवाओं के रिकॉर्ड/पहचान से जुड़ी डिजिटल व्यवस्था है।
+विभिन्न सेवाओं में Samagra से संबंधित जानकारी की आवश्यकता हो सकती है।
+</p>
+
+<br>
+
+<h3>Samagra ID के सामान्य प्रकार</h3>
+
+<ul>
+  <li><strong>Family ID:</strong> परिवार से संबंधित पहचान/रिकॉर्ड।</li>
+  <li><strong>Member ID:</strong> परिवार के व्यक्तिगत सदस्य से संबंधित रिकॉर्ड।</li>
+  <li><strong>e-KYC:</strong> उपलब्ध प्रक्रिया के अनुसार पहचान सत्यापन से जुड़ी सुविधा।</li>
+  <li><strong>Profile Information:</strong> उपलब्ध रिकॉर्ड में दर्ज जानकारी।</li>
+</ul>
+
+</div>
+
+<div class="section-title">
+<h2>सामान्य प्रक्रिया</h2>
+<p>A1 Computer Shop पर ऑनलाइन सहायता लेने के चरण</p>
+</div>
+
+<div class="steps">
+
+<div class="step">
+  <div class="step-number">1</div>
+  <h3>जानकारी दें</h3>
+  <p>
+    उपलब्ध Samagra ID और आवश्यक जानकारी बताएं।
+  </p>
+</div>
+
+<div class="step">
+  <div class="step-number">2</div>
+  <h3>Record Check</h3>
+  <p>
+    उपलब्ध ऑनलाइन सिस्टम में रिकॉर्ड खोजने की कोशिश की जाती है।
+  </p>
+</div>
+
+<div class="step">
+  <div class="step-number">3</div>
+  <h3>Online Process</h3>
+  <p>
+    जिस सेवा की आवश्यकता हो, उसकी उपलब्ध ऑनलाइन प्रक्रिया में सहायता।
+  </p>
+</div>
+
+<div class="step">
+  <div class="step-number">4</div>
+  <h3>Print</h3>
+  <p>
+    आवश्यकता होने पर उपलब्ध रिकॉर्ड/दस्तावेज़ का प्रिंट।
+  </p>
+</div>
+
+</div>
+
+<div class="section-title">
+<h2>सामान्य जानकारी</h2>
+</div>
+
+<table>
+
+<tr>
+  <th>सेवा</th>
+  <th>सामान्य उपयोग</th>
+</tr>
+
+<tr>
+  <td>Family ID</td>
+  <td>परिवार से संबंधित रिकॉर्ड/सेवाओं में</td>
+</tr>
+
+<tr>
+  <td>Member ID</td>
+  <td>व्यक्तिगत सदस्य से संबंधित रिकॉर्ड में</td>
+</tr>
+
+<tr>
+  <td>e-KYC</td>
+  <td>जहाँ संबंधित सेवा में पहचान सत्यापन आवश्यक हो</td>
+</tr>
+
+<tr>
+  <td>Profile Information</td>
+  <td>रिकॉर्ड में उपलब्ध जानकारी देखने/जांचने में</td>
+</tr>
+
+<tr>
+  <td>Print</td>
+  <td>उपलब्ध रिकॉर्ड का प्रिंट लेने में</td>
+</tr>
+
+</table>
+
+<div class="info-box">
+
+<h3>📋 साथ में क्या जानकारी रखें?</h3>
+
+<ul>
+  <li>यदि उपलब्ध हो तो Family ID</li>
+  <li>यदि उपलब्ध हो तो Member ID</li>
+  <li>परिवार/सदस्य का नाम</li>
+  <li>मोबाइल नंबर, जहाँ आवश्यक हो</li>
+  <li>आवश्यकता के अनुसार पहचान संबंधी दस्तावेज़</li>
+  <li>जिस सेवा के लिए आवेदन/सुधार करना है उसकी जानकारी</li>
+</ul>
+
+</div>
+
+<div class="section-title">
+<h2>आम समस्याएँ और समाधान</h2>
+</div>
+
+<div class="faq">
+
+<h3>❓ Samagra ID याद नहीं है?</h3>
+
+<p>
+उपलब्ध जानकारी के आधार पर रिकॉर्ड खोजने की कोशिश की जा सकती है।
+सही जानकारी न मिलने पर संबंधित सरकारी सहायता माध्यम से संपर्क करना उचित है।
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>❓ नाम या जानकारी गलत दिखाई दे रही है?</h3>
+
+<p>
+रिकॉर्ड में सुधार के लिए उपलब्ध ऑनलाइन प्रक्रिया/संबंधित विभाग के
+नियमों के अनुसार आवेदन या सुधार प्रक्रिया की आवश्यकता हो सकती है।
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>❓ e-KYC नहीं हो रही है?</h3>
+
+<p>
+OTP, पहचान सत्यापन, नेटवर्क या सरकारी सिस्टम से संबंधित समस्या हो सकती है।
+सही जानकारी के साथ दोबारा प्रयास किया जा सकता है।
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>❓ क्या A1 Computer Shop सरकारी Samagra कार्यालय है?</h3>
+
+<p>
+नहीं। A1 Computer Shop एक निजी ऑनलाइन सेवा केंद्र है।
+हम ऑनलाइन प्रक्रिया में सहायता और प्रिंट/स्कैन जैसी सेवाएँ प्रदान करते हैं।
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>🔐 सुरक्षा जरूरी है</h3>
+
+<ul>
+  <li>OTP किसी अनजान व्यक्ति को न बताएं।</li>
+  <li>ATM PIN और UPI PIN कभी साझा न करें।</li>
+  <li>अपना पासवर्ड किसी के साथ शेयर न करें।</li>
+  <li>दस्तावेज़ केवल आवश्यक प्रक्रिया के लिए ही दें।</li>
+  <li>ऑनलाइन फॉर्म submit करने से पहले जानकारी जांचें।</li>
+</ul>
+
+</div>
+
+<div class="section-title">
+<h2>संबंधित सेवाएँ</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+  <div class="icon">💳</div>
+  <h3>Ayushman Card</h3>
+  <p>Ayushman Card से संबंधित ऑनलाइन सहायता।</p>
+  <div class="buttons">
+    <a class="btn" href="ayushman.html">Open</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="icon">🪪</div>
+  <h3>Aadhaar</h3>
+  <p>Aadhaar से संबंधित उपलब्ध सेवाओं की जानकारी।</p>
+  <div class="buttons">
+    <a class="btn" href="aadhaar.html">Open</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="icon">🗳️</div>
+  <h3>Voter</h3>
+  <p>मतदाता संबंधी ऑनलाइन सेवाओं में सहायता।</p>
+  <div class="buttons">
+    <a class="btn" href="voter.html">Open</a>
+  </div>
+</div>
+
+<div class="card">
+  <div class="icon">📄</div>
+  <h3>Certificate</h3>
+  <p>विभिन्न प्रमाण-पत्रों से संबंधित ऑनलाइन सहायता।</p>
+  <div class="buttons">
+    <a class="btn" href="certificate.html">Open</a>
+  </div>
+</div>
+
+</div>
+
+<div class="info-box">
+
+<h3>📍 A1 Computer Shop</h3>
+
+<p>
+<strong>Address:</strong>
+New Bus Stand, Ajaigarh, Madhya Pradesh
+</p>
+
+<p>
+<strong>Mobile:</strong>
+9993831755
+</p>
+
+<div class="buttons">
+
+<a class="btn whatsapp-btn"
+   href="https://wa.me/919993831755"
+   target="_blank">
+  💬 WhatsApp करें
+</a>
+
+<a class="btn"
+   href="tel:9993831755">
+  📞 Call करें
+</a>
+
+<a class="btn back-btn"
+   href="services.html">
+  ← All Services
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>A1 Computer Shop</h3>
+<p>New Bus Stand, Ajaigarh, Madhya Pradesh</p>
+<p>Private Online Service Center</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<p><a href="index.html">Home</a></p>
+<p><a href="services.html">All Services</a></p>
+<p><a href="mp-online.html">MP Online</a></p>
+<p><a href="government-jobs.html">Government Jobs</a></p>
+<p><a href="contact.html">Contact</a></p>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>📞 9993831755</p>
+<p>📍 New Bus Stand, Ajaigarh</p>
+<p>
+💬
+<a href="https://wa.me/919993831755" target="_blank">
+WhatsApp
+</a>
+</p>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 A1 Computer Shop. All Rights Reserved.
+<br>
+यह एक निजी ऑनलाइन सेवा केंद्र है। यह किसी सरकारी विभाग की आधिकारिक वेबसाइट नहीं है।
+</div>
+
+</footer>
+
+<a class="float-whatsapp"
+   href="https://wa.me/919993831755"
+   target="_blank"
+   title="WhatsApp">
+  💬
+</a>
+
+</body>
+</html>
