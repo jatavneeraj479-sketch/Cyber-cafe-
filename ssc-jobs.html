@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SSC Jobs - A1 Computer Shop</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#222;
+}
+
+header{
+    background:#0b1f3a;
+    color:white;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#ffd54a;
+}
+
+.header-contact{
+    font-size:14px;
+}
+
+nav{
+    background:#12345b;
+    padding:12px 5%;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#ffd54a;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.breadcrumb{
+    padding:18px 0;
+    font-size:14px;
+}
+
+.breadcrumb a{
+    color:#0759a5;
+    text-decoration:none;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0759a5,#0b1f3a);
+    color:white;
+    padding:40px 25px;
+    border-radius:15px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    line-height:1.7;
+}
+
+.notice{
+    background:#fff3cd;
+    border-left:5px solid #ffb300;
+    padding:15px;
+    margin-bottom:25px;
+    border-radius:8px;
+    line-height:1.6;
+}
+
+.section-title{
+    text-align:center;
+    margin:30px 0 20px;
+}
+
+.section-title h2{
+    color:#0b1f3a;
+    margin-bottom:8px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    border-radius:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.icon{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#0759a5;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:14px;
+    line-height:1.6;
+    color:#555;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 16px;
+    background:#0759a5;
+    color:white;
+    text-decoration:none;
+    border-radius:7px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#0b1f3a;
+}
+
+.info-box{
+    background:white;
+    padding:25px;
+    margin:30px 0;
+    border-radius:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.info-box h2{
+    color:#0b1f3a;
+    margin-bottom:15px;
+}
+
+.info-box ul{
+    padding-left:22px;
+    line-height:2;
+}
+
+.table-box{
+    overflow-x:auto;
+    background:white;
+    padding:15px;
+    border-radius:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:13px;
+    text-align:left;
+}
+
+th{
+    background:#0b1f3a;
+    color:white;
+}
+
+tr:nth-child(even){
+    background:#f5f7fa;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.step{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.07);
+}
+
+.step-number{
+    width:45px;
+    height:45px;
+    line-height:45px;
+    margin:auto auto 10px;
+    background:#0759a5;
+    color:white;
+    border-radius:50%;
+    font-weight:bold;
+}
+
+.contact-box{
+    background:#0b1f3a;
+    color:white;
+    padding:30px;
+    border-radius:15px;
+    margin:30px 0;
+    text-align:center;
+}
+
+.contact-box h2{
+    color:#ffd54a;
+    margin-bottom:12px;
+}
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#25D366;
+    color:white;
+    padding:14px 18px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
+}
+
+footer{
+    background:#08182d;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+    line-height:1.8;
+}
+
+@media(max-width:600px){
+    .hero h1{
+        font-size:27px;
+    }
+
+    header{
+        gap:10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        A1 COMPUTER SHOP
+    </div>
+
+    <div class="header-contact">
+        📞 9993831755
+    </div>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="services.html">
+        All Services
+    </a>
+
+    <a href="mp-online.html">
+        MP Online
+    </a>
+
+    <a href="government-jobs.html">
+        Government Jobs
+    </a>
+
+    <a href="scholarship.html">
+        Scholarship
+    </a>
+
+    <a href="college.html">
+        College
+    </a>
+
+    <a href="contact.html">
+        Contact
+    </a>
+
+</nav>
+
+
+<div class="container">
+
+
+    <div class="breadcrumb">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        /
+
+        <a href="government-jobs.html">
+            Government Jobs
+        </a>
+
+        /
+
+        SSC Jobs
+
+    </div>
+
+
+    <section class="hero">
+
+        <h1>
+            📋 SSC Government Jobs
+        </h1>
+
+        <p>
+            Staff Selection Commission (SSC) से संबंधित
+            विभिन्न सरकारी भर्ती परीक्षाओं की जानकारी,
+            ऑनलाइन आवेदन, documents, exam preparation
+            और application process के लिए यह page बनाया गया है।
+        </p>
+
+    </section>
+
+
+    <div class="notice">
+
+        ⚠️ <strong>महत्वपूर्ण सूचना:</strong>
+
+        A1 Computer Shop एक निजी ऑनलाइन सेवा केंद्र है।
+        यह SSC या भारत सरकार की आधिकारिक वेबसाइट नहीं है।
+
+        किसी भी भर्ती की अंतिम eligibility, vacancy,
+        fee, age limit और last date संबंधित official notification
+        से जरूर verify करें।
+
+    </div>
+
+
+    <div class="section-title">
+
+        <h2>
+            SSC में प्रमुख भर्ती परीक्षाएं
+        </h2>
+
+        <p>
+            अलग-अलग SSC examinations की सामान्य जानकारी
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <div class="icon">
+                🧑‍💼
+            </div>
+
+            <h3>
+                SSC CGL
+            </h3>
+
+            <p>
+                Graduate candidates के लिए विभिन्न
+                Group B और Group C posts से संबंधित
+                competitive examination।
+            </p>
+
+            <a href="#cgl" class="btn">
+                Full Information →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                📝
+            </div>
+
+            <h3>
+                SSC CHSL
+            </h3>
+
+            <p>
+                12वीं पास candidates के लिए विभिन्न
+                clerical और data-entry related posts।
+            </p>
+
+            <a href="#chsl" class="btn">
+                Full Information →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                👮
+            </div>
+
+            <h3>
+                SSC GD
+            </h3>
+
+            <p>
+                Constable GD recruitment से संबंधित
+                application और examination information।
+            </p>
+
+            <a href="#gd" class="btn">
+                Full Information →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🕵️
+            </div>
+
+            <h3>
+                SSC CPO
+            </h3>
+
+            <p>
+                Delhi Police और CAPFs में Sub-Inspector
+                recruitment से संबंधित examination।
+            </p>
+
+            <a href="#cpo" class="btn">
+                Full Information →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🔧
+            </div>
+
+            <h3>
+                SSC MTS
+            </h3>
+
+            <p>
+                Multi Tasking Staff और संबंधित
+                recruitment examination की जानकारी।
+            </p>
+
+            <a href="#mts" class="btn">
+                Full Information →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🏢
+            </div>
+
+            <h3>
+                SSC Selection Post
+            </h3>
+
+            <p>
+                विभिन्न departments में अलग-अलग
+                qualification based posts।
+            </p>
+
+            <a href="#selection" class="btn">
+                Full Information →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <h2>
+            📊 SSC Exam सामान्य जानकारी
+        </h2>
+
+        <div class="table-box">
+
+            <table>
+
+                <tr>
+                    <th>
+                        Exam
+                    </th>
+
+                    <th>
+                        सामान्य Qualification
+                    </th>
+
+                    <th>
+                        सामान्य Post Level
+                    </th>
+
+                    <th>
+                        Selection
+                    </th>
+                </tr>
+
+
+                <tr id="cgl">
+
+                    <td>
+                        SSC CGL
+                    </td>
+
+                    <td>
+                        Graduation
+                    </td>
+
+                    <td>
+                        Group B / C
+                    </td>
+
+                    <td>
+                        परीक्षा आधारित
+                    </td>
+
+                </tr>
+
+
+                <tr id="chsl">
+
+                    <td>
+                        SSC CHSL
+                    </td>
+
+                    <td>
+                        12वीं
+                    </td>
+
+                    <td>
+                        विभिन्न clerical posts
+                    </td>
+
+                    <td>
+                        परीक्षा / skill test आदि
+                    </td>
+
+                </tr>
+
+
+                <tr id="gd">
+
+                    <td>
+                        SSC GD
+                    </td>
+
+                    <td>
+                        सामान्यतः 10वीं
+                    </td>
+
+                    <td>
+                        Constable GD
+                    </td>
+
+                    <td>
+                        Written / Physical आदि
+                    </td>
+
+                </tr>
+
+
+                <tr id="cpo">
+
+                    <td>
+                        SSC CPO
+                    </td>
+
+                    <td>
+                        Graduation
+                    </td>
+
+                    <td>
+                        Sub-Inspector
+                    </td>
+
+                    <td>
+                        परीक्षा / Physical आदि
+                    </td>
+
+                </tr>
+
+
+                <tr id="mts">
+
+                    <td>
+                        SSC MTS
+                    </td>
+
+                    <td>
+                        सामान्यतः 10वीं
+                    </td>
+
+                    <td>
+                        MTS
+                    </td>
+
+                    <td>
+                        परीक्षा आधारित
+                    </td>
+
+                </tr>
+
+
+                <tr id="selection">
+
+                    <td>
+                        Selection Post
+                    </td>
+
+                    <td>
+                        Post के अनुसार
+                    </td>
+
+                    <td>
+                        विभिन्न posts
+                    </td>
+
+                    <td>
+                        परीक्षा / अन्य criteria
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <h2>
+            📄 SSC Form के लिए सामान्य Documents
+        </h2>
+
+        <ul>
+
+            <li>
+                आधार कार्ड
+            </li>
+
+            <li>
+                Active Mobile Number
+            </li>
+
+            <li>
+                Email ID
+            </li>
+
+            <li>
+                10वीं की मार्कशीट
+            </li>
+
+            <li>
+                12वीं की मार्कशीट
+            </li>
+
+            <li>
+                Graduation documents — यदि post के लिए आवश्यक हो
+            </li>
+
+            <li>
+                Passport Size Photograph
+            </li>
+
+            <li>
+                Signature की scanned copy
+            </li>
+
+            <li>
+                Category Certificate — यदि लागू हो
+            </li>
+
+            <li>
+                अन्य documents जैसा official notification में बताया गया हो
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="section-title">
+
+        <h2>
+            📝 SSC Online Form Process
+        </h2>
+
+        <p>
+            A1 Computer Shop पर सामान्य application process
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="step-number">
+                1
+            </div>
+
+            <h3>
+                Notification
+            </h3>
+
+            <p>
+                Recruitment notification और eligibility check करें।
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                2
+            </div>
+
+            <h3>
+                Documents
+            </h3>
+
+            <p>
+                आवश्यक documents और photographs तैयार रखें।
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                3
+            </div>
+
+            <h3>
+                Registration
+            </h3>
+
+            <p>
+                आवश्यक registration/application details भरें।
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                4
+            </div>
+
+            <h3>
+                Application
+            </h3>
+
+            <p>
+                संबंधित recruitment का application form पूरा करें।
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                5
+            </div>
+
+            <h3>
+                Payment
+            </h3>
+
+            <p>
+                यदि application fee लागू है तो payment करें।
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                6
+            </div>
+
+            <h3>
+                Print
+            </h3>
+
+            <p>
+                Application form और receipt सुरक्षित रखें।
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <h2>
+            ✅ Form Submit करने के बाद
+        </h2>
+
+        <ul>
+
+            <li>
+                Application Number सुरक्षित रखें।
+            </li>
+
+            <li>
+                Login details सुरक्षित रखें।
+            </li>
+
+            <li>
+                Admit Card जारी होने पर download करें।
+            </li>
+
+            <li>
+                Exam date और centre details check करें।
+            </li>
+
+            <li>
+                Result और आगे की selection process check करें।
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="info-box">
+
+        <h2>
+            🎯 SSC Preparation के लिए सामान्य Subjects
+        </h2>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <div class="icon">
+                    ➗
+                </div>
+
+                <h3>
+                    Mathematics
+                </h3>
+
+                <p>
+                    Arithmetic, Algebra, Geometry,
+                    Percentage, Ratio आदि।
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Reasoning
+                </h3>
+
+                <p>
+                    Analogy, Series, Coding-Decoding,
+                    Classification आदि।
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🌎
+                </div>
+
+                <h3>
+                    General Awareness
+                </h3>
+
+                <p>
+                    सामान्य ज्ञान, इतिहास, भूगोल,
+                    विज्ञान और current affairs।
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    📚
+                </div>
+
+                <h3>
+                    English / Language
+                </h3>
+
+                <p>
+                    Grammar, Vocabulary,
+                    Comprehension आदि।
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <h2>
+            💻 SSC Form भरवाने के लिए A1 Computer Shop आएं
+        </h2>
+
+        <p>
+            New Bus Stand, Ajaigarh, Madhya Pradesh
+        </p>
+
+        <p style="margin-top:10px;">
+            📞 <strong>9993831755</strong>
+        </p>
+
+        <a
+            class="btn"
+            style="background:#25D366;margin-top:18px;"
+            href="https://wa.me/919993831755"
+            target="_blank"
+        >
+            💬 WhatsApp करें
+        </a>
+
+    </div>
+
+
+    <div style="text-align:center;margin:30px 0;">
+
+        <a
+            class="btn"
+            href="government-jobs.html"
+        >
+            ← Government Jobs
+        </a>
+
+        <a
+            class="btn"
+            href="index.html"
+        >
+            🏠 Home
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<a
+    class="whatsapp"
+    href="https://wa.me/919993831755"
+    target="_blank"
+>
+    💬 WhatsApp
+</a>
+
+
+<footer>
+
+    <strong>
+        A1 COMPUTER SHOP
+    </strong>
+
+    <br>
+
+    New Bus Stand, Ajaigarh, Madhya Pradesh
+
+    <br>
+
+    📞 9993831755
+
+    <br><br>
+
+    यह एक निजी ऑनलाइन सेवा केंद्र है।
+    यह किसी सरकारी विभाग, SSC या MP Online की आधिकारिक वेबसाइट नहीं है।
+
+    <br><br>
+
+    © 2026 A1 Computer Shop. All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
